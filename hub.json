@@ -1,5 +1,5 @@
 {
- "built": "20261112161217",
+ "built": "20261112162714",
  "congresses": [
   {
    "number": 106,
@@ -23,6 +23,15 @@
      "subject": "Pdfs",
      "date": "2000-03-21",
      "url": "https://web.archive.org/web/20010110075732id_/murkowski.senate.gov/pdfs/letter_to_the_president.pdf"
+    },
+    {
+     "thumb": "thumbs/MW3RFQ2B4AGF4WV677PXNE5OXOKWXKRW.webp",
+     "member": "Bill Pascrell, Jr.",
+     "member_id": "P000096",
+     "to": "Federal Aviation Administration",
+     "subject": "Helicopter Noise",
+     "date": "2000-01-26",
+     "url": "https://web.archive.org/web/20220920001552id_/pascrell.house.gov/uploadedfiles/faa_helicopter_noise_letter.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-106/data/letters-from-congress-106th.csv"
@@ -324,13 +333,13 @@
      "url": "https://web.archive.org/web/20141205235923id_/mccaskill.senate.gov/imo/media/doc/uspsletter.pdf"
     },
     {
-     "thumb": "thumbs/EJOJ6T7IQMLXKW5DLZDAZ5LG2CCHVCQK.webp",
+     "thumb": "thumbs/CPZZ2IO4CAINLIAPQA4RUWLANMPJB2L6.webp",
      "member": "Sherrod Brown",
      "member_id": "B000944",
      "to": "Federal Reserve",
-     "subject": "DOJ",
-     "date": "2013-01-16",
-     "url": "https://web.archive.org/web/20130222053544id_/brown.senate.gov/download/letter-to-fed-and-doj"
+     "subject": "Occ",
+     "date": "2013-01-14",
+     "url": "https://web.archive.org/web/20130216153054id_/brown.senate.gov/download/letter-to-fed-and-occ"
     }
    ],
    "download": "../Explorer-Congressional-Letters-113/data/letters-from-congress-113th.csv"
