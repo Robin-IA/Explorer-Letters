@@ -14,6 +14,7 @@
 :root {
   --red: #7f1d2b; --red-deep: #5e1520; --red-tint: #f6e9ea;
   --blue: #2c5aa0; --blue-deep: #1f4682; --blue-tint: #e7eef8;
+  --gold: #c9a227;
   --page: #faf7f2; --panel: #fff; --ink: #2a2526; --muted: #6b6264; --faint: #9a9093;
   --hair: #e6dfd8;
   --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -38,8 +39,10 @@ mark { background: #fbe6a6; color: inherit; border-radius: 2px; }
 .page { min-height: 100vh; display: flex; flex-direction: column; }
 
 /* Masthead: the same near-black bar as every Congress's explorer, so moving
-   between them reads as one site; a dark red rule under it. */
-header.bar { background: #2c2c2c; color: #fff; border-bottom: 4px solid var(--red); }
+   between them reads as one site, with a blue, red and gold stripe under it. */
+header.bar { background: #2c2c2c; color: #fff; position: relative; }
+header.bar::after { content: ""; display: block; height: 12px;
+  background: linear-gradient(180deg, var(--blue) 0 4px, var(--red) 4px 8px, var(--gold) 8px 12px); }
 header.bar .wrap { min-height: 5.6rem; display: flex; align-items: center; justify-content: space-between; gap: 1.4rem; flex-wrap: wrap; }
 header.bar a { color: #fff; }
 header.bar a.brand { display: flex; align-items: center; gap: 1rem; font-size: 1.6rem; font-weight: 500; }
@@ -47,6 +50,14 @@ header.bar a.brand:hover { text-decoration: none; }
 header.bar nav { display: flex; gap: 2rem; font-size: 1.35rem; }
 header.bar nav a { opacity: .9; }
 header.bar nav a:hover { opacity: 1; }
+
+/* The Capitol: a public-domain photograph by the Architect of the Capitol,
+   whose terms ask for the credit line "Architect of the Capitol" and no
+   implied endorsement (aoc.gov/terms). */
+.banner { margin: 0; position: relative; height: clamp(18rem, 30vw, 40rem); overflow: hidden; background: #c9d3e3; }
+.banner img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.banner figcaption { position: absolute; right: 1.2rem; bottom: 1rem; left: auto; max-width: calc(100% - 2.4rem); font-size: 1.15rem; color: #fff;
+  background: rgba(20, 20, 24, .55); padding: .2rem .8rem; border-radius: 3px; }
 
 /* Hero */
 .hero { padding: 4.4rem 0 3.2rem; border-bottom: 1px solid var(--hair);
@@ -179,6 +190,13 @@ footer a { color: #fff; text-decoration: underline; }
       <nav aria-label="On this page"><a href="#by-congress">By Congress</a><a href="#each">Each Congress</a><a href="https://web.archive.org/">Wayback Machine</a></nav>
     </div>
   </header>
+  <figure class="banner">
+    <img src="img/capitol-east-front-1200.webp"
+         srcset="img/capitol-east-front-1200.webp 1200w, img/capitol-east-front-2400.webp 2400w"
+         sizes="100vw" width="2400" height="1350" fetchpriority="high"
+         alt="The East Front of the United States Capitol at sunrise, the flag flying beside the dome">
+    <figcaption>East Front of the U.S. Capitol at sunrise. Photo: Architect of the Capitol</figcaption>
+  </figure>
   <section class="hero">
     <div class="wrap herogrid">
       <div class="herotext">
@@ -211,8 +229,10 @@ footer a { color: #fff; text-decoration: underline; }
     Every letter here was published on a member of Congress's own website and preserved by the
     <a href="https://web.archive.org/">Wayback Machine</a>, and every one opens from there. A letter belongs to the
     Congress in session on its date, so each appears in exactly one explorer.
+    <br>The photograph of the Capitol is by the Architect of the Capitol; its use implies no endorsement by the
+    Architect of the Capitol or the United States Congress.
   </div></footer>
 </div>
-<script type="module" src="hub.js?v=20261112122334"></script>
+<script type="module" src="hub.js?v=20261112122640"></script>
 </body>
 </html>
