@@ -1,5 +1,5 @@
 {
- "built": "20261112155115",
+ "built": "20261112160758",
  "congresses": [
   {
    "number": 106,
@@ -95,6 +95,15 @@
      "url": "https://web.archive.org/web/20040324055955id_/schumer.senate.gov/schumerwebsite/pressroom/letters/education%20conference%20call%20report%202.25.04.pdf"
     },
     {
+     "thumb": "thumbs/I6QHMO7NOPIWYBLEAAQOEHFA7X443R2O.webp",
+     "member": "Carl Levin",
+     "member_id": "L000261",
+     "to": "Department of Energy",
+     "subject": "",
+     "date": "2003-02-06",
+     "url": "https://web.archive.org/web/20030619090822id_/levin.senate.gov/perryletter.pdf"
+    },
+    {
      "thumb": "thumbs/4ZYEDKM5GCPE4564WAZ3BB7WZOUDDDBH.webp",
      "member": "Ron Wyden",
      "member_id": "W000779",
@@ -102,15 +111,6 @@
      "subject": "Leg Issues Wyden",
      "date": "2004-08-08",
      "url": "https://web.archive.org/web/20040823232019id_/wyden.senate.gov/leg_issues/letters/08082004%20wyden%20letter%20to%20rumsfeld.pdf"
-    },
-    {
-     "thumb": "thumbs/YGLPO34JIHC7KYZMHYKUHSAPNAA4IDGD.webp",
-     "member": "Zoe Lofgren",
-     "member_id": "L000397",
-     "to": "Federal Reserve",
-     "subject": "FCC",
-     "date": "2003-05-16",
-     "url": "https://web.archive.org/web/20031225203414id_/house.gov/lofgren/images/letter_to_powell_fcc.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-108/data/letters-from-congress-108th.csv"
@@ -120,6 +120,15 @@
    "label": "109th Congress",
    "path": "../Explorer-Congressional-Letters-109/",
    "samples": [
+    {
+     "thumb": "thumbs/XEUTVD6AV26ZTRSKFHX2FCUG6MT6EWN2.webp",
+     "member": "Carolyn B. Maloney",
+     "member_id": "M000087",
+     "to": "Central Intelligence Agency",
+     "subject": "",
+     "date": "2005-01-31",
+     "url": "https://web.archive.org/web/20050205173055id_/house.gov/maloney/013105cialetter.pdf"
+    },
     {
      "thumb": "thumbs/C6B2HSQ6JTUPXDQXHLRZY4KKFRYZFFA3.webp",
      "member": "Charles E. Schumer",
@@ -139,22 +148,13 @@
      "url": "https://web.archive.org/web/20060428063239id_/leahy.senate.gov/press/200604/final%20cfv%20letter%20to%20cjs%20-%20signed.pdf"
     },
     {
-     "thumb": "thumbs/XEUTVD6AV26ZTRSKFHX2FCUG6MT6EWN2.webp",
-     "member": "Carolyn B. Maloney",
-     "member_id": "M000087",
-     "to": "Central Intelligence Agency",
-     "subject": "",
-     "date": "2005-01-31",
-     "url": "https://web.archive.org/web/20050205173055id_/house.gov/maloney/013105cialetter.pdf"
-    },
-    {
-     "thumb": "thumbs/6TVQDQJH5UYADB3YDPIQMF7Y4X5JJO4W.webp",
-     "member": "Bill Nelson",
-     "member_id": "N000032",
-     "to": "Department of Defense",
-     "subject": "",
-     "date": "2005-09-02",
-     "url": "https://web.archive.org/web/20050916184419id_/billnelson.senate.gov/letter%20to%20rumsfeld.pdf"
+     "thumb": "thumbs/OJ6YMM5FCKDGLJV543KFY5FZ7LOPE5ID.webp",
+     "member": "Zoe Lofgren",
+     "member_id": "L000397",
+     "to": "Department of Justice",
+     "subject": "Patriot Act",
+     "date": "2005-11-08",
+     "url": "https://web.archive.org/web/20051230132949id_/house.gov/lofgren/gonzales_letter_re_patriot_act_11.8.05.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-109/data/letters-from-congress-109th.csv"
