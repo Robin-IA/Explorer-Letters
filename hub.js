@@ -231,9 +231,16 @@ async function runSearch(query) {
     } else {
       const names = new Map((idx.members || []).map(m => [m.id, m.name]));
       const hits = [];
+      // The members whose own name matches, so a search for a member finds
+      // the letters they wrote, not only letters that mention them.
+      const writers = new Set();
+      data.members.forEach((id, i) => {
+        if ((names.get(id) || '').toLowerCase().includes(needle)) writers.add(i);
+      });
       for (const [mIdx, rIdx, year, , subject, exact, topics] of data.rows) {
         const recipient = rIdx >= 0 ? data.recipients[rIdx] : '';
-        if (subject.toLowerCase().includes(needle)
+        if (writers.has(mIdx)
+            || subject.toLowerCase().includes(needle)
             || recipient.toLowerCase().includes(needle)
             || (topics || '').toLowerCase().includes(needle)) {
           hits.push([data.members[mIdx], recipient, year, subject, exact]);
