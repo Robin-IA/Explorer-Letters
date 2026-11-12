@@ -175,8 +175,11 @@ footer a { color: #fff; text-decoration: underline; }
 
 /* Real letters: first pages from the explorers' own thumbnails. */
 .herogrid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 3.6rem; align-items: center; }
-/* One row of four, so the letters stand no taller than the text beside them. */
-.pages { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .9rem; }
+/* Two by two, filling the column beside the title, search and chart. A row of
+   four left the letters too small to read as letters; now that the chart sits
+   under the search, the text column is tall enough to stand a 2x2 beside. */
+.pages { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 1.8rem;
+  width: 100%; max-width: 40rem; justify-self: center; }
 .pages a { display: block; background: #fff; border: 1px solid var(--hair); border-radius: 4px; padding: .4rem;
   box-shadow: 0 6px 18px rgba(94, 21, 32, .14); transition: transform .2s, box-shadow .2s; text-decoration: none; }
 .pages a:nth-child(1) { transform: rotate(-2deg); }
@@ -277,6 +280,6 @@ footer a { color: #fff; text-decoration: underline; }
     the United States Congress.
   </div></footer>
 </div>
-<script type="module" src="hub.js?v=20261112162714"></script>
+<script type="module" src="hub.js?v=20261112163830"></script>
 </body>
 </html>
