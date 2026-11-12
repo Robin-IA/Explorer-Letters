@@ -7,91 +7,165 @@
 <meta name="description" content="Letters published on members of Congress's own websites and archived by the Wayback Machine, one explorer per Congress, searchable across all of them.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='3' width='22' height='26' rx='1.5' fill='none' stroke='%232c2c2c' stroke-width='2.4'/%3E%3Cpath d='M10 10h12M10 15h12M10 20h7' stroke='%232c2c2c' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
-/* The same tokens as each Congress's explorer, so moving between them does
-   not feel like leaving the site. */
+/* Letters from Congress, the home page. Dark red for the masthead and
+   headings, a medium blue for links, bars and actions, on a warm paper
+   ground. Each pair is checked for contrast: white on --red 9.6:1, white on the bar 13.9:1, --blue on
+   --page 5.9:1, --ink on --page 13:1. */
 :root {
-  --page: #fbfbfd; --panel: #fff; --ink: #2b2b2b; --muted: #6e6e73; --faint: #96969b;
-  --bar: #2c2c2c; --link: #2f6bbd; --active: #4b64ff; --hair: #e4e4e8; --tint: #f4f4f7;
-  --sen: #2f6f9f; --hou: #7a4f9c;
+  --red: #7f1d2b; --red-deep: #5e1520; --red-tint: #f6e9ea;
+  --blue: #2c5aa0; --blue-deep: #1f4682; --blue-tint: #e7eef8;
+  --page: #faf7f2; --panel: #fff; --ink: #2a2526; --muted: #6b6264; --faint: #9a9093;
+  --hair: #e6dfd8;
   --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --serif: Georgia, "Times New Roman", serif;
 }
 html { font-size: 10px; -webkit-text-size-adjust: 100%; }
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; background: var(--page); color: var(--ink); font: 1.4rem/1.5 var(--font); }
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 1.5rem/1.55 var(--font); }
+a { color: var(--blue); text-decoration: none; }
+a:hover { color: var(--blue-deep); text-decoration: underline; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
 button { font: inherit; color: inherit; cursor: pointer; }
 input { font: inherit; color: inherit; }
 h1, h2, h3 { margin: 0; font-weight: inherit; font-size: inherit; }
 ul { list-style: none; margin: 0; padding: 0; }
 p { margin: 0; }
 table { border-collapse: collapse; width: 100%; }
-th { font-weight: inherit; text-align: left; }
-mark { background: #fff2ae; color: inherit; }
+mark { background: #fbe6a6; color: inherit; border-radius: 2px; }
 [hidden] { display: none !important; }
 
-.wrap { max-width: 126rem; margin: 0 auto; padding: 0 2.4rem; }
+.wrap { max-width: 120rem; margin: 0 auto; padding: 0 2.4rem; }
 .page { min-height: 100vh; display: flex; flex-direction: column; }
-header.bar { background: var(--bar); color: #fff; }
-header.bar .wrap { min-height: 5.6rem; display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; padding-top: .7rem; padding-bottom: .7rem; }
-header.bar a.brand { display: flex; align-items: center; gap: 1rem; color: #fff; font-size: 1.6rem; font-weight: 500; }
+
+/* Masthead: the same near-black bar as every Congress's explorer, so moving
+   between them reads as one site; a dark red rule under it. */
+header.bar { background: #2c2c2c; color: #fff; border-bottom: 4px solid var(--red); }
+header.bar .wrap { min-height: 5.6rem; display: flex; align-items: center; justify-content: space-between; gap: 1.4rem; flex-wrap: wrap; }
+header.bar a { color: #fff; }
+header.bar a.brand { display: flex; align-items: center; gap: 1rem; font-size: 1.6rem; font-weight: 500; }
 header.bar a.brand:hover { text-decoration: none; }
-main { flex: 1; padding: 3.2rem 0 4.8rem; }
-footer { border-top: 1px solid var(--hair); color: var(--muted); font-size: 1.25rem; padding: 2rem 0 3rem; }
+header.bar nav { display: flex; gap: 2rem; font-size: 1.35rem; }
+header.bar nav a { opacity: .9; }
+header.bar nav a:hover { opacity: 1; }
 
-.hero { font-family: var(--serif); font-size: 3.2rem; line-height: 1.15; letter-spacing: -.01em; }
-.sub { color: var(--muted); font-size: 1.55rem; margin: .8rem 0 2.4rem; max-width: 72rem; }
-.tab { font-variant-numeric: tabular-nums; }
+/* Hero */
+.hero { padding: 4.4rem 0 3.2rem; border-bottom: 1px solid var(--hair);
+  background: linear-gradient(180deg, var(--red-tint) 0%, var(--page) 100%); }
+.kicker { font-size: 1.2rem; letter-spacing: .14em; text-transform: uppercase; color: var(--red); font-weight: 600; }
+h1.title { font-family: var(--serif); color: var(--red-deep); font-size: 4.6rem; line-height: 1.05; letter-spacing: -.015em; margin: .8rem 0 1.4rem; }
+.lede { font-size: 1.75rem; color: var(--ink); max-width: 68rem; }
+.searchbox { display: flex; gap: .8rem; margin: 2.6rem 0 1.2rem; max-width: 72rem; }
+.searchbox input { flex: 1; min-width: 0; padding: 1.25rem 1.4rem; border: 2px solid var(--blue); border-radius: 8px; background: var(--panel); font-size: 1.65rem; }
+.searchbox input:focus { outline: none; box-shadow: 0 0 0 4px var(--blue-tint); }
+.searchbox button { padding: 0 2.4rem; border: 0; border-radius: 8px; background: var(--blue); color: #fff; font-weight: 600; }
+.searchbox button:hover { background: var(--blue-deep); }
+.note { font-size: 1.3rem; color: var(--muted); max-width: 72rem; }
+
+/* Figures, computed from the explorers as they load. */
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin: 3.2rem 0 0; }
+.stat { background: var(--panel); border: 1px solid var(--hair); border-top: 4px solid var(--red); border-radius: 8px; padding: 1.4rem 1.6rem; }
+.stat b { display: block; font-family: var(--serif); font-size: 3.4rem; line-height: 1.1; color: var(--blue-deep); font-weight: 400; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 1.3rem; }
+
+/* width: 100% because a column flex item with auto margins shrinks to its content. */
+main { flex: 1; width: 100%; padding: 0 0 5.6rem; }
+h2.sec { font-family: var(--serif); font-size: 2.4rem; color: var(--red-deep); margin: 4rem 0 .4rem; }
+.secnote { color: var(--muted); font-size: 1.35rem; margin-bottom: 1.6rem; }
+
+/* Letters by Congress: one bar each, linking to that explorer. */
+.chart { background: var(--panel); border: 1px solid var(--hair); border-radius: 8px; padding: 2rem 2rem 1.2rem; }
+.bars { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); align-items: end; gap: .8rem; height: 20rem; }
+.bars a { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; color: var(--ink); text-decoration: none; }
+.bars a .v { font-size: 1.15rem; color: var(--muted); text-align: center; font-variant-numeric: tabular-nums; margin-bottom: .3rem; white-space: nowrap; }
+.bars a i { display: block; background: var(--blue); border-radius: 4px 4px 0 0; min-height: 3px; transition: background .15s; }
+.bars a:hover i, .bars a:focus-visible i { background: var(--red); }
+.bars a:hover .v { color: var(--ink); }
+.axis { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: .8rem; border-top: 1px solid var(--hair); margin-top: .2rem; padding-top: .6rem; }
+.axis span { text-align: center; font-size: 1.2rem; color: var(--muted); }
+.axis small { display: block; font-size: 1.05rem; color: var(--faint); }
+
+/* Each Congress */
+.congresses { display: grid; grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr)); gap: 1.4rem; }
+.congress { background: var(--panel); border: 1px solid var(--hair); border-left: 5px solid var(--red); border-radius: 8px; padding: 1.6rem 1.8rem 1.4rem; transition: box-shadow .15s, border-color .15s; }
+.congress:hover { box-shadow: 0 4px 14px rgba(94, 21, 32, .10); border-left-color: var(--blue); }
+.congress .nm { display: inline-block; font-family: var(--serif); font-size: 2.2rem; color: var(--red-deep); }
+.congress .nm:hover { color: var(--blue-deep); }
+.congress .dt { color: var(--muted); font-size: 1.25rem; margin: .1rem 0 1rem; }
+.congress .ct { font-size: 1.35rem; }
+.congress .ct b { font-size: 1.8rem; font-weight: 600; color: var(--blue-deep); }
+.congress .bar { height: .6rem; background: var(--blue-tint); border-radius: 3px; overflow: hidden; margin-top: 1rem; }
+.congress .bar i { display: block; height: 100%; background: var(--blue); }
+.congress .acts { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.2rem; margin-top: 1.3rem; font-size: 1.35rem; font-weight: 500; }
+.congress .soon { color: var(--faint); font-weight: 400; }
+.congress.missing { opacity: .6; border-left-color: var(--hair); }
+.totals { margin: 2rem 0 0; color: var(--muted); font-size: 1.3rem; }
+
+/* Search results */
+.status { color: var(--muted); font-size: 1.35rem; margin-bottom: 1.6rem; }
 .small { font-size: 1.25rem; color: var(--muted); }
-
-.searchbox { display: flex; gap: .8rem; margin: 0 0 2.8rem; max-width: 72rem; }
-.searchbox input { flex: 1; min-width: 0; padding: 1rem 1.2rem; border: 1px solid #cfcfd4; border-radius: 6px; background: var(--panel); font-size: 1.6rem; }
-.searchbox input:focus { outline: 2px solid var(--active); outline-offset: 1px; }
-.searchbox button { padding: 0 1.8rem; border: 0; border-radius: 6px; background: var(--bar); color: #fff; }
-.note { background: var(--tint); border-radius: 6px; padding: 1rem 1.4rem; margin: -1.2rem 0 2.8rem; max-width: 72rem; font-size: 1.3rem; color: var(--muted); }
-
-.congresses { display: grid; grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr)); gap: 1.2rem; }
-.congress { display: block; background: var(--panel); border: 1px solid var(--hair); border-radius: 8px; padding: 1.6rem 1.8rem; color: var(--ink); }
-.congress:hover { border-color: var(--active); }
-.congress .nm { display: inline-block; font-family: var(--serif); font-size: 2rem; color: var(--ink); }
-.congress .acts { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.2rem; margin-top: 1.2rem; font-size: 1.3rem; }
-.congress .soon { color: var(--faint); }
-.congress .dt { color: var(--muted); font-size: 1.25rem; margin: .2rem 0 1rem; }
-.congress .ct { font-size: 1.3rem; }
-.congress .ct b { font-size: 1.7rem; font-weight: 500; }
-.congress .bar { height: .55rem; background: var(--tint); border-radius: 3px; overflow: hidden; margin-top: 1rem; }
-.congress .bar i { display: block; height: 100%; background: var(--active); opacity: .5; }
-.congress.missing { opacity: .6; }
-.totals { margin: 2.4rem 0 0; color: var(--muted); font-size: 1.3rem; }
-
-h2.sec { font-size: 1.15rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 3.2rem 0 1.2rem; }
-.status { color: var(--muted); font-size: 1.3rem; margin-bottom: 1.6rem; }
 .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr)); gap: 1rem; }
-.person { background: var(--panel); border: 1px solid var(--hair); border-radius: 8px; padding: 1.2rem 1.4rem; }
-.person .nm { font-weight: 500; }
+.person { background: var(--panel); border: 1px solid var(--hair); border-top: 3px solid var(--blue); border-radius: 8px; padding: 1.2rem 1.4rem; }
+.person .nm { font-weight: 600; color: var(--red-deep); }
 .person .meta { color: var(--muted); font-size: 1.25rem; margin: .1rem 0 .8rem; }
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-.chips a { border: 1px solid var(--hair); border-radius: 999px; padding: .1rem .9rem; font-size: 1.25rem; white-space: nowrap; }
-.chips a:hover { border-color: var(--active); text-decoration: none; }
-
-.group { margin: 0 0 2.4rem; }
-.group h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--hair); padding-bottom: .6rem; margin-bottom: .2rem; }
-.group h3 .nm { font-family: var(--serif); font-size: 1.9rem; }
+.chips a { border: 1px solid var(--blue-tint); background: var(--blue-tint); border-radius: 999px; padding: .1rem .9rem; font-size: 1.25rem; white-space: nowrap; }
+.chips a:hover { border-color: var(--blue); text-decoration: none; }
+.group { margin: 0 0 2.6rem; background: var(--panel); border: 1px solid var(--hair); border-radius: 8px; padding: 1.4rem 1.8rem; }
+.group:empty { display: none; }
+.group h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 2px solid var(--red-tint); padding-bottom: .6rem; margin-bottom: .2rem; }
+.group h3 .nm { font-family: var(--serif); font-size: 2rem; color: var(--red-deep); }
 .group h3 .ct { color: var(--muted); font-size: 1.3rem; }
 .hits { table-layout: fixed; }
-.hits td { padding: .7rem .8rem .7rem 0; border-bottom: 1px solid var(--hair); vertical-align: top; overflow-wrap: anywhere; }
-.hits td.yr { width: 5rem; color: var(--muted); }
+.hits td { padding: .8rem .8rem .8rem 0; border-bottom: 1px solid var(--hair); vertical-align: top; overflow-wrap: anywhere; }
+.hits tr:last-child td { border-bottom: 0; }
+.hits td.yr { width: 5.4rem; color: var(--muted); }
 .hits td.who { width: 22%; }
 .hits td.to { width: 24%; color: var(--muted); }
-.more { margin-top: .8rem; font-size: 1.3rem; }
+.more { margin-top: .8rem; font-size: 1.35rem; font-weight: 500; }
 
-@media (max-width: 640px) {
+footer { background: var(--red-deep); color: #f3e6e8; font-size: 1.3rem; padding: 2.4rem 0 3rem; }
+footer a { color: #fff; text-decoration: underline; }
+
+
+/* Real letters: first pages from the explorers' own thumbnails. */
+.herogrid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 3.6rem; align-items: center; }
+.pages { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.pages a { display: block; background: #fff; border: 1px solid var(--hair); border-radius: 4px; padding: .6rem;
+  box-shadow: 0 6px 18px rgba(94, 21, 32, .14); transition: transform .2s, box-shadow .2s; text-decoration: none; }
+.pages a:nth-child(1) { transform: rotate(-2deg); }
+.pages a:nth-child(2) { transform: rotate(1.5deg) translateY(1.2rem); }
+.pages a:nth-child(3) { transform: rotate(1deg) translateY(-.4rem); }
+.pages a:nth-child(4) { transform: rotate(-1.5deg) translateY(.8rem); }
+.pages a:hover, .pages a:focus-visible { transform: none; box-shadow: 0 10px 26px rgba(31, 70, 130, .22); }
+.pages img, .shots img { display: block; width: 100%; aspect-ratio: 17 / 22; object-fit: cover; object-position: top; background: var(--blue-tint); }
+.pages span { display: block; font-size: 1.15rem; color: var(--muted); padding: .5rem .2rem 0; line-height: 1.3;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.shots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; margin: 1.2rem 0 0; }
+.shots a { display: block; border: 1px solid var(--hair); border-radius: 3px; overflow: hidden; background: #fff; }
+.shots a:hover, .shots a:focus-visible { border-color: var(--blue); }
+
+@media (max-width: 720px) {
   .wrap { padding: 0 1.6rem; }
-  .hero { font-size: 2.6rem; }
+  h1.title { font-size: 3.4rem; }
+  .lede { font-size: 1.6rem; }
+  .stats { grid-template-columns: 1fr 1fr 1fr; gap: .8rem; }
+  .stat { padding: 1rem; }
+  .stat b { font-size: 2.2rem; }
+  .bars { height: 14rem; gap: .3rem; }
+  .bars a .v { display: none; }
+  .axis { gap: .3rem; }
+  .axis span { font-size: 1rem; }
+  .axis small { display: none; }
   .hits td.to { display: none; }
   .hits td.who { width: 35%; }
+  header.bar nav { display: none; }
+  .herogrid { grid-template-columns: 1fr; gap: 2.4rem; }
+  .pages { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; }
+  .pages a { padding: .3rem; }
+  .pages a:nth-child(n) { transform: none; }
+  .pages span { display: none; }
 }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
 <body>
@@ -100,31 +174,45 @@ h2.sec { font-size: 1.15rem; text-transform: uppercase; letter-spacing: .08em; c
     <div class="wrap">
       <a class="brand" href="https://archive.org/" title="Internet Archive">
         <svg width="28" height="28" viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="26" width="26" height="2.5" fill="#fff"/><rect x="2" y="4.5" width="26" height="2.5" fill="#fff"/><path d="M15 1 3 4.5h24z" fill="#fff"/><rect x="5" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="10.75" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="16.5" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="22.25" y="8.5" width="2.75" height="16" fill="#fff"/></svg>
-        <span>Letters from Congress</span>
+        <span>Internet Archive</span>
       </a>
+      <nav aria-label="On this page"><a href="#by-congress">By Congress</a><a href="#each">Each Congress</a><a href="https://web.archive.org/">Wayback Machine</a></nav>
     </div>
   </header>
-  <main id="main" class="wrap">
-    <p class="hero">Letters from Congress</p>
-    <p class="sub" id="lede">Letters that members of Congress published on their own websites, preserved by the Wayback Machine. Each Congress has its own explorer; search here looks across all of them.</p>
-    <form class="searchbox" id="search" role="search">
-      <input id="q" type="search" placeholder="Search every Congress — a topic, an agency, a member’s name" aria-label="Search every Congress" autocomplete="off">
-      <button type="submit">Search</button>
-    </form>
-    <p class="note">Search matches each letter’s subject, its recipient, its topics and the member’s name. Searching the words inside the letters comes once the text of every letter has been read.</p>
+  <section class="hero">
+    <div class="wrap herogrid">
+      <div class="herotext">
+      <p class="kicker">From the Wayback Machine</p>
+      <h1 class="title">Letters from Congress</h1>
+      <p class="lede" id="lede">Letters that members of Congress published on their own websites, to agencies, companies and each other, preserved by the Wayback Machine. Each Congress has its own explorer; search here looks across all of them.</p>
+      <form class="searchbox" id="search" role="search">
+        <input id="q" type="search" placeholder="Search every Congress — a topic, an agency, a member’s name" aria-label="Search every Congress" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+      <p class="note">Search matches each letter’s subject, its recipient, its topics and the member’s name. Searching the words inside the letters comes once the text of every letter has been read.</p>
+      </div>
+      <figure class="pages" id="pages" aria-label="First pages of letters from the collection"></figure>
+    </div>
+    <div class="wrap"><div class="stats" id="stats" aria-live="polite"></div></div>
+  </section>
+  <main class="wrap">
     <div id="results"></div>
     <section id="list">
-      <h2 class="sec">Each Congress</h2>
+      <h2 class="sec" id="by-congress">Letters by Congress</h2>
+      <p class="secnote">Each letter is counted once, in the Congress in session on its date. Select a bar to open that Congress.</p>
+      <div class="chart" id="chart"></div>
+      <h2 class="sec" id="each">Each Congress</h2>
+      <p class="secnote">Every member of each Congress is listed in its explorer, including those whose sites held no letters.</p>
       <div class="congresses" id="congresses"><p class="status">Loading…</p></div>
       <p class="totals" id="totals"></p>
     </section>
   </main>
   <footer><div class="wrap">
     Every letter here was published on a member of Congress's own website and preserved by the
-    <a href="https://web.archive.org/">Wayback Machine</a>. A letter belongs to the Congress in session on its date,
-    so each one appears in exactly one explorer.
+    <a href="https://web.archive.org/">Wayback Machine</a>, and every one opens from there. A letter belongs to the
+    Congress in session on its date, so each appears in exactly one explorer.
   </div></footer>
 </div>
-<script type="module" src="hub.js?v=20261112121022"></script>
+<script type="module" src="hub.js?v=20261112122334"></script>
 </body>
 </html>

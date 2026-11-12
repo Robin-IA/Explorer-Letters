@@ -1,88 +1,593 @@
 {
- "built": "20261112121022",
+ "built": "20261112122334",
  "congresses": [
   {
    "number": 106,
    "label": "106th Congress",
    "path": "../Explorer-Congressional-Letters-106/",
+   "samples": [
+    {
+     "thumb": "thumbs/3JQBBGW73GL5ALPHLXLXDIYDPIRXCDLG.webp",
+     "member": "Frank Murkowski",
+     "member_id": "M001085",
+     "to": "The President",
+     "subject": "Pdfs",
+     "date": "2000-03-21",
+     "url": "https://web.archive.org/web/20010110075732id_/murkowski.senate.gov/pdfs/letter_to_the_president.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-106/data/letters-from-congress-106th.csv"
   },
   {
    "number": 107,
    "label": "107th Congress",
    "path": "../Explorer-Congressional-Letters-107/",
+   "samples": [
+    {
+     "thumb": "thumbs/DAXV2ZLQ64QMQ2W4KWGUL73GZYGZFFXY.webp",
+     "member": "Robert C. \"Bobby\" Scott",
+     "member_id": "S000185",
+     "to": "Pres Bush From Coalition",
+     "subject": "Legislative Charitable Choice Pres Bush Coalition",
+     "date": "2001-01-30",
+     "url": "https://web.archive.org/web/20090226041132id_/bobbyscott.house.gov/legislative/charitable_choice/letter.to.pres.bush.from.coalition.01.30.01.pdf"
+    },
+    {
+     "thumb": "thumbs/E6CAPERPFGN4JIRYPXKHVFWBUFKLI46I.webp",
+     "member": "Ron Wyden",
+     "member_id": "W000779",
+     "to": "Central Intelligence Agency",
+     "subject": "Graham",
+     "date": "2002-10-09",
+     "url": "https://web.archive.org/web/20030430090033id_/wyden.senate.gov/media/2002/cia_graham_letter.pdf"
+    },
+    {
+     "thumb": "thumbs/UMUVS7BPY6SKEOCTXPWJ3YWGKS6RB4RN.webp",
+     "member": "Peter A. DeFazio",
+     "member_id": "D000191",
+     "to": "Congressional leadership",
+     "subject": "Moving Hr 3058",
+     "date": "2001-07-26",
+     "url": "https://web.archive.org/web/20080625220142id_/defazio.house.gov/images/zoom/mzctym/walden-defazio_letter_to_leadership_regarding_moving_hr_3058.pdf"
+    },
+    {
+     "thumb": "thumbs/U2CI5VVVDSIV3Y7ZBDIKXNZBZUENI37T.webp",
+     "member": "Kent Conrad",
+     "member_id": "C000705",
+     "to": "Department of Justice",
+     "subject": "",
+     "date": "2001-08-10",
+     "url": "https://web.archive.org/web/20081014065656id_/conrad.senate.gov/issues/statements/budget/081001_letter_to_ag_mukasey.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-107/data/letters-from-congress-107th.csv"
   },
   {
    "number": 108,
    "label": "108th Congress",
    "path": "../Explorer-Congressional-Letters-108/",
+   "samples": [
+    {
+     "thumb": "thumbs/T74ZXREUIUVUOBPGVGU5VNFPNHZDRZZL.webp",
+     "member": "Henry A. Waxman",
+     "member_id": "W000215",
+     "to": "Department of Defense",
+     "subject": "",
+     "date": "2004-09-22",
+     "url": "https://web.archive.org/web/20091104012457id_/henrywaxman.house.gov/uploadedfiles/letter_to_dod.pdf"
+    },
+    {
+     "thumb": "thumbs/R7O2SQVHOQ5Z7N4BICFUEYJJDVRJYKBO.webp",
+     "member": "Charles E. Schumer",
+     "member_id": "S000148",
+     "to": "Report",
+     "subject": "Schumerwebsite Pressroom Education Conference",
+     "date": "2004-02-25",
+     "url": "https://web.archive.org/web/20040324055955id_/schumer.senate.gov/schumerwebsite/pressroom/letters/education%20conference%20call%20report%202.25.04.pdf"
+    },
+    {
+     "thumb": "thumbs/4ZYEDKM5GCPE4564WAZ3BB7WZOUDDDBH.webp",
+     "member": "Ron Wyden",
+     "member_id": "W000779",
+     "to": "Department of Defense",
+     "subject": "Leg Issues Wyden",
+     "date": "2004-08-08",
+     "url": "https://web.archive.org/web/20040823232019id_/wyden.senate.gov/leg_issues/letters/08082004%20wyden%20letter%20to%20rumsfeld.pdf"
+    },
+    {
+     "thumb": "thumbs/2Z6GJFINHOAMLJMSSF2HZHE3ZHMBO23E.webp",
+     "member": "John Cornyn",
+     "member_id": "C001056",
+     "to": "Bush",
+     "subject": "Archive Jcp",
+     "date": "2004-05-24",
+     "url": "https://web.archive.org/web/20040524011506id_/cornyn.senate.gov/doc_archive/jcp/letter%20to%20bush.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-108/data/letters-from-congress-108th.csv"
   },
   {
    "number": 109,
    "label": "109th Congress",
    "path": "../Explorer-Congressional-Letters-109/",
+   "samples": [
+    {
+     "thumb": "thumbs/C6B2HSQ6JTUPXDQXHLRZY4KKFRYZFFA3.webp",
+     "member": "Charles E. Schumer",
+     "member_id": "S000148",
+     "to": "Bush",
+     "subject": "Schumerwebsite Pressroom Caucus",
+     "date": "2005-02-10",
+     "url": "https://web.archive.org/web/20050226093517id_/schumer.senate.gov/schumerwebsite/pressroom/letters/caucus%20letter%20to%20bush%2002.10.05.pdf"
+    },
+    {
+     "thumb": "thumbs/3ZKWONUM4YX3D26QWATIW6X5Q5ZIKWS2.webp",
+     "member": "Patrick J. Leahy",
+     "member_id": "L000174",
+     "to": "Cjs Signed",
+     "subject": "200604 Cfv",
+     "date": "2006-04-12",
+     "url": "https://web.archive.org/web/20060428063239id_/leahy.senate.gov/press/200604/final%20cfv%20letter%20to%20cjs%20-%20signed.pdf"
+    },
+    {
+     "thumb": "thumbs/XEUTVD6AV26ZTRSKFHX2FCUG6MT6EWN2.webp",
+     "member": "Carolyn B. Maloney",
+     "member_id": "M000087",
+     "to": "Central Intelligence Agency",
+     "subject": "",
+     "date": "2005-01-31",
+     "url": "https://web.archive.org/web/20050205173055id_/house.gov/maloney/013105cialetter.pdf"
+    },
+    {
+     "thumb": "thumbs/6TVQDQJH5UYADB3YDPIQMF7Y4X5JJO4W.webp",
+     "member": "Bill Nelson",
+     "member_id": "N000032",
+     "to": "Department of Defense",
+     "subject": "",
+     "date": "2005-09-02",
+     "url": "https://web.archive.org/web/20050916184419id_/billnelson.senate.gov/letter%20to%20rumsfeld.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-109/data/letters-from-congress-109th.csv"
   },
   {
    "number": 110,
    "label": "110th Congress",
    "path": "../Explorer-Congressional-Letters-110/",
+   "samples": [
+    {
+     "thumb": "thumbs/RTGFNPMI6WLGZV4XGDCU42GA6RG52XSH.webp",
+     "member": "Carolyn B. Maloney",
+     "member_id": "M000087",
+     "to": "Agwunobi Final",
+     "subject": "911recovery",
+     "date": "2007-03-06",
+     "url": "https://web.archive.org/web/20070309072350id_/maloney.house.gov/documents/911recovery/20070306_letter_to_agwunobi_final.pdf"
+    },
+    {
+     "thumb": "thumbs/MFNV4QCAE7HVOJS6D7VORRAKJ5LKQPRR.webp",
+     "member": "Barney Frank",
+     "member_id": "F000339",
+     "to": "Bush",
+     "subject": "Mexican Trucking",
+     "date": "2007-07-02",
+     "url": "https://web.archive.org/web/20090629170117id_/house.gov/frank/letters/2007/07-02-07-mexican-trucking-letter-to-bush.pdf"
+    },
+    {
+     "thumb": "thumbs/RF5UEU6K7UTDS2YTSYYG7VVMKZWOH2AU.webp",
+     "member": "Robert Menendez",
+     "member_id": "M000639",
+     "to": "Commissioner Basham",
+     "subject": "Csd",
+     "date": "2007-08-08",
+     "url": "https://web.archive.org/web/20201028112417id_/menendez.senate.gov/imo/media/doc/8-8-07%20letter%20to%20commissioner%20basham%20on%20csd.pdf"
+    },
+    {
+     "thumb": "thumbs/D3YMUD4RT36QL7SHC5K4EXY3HDNAAHVV.webp",
+     "member": "Patrick J. Leahy",
+     "member_id": "L000174",
+     "to": "Day",
+     "subject": "200701 Joint",
+     "date": "2007-01-16",
+     "url": "https://web.archive.org/web/20070201022308id_/leahy.senate.gov/press/200701/signed%20joint%20letter%20to%20day_01%2016%2007.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-110/data/letters-from-congress-110th.csv"
   },
   {
    "number": 111,
    "label": "111th Congress",
    "path": "../Explorer-Congressional-Letters-111/",
+   "samples": [
+    {
+     "thumb": "thumbs/72UAFVZ74ECOKSEV5MVBVVRLBLPVIR76.webp",
+     "member": "Henry A. Waxman",
+     "member_id": "W000215",
+     "to": "King Abdullah",
+     "subject": "",
+     "date": "2009-07-31",
+     "url": "https://web.archive.org/web/20090902185354id_/henrywaxman.house.gov/uploadedfiles/final_letter_to_king_abdullah_07-31-09.pdf"
+    },
+    {
+     "thumb": "thumbs/EJ7DSNZLGSY2EOKLUTB2K5FOMEC4IBRP.webp",
+     "member": "Chuck Grassley",
+     "member_id": "G000386",
+     "to": "Department of Defense",
+     "subject": "Coburn Marine Corps Accounting",
+     "date": "2009-02-03",
+     "url": "https://web.archive.org/web/20100304185901id_/grassley.senate.gov/about/upload/defense-02-03-09-letter-to-dod-w-coburn-marine-corps-accounting.pdf"
+    },
+    {
+     "thumb": "thumbs/5VDLOIB2I4ZAC7OEDEOMNEFRB7OR6XHQ.webp",
+     "member": "Tammy Baldwin",
+     "member_id": "B001230",
+     "to": "The President",
+     "subject": "Uganda",
+     "date": "2010-01-21",
+     "url": "https://web.archive.org/web/20100202214427id_/tammybaldwin.house.gov/media/pdfs/letter%20to%20president%20obama%20on%20uganda%201.21.10.pdf"
+    },
+    {
+     "thumb": "thumbs/M4WBSYL2ZQKKKI6WI5G3CP65KBH3L6RT.webp",
+     "member": "David Dreier",
+     "member_id": "D000492",
+     "to": "The President",
+     "subject": "VA",
+     "date": "2009-03-18",
+     "url": "https://web.archive.org/web/20090902152615id_/dreier.house.gov/dreier/pdf/letter%20to%20pres%20obama_va_3_18_09.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-111/data/letters-from-congress-111th.csv"
   },
   {
    "number": 112,
    "label": "112th Congress",
    "path": "../Explorer-Congressional-Letters-112/",
+   "samples": [
+    {
+     "thumb": "thumbs/JK7RJZKNGJP4WMH3R3Q6FJOQEUSDLDWT.webp",
+     "member": "Chuck Grassley",
+     "member_id": "G000386",
+     "to": "Bureau of Alcohol, Tobacco, Firearms and Explosives",
+     "subject": "Sw Border Strategy",
+     "date": "2011-01-27",
+     "url": "https://web.archive.org/web/20110311011816id_/grassley.senate.gov/about/upload/judiciary-01-27-11-letter-to-atf-sw-border-strategy.pdf"
+    },
+    {
+     "thumb": "thumbs/MTJQD4OP6UKROGS5AYVLCK7VFF6RNA7B.webp",
+     "member": "Henry A. Waxman",
+     "member_id": "W000215",
+     "to": "The President",
+     "subject": "Oil Gas Tax Subsidies",
+     "date": "2011-06-15",
+     "url": "https://web.archive.org/web/20121030122610id_/waxman.house.gov/sites/waxman.house.gov/files/signed_letter_to_biden_re_oil_and_gas_tax_subsidies.pdf"
+    },
+    {
+     "thumb": "thumbs/B32YUAW6OG43EDTA6ZZF3GMKVTNOFKZD.webp",
+     "member": "Ron Wyden",
+     "member_id": "W000779",
+     "to": "Environmental Protection Agency",
+     "subject": "Boiler Mact Concerns",
+     "date": "2011-02-18",
+     "url": "https://web.archive.org/web/20121218063335id_/wyden.senate.gov/imo/media/doc/02-18-2011%20letter%20to%20epa%20on%20boiler%20mact%20concerns.pdf"
+    },
+    {
+     "thumb": "thumbs/5AATSP5PMNREO54MYU35CGVRSDLHEOE7.webp",
+     "member": "Sherrod Brown",
+     "member_id": "B000944",
+     "to": "Department of the Treasury",
+     "subject": "China Currency",
+     "date": "2011-01-18",
+     "url": "https://web.archive.org/web/20121019155439id_/brown.senate.gov/download/letter-to-secretary-geithner-on-china-currency"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-112/data/letters-from-congress-112th.csv"
   },
   {
    "number": 113,
    "label": "113th Congress",
    "path": "../Explorer-Congressional-Letters-113/",
+   "samples": [
+    {
+     "thumb": "thumbs/6DJRFNCY2WZYFM6DUJRZVE4TRKUSAMSO.webp",
+     "member": "Chuck Grassley",
+     "member_id": "G000386",
+     "to": "Department of Justice",
+     "subject": "Trade Baucus Eu Working Group AG Priority",
+     "date": "2013-01-24",
+     "url": "https://web.archive.org/web/20130222004113id_/grassley.senate.gov/issues/upload/ag-trade-01-24-13-signed-letter-to-baucus-eu-working-group-ag-a-priority-docx.pdf"
+    },
+    {
+     "thumb": "thumbs/DN6NPNAJRMNJQH4NFQ7O2UZEWN7EM6MM.webp",
+     "member": "Roy Blunt",
+     "member_id": "B000575",
+     "to": "Department of State",
+     "subject": "Saeed Abedini",
+     "date": "2013-01-15",
+     "url": "https://web.archive.org/web/20200131083410id_/blunt.senate.gov/imo/media/doc/1-15-13%20letter%20to%20state%20re%20saeed%20abedini.pdf"
+    },
+    {
+     "thumb": "thumbs/42P5LLLEVQZMD56OFV7IWIIKIPQ2DJRH.webp",
+     "member": "Claire McCaskill",
+     "member_id": "M001170",
+     "to": "United States Postal Service",
+     "subject": "",
+     "date": "2014-12-01",
+     "url": "https://web.archive.org/web/20141205235923id_/mccaskill.senate.gov/imo/media/doc/uspsletter.pdf"
+    },
+    {
+     "thumb": "thumbs/UYDEY63PUEJSGO44ADBGCPIDEHFJYYCI.webp",
+     "member": "Sherrod Brown",
+     "member_id": "B000944",
+     "to": "Secaf Csaf",
+     "subject": "Kc 46a",
+     "date": "2013-01-25",
+     "url": "https://web.archive.org/web/20201007054518id_/brown.senate.gov/imo/media/doc/letter%20to%20secaf%20csaf%20re%20kc-46a.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-113/data/letters-from-congress-113th.csv"
   },
   {
    "number": 114,
    "label": "114th Congress",
    "path": "../Explorer-Congressional-Letters-114/",
+   "samples": [
+    {
+     "thumb": "thumbs/AGMGJWXEFJ4KI3SYGRPWBZZOHDBXRIZZ.webp",
+     "member": "Claire McCaskill",
+     "member_id": "M001170",
+     "to": "Astrazeneca July 2016",
+     "subject": "Aging",
+     "date": "2016-07-19",
+     "url": "https://web.archive.org/web/20161109025157id_/mccaskill.senate.gov/imo/media/doc/aging%20letter%20to%20astrazeneca%20july%202016.pdf"
+    },
+    {
+     "thumb": "thumbs/FFJFID6UFEVQ5KL2RSARLODSTE2WQOYS.webp",
+     "member": "Chuck Grassley",
+     "member_id": "G000386",
+     "to": "Doj, Fallen Iowans Benefits",
+     "subject": "Judiciary Public Safety Officers Benefits",
+     "date": "2015-01-12",
+     "url": "https://web.archive.org/web/20161109062254id_/grassley.senate.gov/sites/default/files/judiciary/upload/public%20safety%20officers%20benefits,%2001-12-15,%20letter%20to%20doj,%20fallen%20iowans%20benefits.pdf"
+    },
+    {
+     "thumb": "thumbs/TD3LU33MYY3UMLX5GL6252TU7I2X5EDQ.webp",
+     "member": "Marco Rubio",
+     "member_id": "R000595",
+     "to": "The President",
+     "subject": "Cuba Hr",
+     "date": "2015-01-06",
+     "url": "https://web.archive.org/web/20170226054959id_/rubio.senate.gov/public/_cache/files/12037935-e81c-40a2-9a54-1852ba697df9/1.6.15-letter-to-obama-re-cuba-hr.pdf"
+    },
+    {
+     "thumb": "thumbs/T4B4JVI4MQWA3TZYJZVNS7IYCJYLSSSA.webp",
+     "member": "Ted Cruz",
+     "member_id": "C001098",
+     "to": "Department of State",
+     "subject": "",
+     "date": "2015-01-29",
+     "url": "https://web.archive.org/web/20150206124252id_/cruz.senate.gov/files/documents/letters/20150129_letter_to_secretary_kerry.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-114/data/letters-from-congress-114th.csv"
   },
   {
    "number": 115,
    "label": "115th Congress",
    "path": "../Explorer-Congressional-Letters-115/",
+   "samples": [
+    {
+     "thumb": "thumbs/NP4MTMR2GPX2UFTIMG6FVB3RIT4HWB4Y.webp",
+     "member": "Elizabeth Warren",
+     "member_id": "W000817",
+     "to": "Department of Health and Human Services",
+     "subject": "2017 01 17warren",
+     "date": "2017-01-17",
+     "url": "https://web.archive.org/web/20170222040529id_/warren.senate.gov/files/documents/2017-01-17warren_letter_to_price.pdf"
+    },
+    {
+     "thumb": "thumbs/N37S6MLL6ECOYEWIC3KY6KFCENWPFU3Q.webp",
+     "member": "Marco Rubio",
+     "member_id": "R000595",
+     "to": "Finance And Wm",
+     "subject": "Lee",
+     "date": "2017-01-18",
+     "url": "https://web.archive.org/web/20170412133339id_/rubio.senate.gov/public/_cache/files/14b6fcc5-e80b-4ae5-8762-968be2ce8f98/rubio-lee-letter-to-finance-and-wm-1.18.17.pdf"
+    },
+    {
+     "thumb": "thumbs/H76LRAMLBYV3AUWDMHD6WVNQHZ7MFIUL.webp",
+     "member": "Jon Tester",
+     "member_id": "T000464",
+     "to": "Jeff Bezos",
+     "subject": "Tester",
+     "date": "2017-01-23",
+     "url": "https://web.archive.org/web/20170125025910id_/tester.senate.gov/files/letters/01-23-17%20senator%20tester%20letter%20to%20jeff%20bezos%20.pdf"
+    },
+    {
+     "thumb": "thumbs/25X4AIYKUXXW2NQELPCI3P5VWLUHTNAD.webp",
+     "member": "Dianne Feinstein",
+     "member_id": "F000062",
+     "to": "Environmental Protection Agency",
+     "subject": "Auto Emissions Determination",
+     "date": "2017-03-07",
+     "url": "https://web.archive.org/web/20180924201006id_/feinstein.senate.gov/public/_cache/files/d/9/d9db8136-883c-4356-b392-9c367f370167/epa-auto-emissions-final-determination-letter.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-115/data/letters-from-congress-115th.csv"
   },
   {
    "number": 116,
    "label": "116th Congress",
    "path": "../Explorer-Congressional-Letters-116/",
+   "samples": [
+    {
+     "thumb": "thumbs/ZF73HWDUXVQXMW5VZHZRMV6HQWGFRV4K.webp",
+     "member": "Elizabeth Warren",
+     "member_id": "W000817",
+     "to": "Office of the Inspector General",
+     "subject": "Dol Child Labor Nprm",
+     "date": "2019-01-07",
+     "url": "https://web.archive.org/web/20190501133105id_/warren.senate.gov/imo/media/doc/2019.01.07%20letter%20to%20oig%20re%20dol%20child%20labor%20nprm.pdf"
+    },
+    {
+     "thumb": "thumbs/O6RBVA3MRYFCPZZQ23IWMLI2TDULYAZU.webp",
+     "member": "Marco Rubio",
+     "member_id": "R000595",
+     "to": "Gov Desantis",
+     "subject": "Citrus Block Grant",
+     "date": "2019-01-08",
+     "url": "https://web.archive.org/web/20190319150428id_/rubio.senate.gov/public/_cache/files/fa3f30b2-9c5b-4acc-bfeb-6e6c44b8ae9f/19.01.08-mr-letter-to-gov-desantis-re-citrus-block-grant.pdf"
+    },
+    {
+     "thumb": "thumbs/AE4OIUNDHJNGR5N6WQJ7CHC5AKX6KVA5.webp",
+     "member": "Sherrod Brown",
+     "member_id": "B000944",
+     "to": "Office of Management and Budget",
+     "subject": "Contractor Employee Back Pay",
+     "date": "2019-01-10",
+     "url": "https://web.archive.org/web/20201009171213id_/brown.senate.gov/imo/media/doc/van%20hollen%20%20letter%20to%20omb%20on%20contractor%20employee%20back%20pay.pdf"
+    },
+    {
+     "thumb": "thumbs/ZWXXSZ3IS6ENZLY3YO2DTNLAASGOYXAL.webp",
+     "member": "Tammy Baldwin",
+     "member_id": "B001230",
+     "to": "Department of Agriculture",
+     "subject": "Rural Development",
+     "date": "2019-01-11",
+     "url": "https://web.archive.org/web/20250206100436id_/baldwin.senate.gov/imo/media/doc/senator%20baldwin%20letter%20usda%20rural%20development%201.11.19.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-116/data/letters-from-congress-116th.csv"
   },
   {
    "number": 117,
    "label": "117th Congress",
    "path": "../Explorer-Congressional-Letters-117/",
+   "samples": [
+    {
+     "thumb": "thumbs/5GCTYLUP6RTZELGR5VFCIWNNQO5JC3IB.webp",
+     "member": "Marco Rubio",
+     "member_id": "R000595",
+     "to": "Department of Health and Human Services",
+     "subject": "Mab Drugs Follow up",
+     "date": "2021-01-05",
+     "url": "https://web.archive.org/web/20220105184944id_/rubio.senate.gov/public/_cache/files/99f9989a-88fb-47d8-bdf7-d26e7a07bb24/01.05.21--rubio-letter-to-hhs--mab-drugs--follow-up.pdf"
+    },
+    {
+     "thumb": "thumbs/T6AYCEQFHOUW7PDD3666OAZ55U2QGVUU.webp",
+     "member": "Elizabeth Warren",
+     "member_id": "W000817",
+     "to": "Department of Health and Human Services",
+     "subject": "Funds Underserved Communities",
+     "date": "2021-01-11",
+     "url": "https://web.archive.org/web/20210120201543id_/warren.senate.gov/imo/media/doc/2021.01.11%20letter%20to%20hhs%20re%20funds%20for%20underserved%20communities_v2.pdf"
+    },
+    {
+     "thumb": "thumbs/MVRTDPP46JFRCHBH2RLYG3DOLIH57J77.webp",
+     "member": "James Lankford",
+     "member_id": "L000575",
+     "to": "The President",
+     "subject": "Administration",
+     "date": "2021-01-27",
+     "url": "https://web.archive.org/web/20210426121139id_/lankford.senate.gov/imo/media/doc/portman%20federal%20regulations%20letter%20to%20biden%20administration.pdf"
+    },
+    {
+     "thumb": "thumbs/JJY6GB4RSTU7PEMOFYOBA6N5ZDK7G2XI.webp",
+     "member": "Michael F. Bennet",
+     "member_id": "B001267",
+     "to": "Department of Defense",
+     "subject": "Insurrection Act Response",
+     "date": "2021-01-06",
+     "url": "https://web.archive.org/web/20210106170119id_/bennet.senate.gov/public/_cache/files/d/6/d64b4d2d-6e59-4553-9e28-cce2f31887fa/dod-insurrection-act-letter-response-to-questions.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-117/data/letters-from-congress-117th.csv"
   },
   {
    "number": 118,
    "label": "118th Congress",
    "path": "../Explorer-Congressional-Letters-118/",
+   "samples": [
+    {
+     "thumb": "thumbs/SCA3O2WZBJDVCGY7ZPNZUQID4MJK4H4H.webp",
+     "member": "Elizabeth Warren",
+     "member_id": "W000817",
+     "to": "The President",
+     "subject": "Administration Vigilante Groups Southern US Border January 2023pdf1",
+     "date": "2023-01-06",
+     "url": "https://web.archive.org/web/20240810012740id_/warren.senate.gov/imo/media/doc/senators_letter_to_the_biden_administration_on_vigilante_groups_at_the_southern_us_border_-_january_2023pdf1.pdf"
+    },
+    {
+     "thumb": "thumbs/NDYRFFAAF47X52LJ2UAWHJRPFE26BH7Z.webp",
+     "member": "Michael F. Bennet",
+     "member_id": "B001267",
+     "to": "Internal Revenue Service",
+     "subject": "",
+     "date": "2023-02-10",
+     "url": "https://web.archive.org/web/20230904155144id_/bennet.senate.gov/public/_cache/files/b/5/b5bbbc6e-5234-47a5-a68f-9486a25fdd2f/irs-neguse-letter.pdf"
+    },
+    {
+     "thumb": "thumbs/Q53LD3BKMMFSTIYWMYHVKRCQ6I5LDDUH.webp",
+     "member": "Marco Rubio",
+     "member_id": "R000595",
+     "to": "Department of Homeland Security",
+     "subject": "Migrant Landings Florida Keys",
+     "date": "2023-01-05",
+     "url": "https://web.archive.org/web/20230106054254id_/rubio.senate.gov/public/_cache/files/65897086-f246-437a-b317-8b421bb21164/01.05.23---rubio-letter-to-dhs---migrant-landings-in-florida-keys.pdf"
+    },
+    {
+     "thumb": "thumbs/7F6NC6HX4EIXO2GW2YBMK6LQN5YWFETU.webp",
+     "member": "James Lankford",
+     "member_id": "L000575",
+     "to": "Dha, Esi, Cigna[2]",
+     "subject": "Tricare Pharmacy Program",
+     "date": "2023-01-03",
+     "url": "https://web.archive.org/web/20230105141053id_/lankford.senate.gov/imo/media/doc/2023-1-3%20sen.%20lankford%20tricare%20pharmacy%20program%20letter%20to%20dha,%20esi,%20cigna[2].pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-118/data/letters-from-congress-118th.csv"
   },
   {
    "number": 119,
    "label": "119th Congress",
    "path": "../Explorer-Congressional-Letters-119/",
+   "samples": [
+    {
+     "thumb": "thumbs/J67XYQAZM5JBGXUMA3RUTHNGDXXXU5AQ.webp",
+     "member": "Elizabeth Warren",
+     "member_id": "W000817",
+     "to": "Mrpetehegseth",
+     "subject": "",
+     "date": "2025-01-06",
+     "url": "https://web.archive.org/web/20250108025030id_/warren.senate.gov/imo/media/doc/letter_to_mrpetehegseth.pdf"
+    },
+    {
+     "thumb": "thumbs/PLQ6ZCIKVR47QHJ6RRJSBJGVBTILQC2F.webp",
+     "member": "Russ Fulcher",
+     "member_id": "F000469",
+     "to": "Department of Homeland Security",
+     "subject": "HHS Title 42 Cancellation",
+     "date": "2025-03-24",
+     "url": "https://web.archive.org/web/20250324052141id_/fulcher.house.gov/_cache/files/4/e/4eaf2ffb-bf41-4904-82d8-6b6e1095ad62/3fbb1c61763485a904357462e8d2cd14e6f8e7e463a393ec74a2c5ce132d8891.letter-to-dhs-and-hhs---title-42-cancellation.pdf"
+    },
+    {
+     "thumb": "thumbs/M7HG5ZZ7EEEW2BFVJUV5NEV4UBUAIFD7.webp",
+     "member": "Julia Brownley",
+     "member_id": "B001285",
+     "to": "Immigration and Customs Enforcement",
+     "subject": "",
+     "date": "2025-01-29",
+     "url": "https://web.archive.org/web/20250131124803id_/juliabrownley.house.gov/wp-content/uploads/2025/01/012925-brownley-letter-to-ice.pdf"
+    },
+    {
+     "thumb": "thumbs/KPXB5Z47WYTR54KDUYXZ2VXUXSJCV67J.webp",
+     "member": "Adam B. Schiff",
+     "member_id": "S001150",
+     "to": "Department of Justice",
+     "subject": "Bop Facilities ICE",
+     "date": "2025-02-01",
+     "url": "https://web.archive.org/web/20250420171014id_/schiff.senate.gov/wp-content/uploads/2025/02/letter-to-ag-bondi-re-bop-facilities-for-ice-1.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-119/data/letters-from-congress-119th.csv"
   }
  ]

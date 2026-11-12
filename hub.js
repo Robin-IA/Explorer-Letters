@@ -78,12 +78,27 @@ function loadSearch(c) {
 
 // ------------------------------------------------------------- the list
 
+const YEAR = d => (d || '').slice(0, 4);
+
+// One picture of a real letter: its first page, linking to the letter on the
+// Wayback Machine. The alt text says whose letter and to whom, because the
+// picture is the letter and should be described as one.
+function shot(c, s, caption) {
+  const alt = `First page of a letter from ${s.member}${s.to ? ` to ${s.to}` : ''}`
+    + `${YEAR(s.date) ? `, ${YEAR(s.date)}` : ''}`;
+  return el('a', { href: s.url, title: `${alt}. Opens the letter on the Wayback Machine.` },
+    el('img', { src: `${base(c)}${s.thumb}?v=${stampOf(c.number)}`, alt, loading: 'lazy',
+                width: 170, height: 220 }),
+    caption ? el('span', {}, `${s.member}${YEAR(s.date) ? ` · ${YEAR(s.date)}` : ''}`) : null);
+}
+
 function renderList() {
   const loaded = [...HUB.congresses].sort((a, b) => b.number - a.number)
     .map(c => [c, INDEXES.get(c.number)]);
   const ok = loaded.filter(([, i]) => i && !i.failed);
   const max = Math.max(1, ...ok.map(([, i]) => i.letters || 0));
-  $('#congresses').replaceChildren(...loaded.map(([c, idx]) => {
+
+  fill($('#congresses'), loaded.map(([c, idx]) => {
     if (!idx) return el('div', { class: 'congress missing' }, el('div', { class: 'nm' }, c.label || `${c.number}th`), el('div', { class: 'dt' }, 'Loading…'));
     if (idx.failed) {
       return el('div', { class: 'congress missing' },
@@ -91,17 +106,17 @@ function renderList() {
         el('div', { class: 'dt' }, `Could not load (${idx.failed})`));
     }
     const k = idx.congress || {};
-    // A card, not one big link, so the download sits beside the explorer link
-    // rather than inside it. The download is a placeholder: the data file for
-    // each Congress is not built yet, and the page says so rather than
-    // offering a link that goes nowhere. When it exists, set c.download in
-    // hub.json (build_hub.py) and the link appears.
+    // A card, not one big link, so the download and the pictures sit beside
+    // the explorer link rather than inside it.
     return el('div', { class: 'congress' },
       el('a', { class: 'nm', href: congressLink(c) }, `${k.ordinal || c.number} Congress`),
       el('div', { class: 'dt' }, k.dates || ''),
       el('div', { class: 'ct tab' }, el('b', {}, num(idx.letters)), ' letters · ',
         num(idx.members_with_letters), ' of ', num(idx.members_total), ' members'),
       el('div', { class: 'bar' }, el('i', { style: `width:${Math.max(2, (idx.letters / max) * 100)}%` })),
+      (c.samples || []).length
+        ? el('div', { class: 'shots' }, ...(c.samples || []).map(s => shot(c, s, false)))
+        : null,
       el('div', { class: 'acts' },
         el('a', { href: congressLink(c) }, 'Open the explorer'),
         c.download
@@ -110,19 +125,47 @@ function renderList() {
             'Download data · coming soon')));
   }));
 
+  // Letters by Congress, oldest to newest, so the growth reads left to right.
+  const chrono = [...ok].sort((a, b) => a[0].number - b[0].number);
+  fill($('#chart'),
+    el('div', { class: 'bars', role: 'list' }, ...chrono.map(([c, i]) => {
+      const k = i.congress || {};
+      return el('a', { href: congressLink(c), role: 'listitem',
+                       'aria-label': `${k.ordinal} Congress, ${k.dates || ''}: ${num(i.letters)} letters` },
+        el('span', { class: 'v' }, num(i.letters)),
+        // 85% at most, leaving room above the tallest bar for its number.
+        el('i', { style: `height:${Math.max(1.5, (i.letters / max) * 85)}%` }));
+    })),
+    el('div', { class: 'axis', 'aria-hidden': 'true' }, ...chrono.map(([c, i]) => {
+      const k = i.congress || {};
+      return el('span', {}, k.ordinal || c.number, el('small', {}, (k.start || '').slice(0, 4)));
+    })));
+
+  // The opening pictures: one letter from each of the four newest Congresses,
+  // by four different members.
+  const used = new Set();
+  const picks = [];
+  for (const [c, i] of loaded) {
+    if (!i || i.failed || picks.length >= 4) continue;
+    const s = (c.samples || []).find(x => !used.has(x.member_id));
+    if (s) { used.add(s.member_id); picks.push([c, s]); }
+  }
+  fill($('#pages'), picks.map(([c, s]) => shot(c, s, true)));
+
   if (ok.length) {
     const letters = ok.reduce((s, [, i]) => s + (i.letters || 0), 0);
     const people = new Set();
     for (const [, i] of ok) for (const m of i.members || []) if (m.letters) people.add(m.id);
     const years = ok.map(([, i]) => i.congress || {}).filter(k => k.start);
     const first = years.length ? Math.min(...years.map(k => +k.start.slice(0, 4))) : '';
-    const last = years.length ? Math.max(...years.map(k => +k.end.slice(0, 4))) : '';
+    const last = years.length ? Math.max(...ok.map(([, i]) => (i.span || [])[1] || 0)) : '';
+    fill($('#stats'),
+      el('div', { class: 'stat' }, el('b', {}, num(letters)), el('span', {}, 'letters')),
+      el('div', { class: 'stat' }, el('b', {}, num(people.size)), el('span', {}, 'members who wrote them')),
+      el('div', { class: 'stat' }, el('b', {}, String(ok.length)), el('span', {}, `Congresses, ${first}–${last}`)));
     $('#totals').textContent = `${num(letters)} letters from ${num(people.size)} members, `
       + `across ${ok.length} Congresses${first ? `, ${first}–${last}` : ''}.`
       + (ok.length < HUB.congresses.length ? ` ${HUB.congresses.length - ok.length} could not be loaded.` : '');
-    $('#lede').textContent = `Letters that members of Congress published on their own websites, `
-      + `preserved by the Wayback Machine. ${num(letters)} of them, one explorer per Congress; `
-      + `search here looks across all of them.`;
   }
 }
 
