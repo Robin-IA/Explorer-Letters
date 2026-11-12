@@ -1,11 +1,20 @@
 {
- "built": "20261112124938",
+ "built": "20261112125439",
  "congresses": [
   {
    "number": 106,
    "label": "106th Congress",
    "path": "../Explorer-Congressional-Letters-106/",
    "samples": [
+    {
+     "thumb": "thumbs/BFKGU4XFCEAQRNOHQANXR25S4F5YD32I.webp",
+     "member": "Henry A. Waxman",
+     "member_id": "W000215",
+     "to": "Garvey",
+     "subject": "",
+     "date": "2000-05-26",
+     "url": "https://web.archive.org/web/20121030173434id_/waxman.house.gov/sites/waxman.house.gov/files/letter_to_administrator_garvey_5-26-00.pdf"
+    },
     {
      "thumb": "thumbs/3JQBBGW73GL5ALPHLXLXDIYDPIRXCDLG.webp",
      "member": "Frank Murkowski",
@@ -51,13 +60,13 @@
      "url": "https://web.archive.org/web/20080625220142id_/defazio.house.gov/images/zoom/mzctym/walden-defazio_letter_to_leadership_regarding_moving_hr_3058.pdf"
     },
     {
-     "thumb": "thumbs/U2CI5VVVDSIV3Y7ZBDIKXNZBZUENI37T.webp",
-     "member": "Kent Conrad",
-     "member_id": "C000705",
-     "to": "Department of Justice",
-     "subject": "",
-     "date": "2001-08-10",
-     "url": "https://web.archive.org/web/20081014065656id_/conrad.senate.gov/issues/statements/budget/081001_letter_to_ag_mukasey.pdf"
+     "thumb": "thumbs/HYSMCAFGDSRYI6GVGPXYNAGJXMGVIVVS.webp",
+     "member": "William Lipinski",
+     "member_id": "L000342",
+     "to": "The President",
+     "subject": "Unitedatsb",
+     "date": "2002-06-28",
+     "url": "https://web.archive.org/web/20031226055834id_/house.gov/lipinski/wh_unitedatsbletter062802.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-107/data/letters-from-congress-107th.csv"
@@ -95,13 +104,13 @@
      "url": "https://web.archive.org/web/20040823232019id_/wyden.senate.gov/leg_issues/letters/08082004%20wyden%20letter%20to%20rumsfeld.pdf"
     },
     {
-     "thumb": "thumbs/2Z6GJFINHOAMLJMSSF2HZHE3ZHMBO23E.webp",
-     "member": "John Cornyn",
-     "member_id": "C001056",
-     "to": "Bush",
-     "subject": "Archive Jcp",
-     "date": "2004-05-24",
-     "url": "https://web.archive.org/web/20040524011506id_/cornyn.senate.gov/doc_archive/jcp/letter%20to%20bush.pdf"
+     "thumb": "thumbs/YGLPO34JIHC7KYZMHYKUHSAPNAA4IDGD.webp",
+     "member": "Zoe Lofgren",
+     "member_id": "L000397",
+     "to": "Federal Reserve",
+     "subject": "FCC",
+     "date": "2003-05-16",
+     "url": "https://web.archive.org/web/20031225203414id_/house.gov/lofgren/images/letter_to_powell_fcc.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-108/data/letters-from-congress-108th.csv"
