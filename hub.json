@@ -1,5 +1,5 @@
 {
- "built": "20261112135918",
+ "built": "20261112143104",
  "congresses": [
   {
    "number": 106,
@@ -412,13 +412,13 @@
      "url": "https://web.archive.org/web/20170125025910id_/tester.senate.gov/files/letters/01-23-17%20senator%20tester%20letter%20to%20jeff%20bezos%20.pdf"
     },
     {
-     "thumb": "thumbs/25X4AIYKUXXW2NQELPCI3P5VWLUHTNAD.webp",
+     "thumb": "thumbs/HGQDHJLCIARYE6A3SDKUN4EC2W4L57VI.webp",
      "member": "Dianne Feinstein",
      "member_id": "F000062",
-     "to": "Environmental Protection Agency",
-     "subject": "Auto Emissions Determination",
-     "date": "2017-03-07",
-     "url": "https://web.archive.org/web/20180924201006id_/feinstein.senate.gov/public/_cache/files/d/9/d9db8136-883c-4356-b392-9c367f370167/epa-auto-emissions-final-determination-letter.pdf"
+     "to": "Department of Justice",
+     "subject": "Hacking Investigation",
+     "date": "2017-01-17",
+     "url": "https://web.archive.org/web/20170121001029id_/feinstein.senate.gov/public/_cache/files/5/3/5333680f-aecb-4797-b3b3-9038a3eb6ed6/letter-to-sessions-on-hacking-investigation.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-115/data/letters-from-congress-115th.csv"
