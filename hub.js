@@ -173,19 +173,56 @@ function renderList() {
 
 let searchRun = 0;
 
-async function runSearch(query) {
+// A vocabulary term's letters, exactly: a topic by its tag, a member by who
+// wrote the letter, an organization or person by every name the letters use
+// for it as recipient ("Navy" and "Secnav" for the Department of the Navy;
+// "Wheeler" only in the years that were Wheeler at that office).
+function termMatcher(node) {
+  if (node.kind === 'topic') {
+    return (row) => (row.topics || '').split(/[;,]/).some(t => t.trim() === node.label);
+  }
+  if (node.kind === 'member') {
+    const id = node.id.slice(2);
+    return (row) => row.member === id;
+  }
+  const plain = new Set();
+  const dated = [];
+  for (const n of node.names || [node.label]) {
+    const m = n.match(/^(.*)@(\d{4})-(\d{4})$/);
+    if (m) dated.push([m[1].toLowerCase(), m[2], m[3]]); else plain.add(n.toLowerCase());
+  }
+  return (row) => {
+    const r = (row.recipient || '').toLowerCase();
+    if (!r) return false;
+    if (plain.has(r)) return true;
+    const y = String(row.year || '');
+    return dated.some(([nm, lo, hi]) => nm === r && y >= lo && y <= hi);
+  };
+}
+
+function findNode(nodes, id) {
+  for (const n of nodes || []) {
+    if (n.id === id) return n;
+    const hit = findNode(n.children, id);
+    if (hit) return hit;
+  }
+  return null;
+}
+
+async function runSearch(query, term) {
   const run = ++searchRun;
-  const needle = (query || '').trim().toLowerCase();
+  const needle = term ? '' : (query || '').trim().toLowerCase();
+  const match = term ? termMatcher(term) : null;
   const out = $('#results');
-  $('#list').hidden = !!needle;
-  if (!needle) { out.replaceChildren(); return; }
+  $('#list').hidden = !!(needle || term);
+  if (!needle && !term) { out.replaceChildren(); return; }
 
   const newest = [...HUB.congresses].sort((a, b) => b.number - a.number)
     .filter(c => { const i = INDEXES.get(c.number); return i && !i.failed; });
 
   // Members first: everything they need is already in the indexes.
   const people = new Map();
-  for (const c of newest) {
+  for (const c of (term ? [] : newest)) {
     for (const m of INDEXES.get(c.number).members || []) {
       if (!m.name.toLowerCase().includes(needle)) continue;
       const p = people.get(m.id) || { m, terms: [] };
@@ -213,7 +250,9 @@ async function runSearch(query) {
           el('a', { href: congressLink(c, `member=${encodeURIComponent(m.id)}`),
                     title: `${m.name} in the ${(INDEXES.get(c.number).congress || {}).ordinal} Congress` },
             `${(INDEXES.get(c.number).congress || {}).ordinal || c.number} · ${num(n)}`)))))) : null,
-    el('h2', { class: 'sec' }, 'Letters'),
+    el('h2', { class: 'sec' }, term ? `Letters: ${term.label}` : 'Letters'),
+    term ? el('p', { class: 'secnote' }, el('a', { href: '?view=topics' }, '← By topic'),
+      (term.names || []).length > 1 ? ` · also written as ${term.names.filter(n => n !== term.label).map(n => n.replace(/@(\d{4})-(\d{4})$/, ' ($1–$2)')).join(', ')}` : '') : null,
     status,
     ...groups.values());
 
@@ -239,10 +278,11 @@ async function runSearch(query) {
       });
       for (const [mIdx, rIdx, year, , subject, exact, topics] of data.rows) {
         const recipient = rIdx >= 0 ? data.recipients[rIdx] : '';
-        if (writers.has(mIdx)
+        if (match ? match({ member: data.members[mIdx], recipient, year, topics })
+            : (writers.has(mIdx)
             || subject.toLowerCase().includes(needle)
             || recipient.toLowerCase().includes(needle)
-            || (topics || '').toLowerCase().includes(needle)) {
+            || (topics || '').toLowerCase().includes(needle))) {
           hits.push([data.members[mIdx], recipient, year, subject, exact]);
           if (hits.length >= CAP) break;
         }
@@ -263,7 +303,7 @@ async function runSearch(query) {
               el('td', { class: 'who' }, el('a', { href: congressLink(c, `member=${encodeURIComponent(id)}`) }, names.get(id) || id)),
               el('td', { class: 'to' }, marked(to, needle)),
               el('td', {}, marked(subject || '(no subject)', needle)))))),
-          hits.length > PER_CONGRESS
+          hits.length > PER_CONGRESS && !term
             ? el('p', { class: 'more' }, el('a', { href: congressLink(c, all) },
               `All ${num(hits.length)} in the ${k.ordinal} Congress →`))
             : null);
@@ -305,7 +345,7 @@ function treeNode(n, needle, depth) {
         'Recipients as the letters’ file names give them. Not yet checked: some are fragments, some the same name written two ways.') : null,
       el('ul', {}, ...kids)));
   }
-  const link = el('a', { href: `?q=${encodeURIComponent(n.label)}`, class: unrev ? 'unrev' : null,
+  const link = el('a', { href: `?term=${encodeURIComponent(n.id)}`, class: unrev ? 'unrev' : null,
                          title: `Letters for ${n.label}` }, marked(n.label, needle));
   const line = [link,
     n.letters ? el('span', { class: 'n' }, `${num(n.letters)} letters`) : null];
@@ -359,6 +399,17 @@ function fromUrl() {
   const p = new URLSearchParams(location.search);
   const q = p.get('q') || '';
   $('#q').value = q;
+  if (p.get('term')) {
+    $('#q').value = '';
+    const go = () => {
+      const node = findNode(TREE, p.get('term'));
+      if (node) runSearch('', node);
+      else fill($('#results'), el('p', { class: 'status' }, 'That term is not in the vocabulary.'));
+    };
+    if (TREE) go();
+    else fetch(`vocabulary-tree.json?v=${HUB.built}`).then(r => r.json()).then(t => { TREE = t; go(); });
+    return;
+  }
   if (p.get('view') === 'topics' && !q) {
     searchRun++;
     showTopics(p.get('find') || '').then(() => {
