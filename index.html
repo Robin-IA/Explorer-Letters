@@ -98,20 +98,6 @@ h2.sec { font-family: var(--serif); font-size: 2.4rem; color: var(--red-deep); m
 .axis { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: .8rem; border-top: 1px solid var(--hair); margin-top: .2rem; padding-top: .6rem; }
 .axis span { text-align: center; font-size: 1.2rem; color: var(--muted); }
 .axis small { display: block; font-size: 1.05rem; color: var(--faint); }
-/* The same chart, small, under the search box in the hero. */
-.herochart { margin-top: 2.4rem; }
-.herochart .minihead { font-size: 1.2rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 0 0 .6rem; }
-.herochart .chart { padding: 1rem 1.2rem .6rem; }
-.herochart .bars { height: 8rem; gap: .4rem; }
-.herochart .bars a .v { font-size: .95rem; margin-bottom: .2rem; }
-.herochart .axis { gap: .4rem; padding-top: .4rem; }
-.herochart .axis span { font-size: 1rem; }
-.herochart .axis small { display: none; }
-.herochart .note { margin-top: .6rem; font-size: 1.2rem; }
-@media (max-width: 720px) {
-  /* Fourteen ordinals do not fit under a phone-width chart: label every other bar. */
-  .herochart .axis span:nth-child(even) { visibility: hidden; }
-}
 
 /* Each Congress */
 .congresses { display: grid; grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr)); gap: 1.4rem; }
@@ -174,21 +160,17 @@ footer a { color: #fff; text-decoration: underline; }
 
 
 /* Real letters: first pages from the explorers' own thumbnails. */
-.herogrid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 3.6rem; align-items: center; }
-/* Two by two, filling the column beside the title, search and chart. A row of
-   four left the letters too small to read as letters; now that the chart sits
-   under the search, the text column is tall enough to stand a 2x2 beside. */
-.pages { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 1.8rem;
-  width: 100%; max-width: 40rem; justify-self: center; }
-.pages a { display: block; background: #fff; border: 1px solid var(--hair); border-radius: 4px; padding: .4rem;
+.herogrid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 3.6rem; align-items: start; }
+.pages { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.pages a { display: block; background: #fff; border: 1px solid var(--hair); border-radius: 4px; padding: .6rem;
   box-shadow: 0 6px 18px rgba(94, 21, 32, .14); transition: transform .2s, box-shadow .2s; text-decoration: none; }
 .pages a:nth-child(1) { transform: rotate(-2deg); }
-.pages a:nth-child(2) { transform: rotate(1.5deg) translateY(.6rem); }
-.pages a:nth-child(3) { transform: rotate(1deg) translateY(-.3rem); }
-.pages a:nth-child(4) { transform: rotate(-1.5deg) translateY(.4rem); }
+.pages a:nth-child(2) { transform: rotate(1.5deg) translateY(1.2rem); }
+.pages a:nth-child(3) { transform: rotate(1deg) translateY(-.4rem); }
+.pages a:nth-child(4) { transform: rotate(-1.5deg) translateY(.8rem); }
 .pages a:hover, .pages a:focus-visible { transform: none; box-shadow: 0 10px 26px rgba(31, 70, 130, .22); }
-.pages img, .shots img { display: block; width: 100%; height: auto; aspect-ratio: 17 / 22; object-fit: cover; object-position: top; background: var(--blue-tint); }
-.pages span { display: block; font-size: 1.05rem; color: var(--muted); padding: .5rem .2rem 0; line-height: 1.3;
+.pages img, .shots img { display: block; width: 100%; aspect-ratio: 17 / 22; object-fit: cover; object-position: top; background: var(--blue-tint); }
+.pages span { display: block; font-size: 1.15rem; color: var(--muted); padding: .5rem .2rem 0; line-height: 1.3;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .shots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; margin: 1.2rem 0 0; }
 .shots a { display: block; border: 1px solid var(--hair); border-radius: 3px; overflow: hidden; background: #fff; }
@@ -252,11 +234,6 @@ footer a { color: #fff; text-decoration: underline; }
         <button type="submit">Search</button>
       </form>
       <p class="note">Search matches each letter’s subject, its recipient, its topics and the member’s name. Searching the words inside the letters comes once the text of every letter has been read.</p>
-      <div class="herochart">
-        <h2 class="minihead" id="timeline">Letters by Congress</h2>
-        <div class="chart" id="chart"></div>
-        <p class="note">Each letter is counted once, in the Congress in session on its date. Select a bar to open that Congress.</p>
-      </div>
       </div>
       <figure class="pages" id="pages" aria-label="First pages of letters from the collection"></figure>
     </div>
@@ -265,7 +242,10 @@ footer a { color: #fff; text-decoration: underline; }
   <main class="wrap">
     <div id="results"></div>
     <section id="list">
-      <h2 class="sec" id="by-congress">Each Congress</h2>
+      <h2 class="sec" id="by-congress">Letters by Congress</h2>
+      <p class="secnote">Each letter is counted once, in the Congress in session on its date. Select a bar to open that Congress.</p>
+      <div class="chart" id="chart"></div>
+      <h2 class="sec" id="each">Each Congress</h2>
       <p class="secnote">Every member of each Congress is listed in its explorer, including those whose sites held no letters.</p>
       <div class="congresses" id="congresses"><p class="status">Loading…</p></div>
       <p class="totals" id="totals"></p>
@@ -280,6 +260,6 @@ footer a { color: #fff; text-decoration: underline; }
     the United States Congress.
   </div></footer>
 </div>
-<script type="module" src="hub.js?v=20261112163830"></script>
+<script type="module" src="hub.js?v=20261112163943"></script>
 </body>
 </html>
