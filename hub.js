@@ -233,7 +233,7 @@ async function runSearch(query, term) {
   const peopleList = [...people.values()]
     .sort((a, b) => b.terms.reduce((s, t) => s + t[1], 0) - a.terms.reduce((s, t) => s + t[1], 0));
 
-  const status = el('p', { class: 'status' }, `Searching ${newest.length} Congresses…`);
+  const status = el('p', { class: 'status', role: 'status' }, `Searching ${newest.length} Congresses…`);
   const groups = new Map(newest.map(c => [c.number, el('div', { class: 'group' })]));
   fill(out,
     peopleList.length ? el('h2', { class: 'sec' }, `Members named “${query.trim()}”`) : null,

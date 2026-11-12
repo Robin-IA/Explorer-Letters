@@ -15,7 +15,7 @@
   --red: #7f1d2b; --red-deep: #5e1520; --red-tint: #f6e9ea;
   --blue: #2c5aa0; --blue-deep: #1f4682; --blue-tint: #e7eef8;
   --gold: #c9a227;
-  --page: #faf7f2; --panel: #fff; --ink: #2a2526; --muted: #6b6264; --faint: #9a9093;
+  --page: #faf7f2; --panel: #fff; --ink: #2a2526; --muted: #6b6264; --faint: #6f676a;
   --hair: #e6dfd8;
   --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --serif: Georgia, "Times New Roman", serif;
@@ -61,7 +61,7 @@ header.bar nav a:hover { opacity: 1; }
 .banner { margin: 0; position: relative; height: clamp(18rem, 30vw, 40rem); overflow: hidden; background: #c9d3e3; }
 .banner img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
 .banner figcaption { position: absolute; right: 1.2rem; bottom: 1rem; left: auto; max-width: calc(100% - 2.4rem); font-size: 1.15rem; color: #fff;
-  background: rgba(20, 20, 24, .55); padding: .2rem .8rem; border-radius: 3px; }
+  background: rgba(20, 20, 24, .72); padding: .2rem .8rem; border-radius: 3px; }
 
 /* Hero */
 .hero { padding: 2.4rem 0 3.2rem; border-bottom: 1px solid var(--hair);
@@ -101,7 +101,7 @@ h2.sec { font-family: var(--serif); font-size: 2.4rem; color: var(--red-deep); m
 /* The same chart, small, under the search box in the hero. */
 .herochart { margin-top: 2.4rem; }
 .herochart .minihead { font-size: 1.2rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 0 0 .6rem; }
-.herochart .chart { padding: 1rem 1.2rem .6rem; }
+.herochart .chart { padding: 1rem 1.2rem .6rem; overflow-x: auto; }
 .herochart .bars { height: 8rem; gap: .4rem; }
 .herochart .bars a .v { font-size: .95rem; margin-bottom: .2rem; }
 .herochart .axis { gap: .4rem; padding-top: .4rem; }
@@ -211,7 +211,7 @@ footer a { color: #fff; text-decoration: underline; }
   header.bar nav { display: none; }
   header.bar a.dl { padding-left: 0; border-left: 0; }
   header.bar a.dl img { height: 2.6rem; }
-  .herogrid { grid-template-columns: 1fr; gap: 2.4rem; }
+  .herogrid { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; }
   .pages { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; }
   .pages a { padding: .3rem; }
   .pages a:nth-child(n) { transform: none; }
@@ -280,6 +280,6 @@ footer a { color: #fff; text-decoration: underline; }
     the United States Congress.
   </div></footer>
 </div>
-<script type="module" src="hub.js?v=20261112171546"></script>
+<script type="module" src="hub.js?v=20261112174128"></script>
 </body>
 </html>
