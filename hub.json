@@ -1,5 +1,5 @@
 {
- "built": "20261112151931",
+ "built": "20261112155115",
  "congresses": [
   {
    "number": 106,
@@ -324,13 +324,13 @@
      "url": "https://web.archive.org/web/20141205235923id_/mccaskill.senate.gov/imo/media/doc/uspsletter.pdf"
     },
     {
-     "thumb": "thumbs/UYDEY63PUEJSGO44ADBGCPIDEHFJYYCI.webp",
+     "thumb": "thumbs/EJOJ6T7IQMLXKW5DLZDAZ5LG2CCHVCQK.webp",
      "member": "Sherrod Brown",
      "member_id": "B000944",
-     "to": "Secaf Csaf",
-     "subject": "Kc 46a",
-     "date": "2013-01-25",
-     "url": "https://web.archive.org/web/20201007054518id_/brown.senate.gov/imo/media/doc/letter%20to%20secaf%20csaf%20re%20kc-46a.pdf"
+     "to": "Federal Reserve",
+     "subject": "DOJ",
+     "date": "2013-01-16",
+     "url": "https://web.archive.org/web/20130222053544id_/brown.senate.gov/download/letter-to-fed-and-doj"
     }
    ],
    "download": "../Explorer-Congressional-Letters-113/data/letters-from-congress-113th.csv"
@@ -341,13 +341,13 @@
    "path": "../Explorer-Congressional-Letters-114/",
    "samples": [
     {
-     "thumb": "thumbs/AGMGJWXEFJ4KI3SYGRPWBZZOHDBXRIZZ.webp",
+     "thumb": "thumbs/ZWIHUIHU7MQN3CQCFEGIMCX6QV7BVI4F.webp",
      "member": "Claire McCaskill",
      "member_id": "M001170",
-     "to": "Astrazeneca July 2016",
-     "subject": "Aging",
-     "date": "2016-07-19",
-     "url": "https://web.archive.org/web/20161109025157id_/mccaskill.senate.gov/imo/media/doc/aging%20letter%20to%20astrazeneca%20july%202016.pdf"
+     "to": "Office of Personnel Management",
+     "subject": "Imperatis Contract",
+     "date": "2015-07-06",
+     "url": "https://web.archive.org/web/20161108224520id_/mccaskill.senate.gov/imo/media/doc/2015-07-06%20opm%20imperatis%20contract%20letter%20final%20signed.pdf"
     },
     {
      "thumb": "thumbs/FFJFID6UFEVQ5KL2RSARLODSTE2WQOYS.webp",
