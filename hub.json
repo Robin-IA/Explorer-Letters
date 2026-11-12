@@ -1,5 +1,5 @@
 {
- "built": "20261112144752",
+ "built": "20261112151931",
  "congresses": [
   {
    "number": 106,
@@ -280,13 +280,13 @@
      "url": "https://web.archive.org/web/20121218063335id_/wyden.senate.gov/imo/media/doc/02-18-2011%20letter%20to%20epa%20on%20boiler%20mact%20concerns.pdf"
     },
     {
-     "thumb": "thumbs/SIPQ7MUC2FUPX3EO6EJE6EY4ETBM765I.webp",
+     "thumb": "thumbs/SUK2JHKAKCLG4RP4FDP5USDEL2VQSCES.webp",
      "member": "Sherrod Brown",
      "member_id": "B000944",
-     "to": "Federal Reserve",
+     "to": "Gates",
      "subject": "",
-     "date": "2011-01-07",
-     "url": "https://web.archive.org/web/20110107120438id_/brown.senate.gov/imo/media/doc/letter%20to%20federal%20reserve.pdf"
+     "date": "2011-01-05",
+     "url": "https://web.archive.org/web/20121031035658id_/brown.senate.gov/download/letter-to-secretary-gates"
     }
    ],
    "download": "../Explorer-Congressional-Letters-112/data/letters-from-congress-112th.csv"
