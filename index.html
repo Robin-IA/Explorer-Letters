@@ -47,7 +47,11 @@ header.bar .wrap { min-height: 5.6rem; display: flex; align-items: center; justi
 header.bar a { color: #fff; }
 header.bar a.brand { display: flex; align-items: center; gap: 1rem; font-size: 1.6rem; font-weight: 500; }
 header.bar a.brand:hover { text-decoration: none; }
-header.bar nav { display: flex; gap: 2rem; font-size: 1.35rem; }
+header.bar nav { display: flex; gap: 2rem; font-size: 1.35rem; margin-left: auto; }
+/* Democracy's Library, on the right: its current horizontal logo, made white
+   for the dark bar from the file in gov-websites-game/brand/. */
+header.bar a.dl { display: block; line-height: 0; padding-left: 2rem; border-left: 1px solid rgba(255,255,255,.25); }
+header.bar a.dl img { display: block; height: 3.2rem; width: auto; }
 header.bar nav a { opacity: .9; }
 header.bar nav a:hover { opacity: 1; }
 
@@ -170,6 +174,8 @@ footer a { color: #fff; text-decoration: underline; }
   .hits td.to { display: none; }
   .hits td.who { width: 35%; }
   header.bar nav { display: none; }
+  header.bar a.dl { padding-left: 0; border-left: 0; }
+  header.bar a.dl img { height: 2.6rem; }
   .herogrid { grid-template-columns: 1fr; gap: 2.4rem; }
   .pages { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; }
   .pages a { padding: .3rem; }
@@ -188,6 +194,9 @@ footer a { color: #fff; text-decoration: underline; }
         <span>Internet Archive</span>
       </a>
       <nav aria-label="On this page"><a href="#by-congress">By Congress</a><a href="#each">Each Congress</a><a href="https://web.archive.org/">Wayback Machine</a></nav>
+      <a class="dl" href="https://archive.org/details/democracys-library" title="Democracy's Library">
+        <img src="img/democracys-library-horizontal-white.png" width="170" height="40" alt="Democracy's Library">
+      </a>
     </div>
   </header>
   <figure class="banner">
@@ -229,10 +238,11 @@ footer a { color: #fff; text-decoration: underline; }
     Every letter here was published on a member of Congress's own website and preserved by the
     <a href="https://web.archive.org/">Wayback Machine</a>, and every one opens from there. A letter belongs to the
     Congress in session on its date, so each appears in exactly one explorer.
-    <br>The photograph of the Capitol is by the Architect of the Capitol; its use implies no endorsement by the
-    Architect of the Capitol or the United States Congress.
+    <br>The images on this page, the letters and the photograph of the Capitol, are in the public domain. The
+    photograph is by the Architect of the Capitol; its use implies no endorsement by the Architect of the Capitol or
+    the United States Congress.
   </div></footer>
 </div>
-<script type="module" src="hub.js?v=20261112122640"></script>
+<script type="module" src="hub.js?v=20261112122819"></script>
 </body>
 </html>
