@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Letters from Congress · Internet Archive</title>
+<meta name="description" content="Letters published on members of Congress's own websites and archived by the Wayback Machine, one explorer per Congress, searchable across all of them.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='3' width='22' height='26' rx='1.5' fill='none' stroke='%232c2c2c' stroke-width='2.4'/%3E%3Cpath d='M10 10h12M10 15h12M10 20h7' stroke='%232c2c2c' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+/* The same tokens as each Congress's explorer, so moving between them does
+   not feel like leaving the site. */
+:root {
+  --page: #fbfbfd; --panel: #fff; --ink: #2b2b2b; --muted: #6e6e73; --faint: #96969b;
+  --bar: #2c2c2c; --link: #2f6bbd; --active: #4b64ff; --hair: #e4e4e8; --tint: #f4f4f7;
+  --sen: #2f6f9f; --hou: #7a4f9c;
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+}
+html { font-size: 10px; -webkit-text-size-adjust: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 1.4rem/1.5 var(--font); }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { font: inherit; color: inherit; cursor: pointer; }
+input { font: inherit; color: inherit; }
+h1, h2, h3 { margin: 0; font-weight: inherit; font-size: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+p { margin: 0; }
+table { border-collapse: collapse; width: 100%; }
+th { font-weight: inherit; text-align: left; }
+mark { background: #fff2ae; color: inherit; }
+[hidden] { display: none !important; }
+
+.wrap { max-width: 126rem; margin: 0 auto; padding: 0 2.4rem; }
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+header.bar { background: var(--bar); color: #fff; }
+header.bar .wrap { min-height: 5.6rem; display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; padding-top: .7rem; padding-bottom: .7rem; }
+header.bar a.brand { display: flex; align-items: center; gap: 1rem; color: #fff; font-size: 1.6rem; font-weight: 500; }
+header.bar a.brand:hover { text-decoration: none; }
+main { flex: 1; padding: 3.2rem 0 4.8rem; }
+footer { border-top: 1px solid var(--hair); color: var(--muted); font-size: 1.25rem; padding: 2rem 0 3rem; }
+
+.hero { font-family: var(--serif); font-size: 3.2rem; line-height: 1.15; letter-spacing: -.01em; }
+.sub { color: var(--muted); font-size: 1.55rem; margin: .8rem 0 2.4rem; max-width: 72rem; }
+.tab { font-variant-numeric: tabular-nums; }
+.small { font-size: 1.25rem; color: var(--muted); }
+
+.searchbox { display: flex; gap: .8rem; margin: 0 0 2.8rem; max-width: 72rem; }
+.searchbox input { flex: 1; min-width: 0; padding: 1rem 1.2rem; border: 1px solid #cfcfd4; border-radius: 6px; background: var(--panel); font-size: 1.6rem; }
+.searchbox input:focus { outline: 2px solid var(--active); outline-offset: 1px; }
+.searchbox button { padding: 0 1.8rem; border: 0; border-radius: 6px; background: var(--bar); color: #fff; }
+.note { background: var(--tint); border-radius: 6px; padding: 1rem 1.4rem; margin: -1.2rem 0 2.8rem; max-width: 72rem; font-size: 1.3rem; color: var(--muted); }
+
+.congresses { display: grid; grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr)); gap: 1.2rem; }
+.congress { display: block; background: var(--panel); border: 1px solid var(--hair); border-radius: 8px; padding: 1.6rem 1.8rem; color: var(--ink); }
+.congress:hover { border-color: var(--active); }
+.congress .nm { display: inline-block; font-family: var(--serif); font-size: 2rem; color: var(--ink); }
+.congress .acts { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.2rem; margin-top: 1.2rem; font-size: 1.3rem; }
+.congress .soon { color: var(--faint); }
+.congress .dt { color: var(--muted); font-size: 1.25rem; margin: .2rem 0 1rem; }
+.congress .ct { font-size: 1.3rem; }
+.congress .ct b { font-size: 1.7rem; font-weight: 500; }
+.congress .bar { height: .55rem; background: var(--tint); border-radius: 3px; overflow: hidden; margin-top: 1rem; }
+.congress .bar i { display: block; height: 100%; background: var(--active); opacity: .5; }
+.congress.missing { opacity: .6; }
+.totals { margin: 2.4rem 0 0; color: var(--muted); font-size: 1.3rem; }
+
+h2.sec { font-size: 1.15rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 3.2rem 0 1.2rem; }
+.status { color: var(--muted); font-size: 1.3rem; margin-bottom: 1.6rem; }
+.people { display: grid; grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr)); gap: 1rem; }
+.person { background: var(--panel); border: 1px solid var(--hair); border-radius: 8px; padding: 1.2rem 1.4rem; }
+.person .nm { font-weight: 500; }
+.person .meta { color: var(--muted); font-size: 1.25rem; margin: .1rem 0 .8rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chips a { border: 1px solid var(--hair); border-radius: 999px; padding: .1rem .9rem; font-size: 1.25rem; white-space: nowrap; }
+.chips a:hover { border-color: var(--active); text-decoration: none; }
+
+.group { margin: 0 0 2.4rem; }
+.group h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--hair); padding-bottom: .6rem; margin-bottom: .2rem; }
+.group h3 .nm { font-family: var(--serif); font-size: 1.9rem; }
+.group h3 .ct { color: var(--muted); font-size: 1.3rem; }
+.hits { table-layout: fixed; }
+.hits td { padding: .7rem .8rem .7rem 0; border-bottom: 1px solid var(--hair); vertical-align: top; overflow-wrap: anywhere; }
+.hits td.yr { width: 5rem; color: var(--muted); }
+.hits td.who { width: 22%; }
+.hits td.to { width: 24%; color: var(--muted); }
+.more { margin-top: .8rem; font-size: 1.3rem; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 1.6rem; }
+  .hero { font-size: 2.6rem; }
+  .hits td.to { display: none; }
+  .hits td.who { width: 35%; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="bar">
+    <div class="wrap">
+      <a class="brand" href="https://archive.org/" title="Internet Archive">
+        <svg width="28" height="28" viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="26" width="26" height="2.5" fill="#fff"/><rect x="2" y="4.5" width="26" height="2.5" fill="#fff"/><path d="M15 1 3 4.5h24z" fill="#fff"/><rect x="5" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="10.75" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="16.5" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="22.25" y="8.5" width="2.75" height="16" fill="#fff"/></svg>
+        <span>Letters from Congress</span>
+      </a>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <p class="hero">Letters from Congress</p>
+    <p class="sub" id="lede">Letters that members of Congress published on their own websites, preserved by the Wayback Machine. Each Congress has its own explorer; search here looks across all of them.</p>
+    <form class="searchbox" id="search" role="search">
+      <input id="q" type="search" placeholder="Search every Congress — a topic, an agency, a member’s name" aria-label="Search every Congress" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <p class="note">Search matches each letter’s subject, its recipient, its topics and the member’s name. Searching the words inside the letters comes once the text of every letter has been read.</p>
+    <div id="results"></div>
+    <section id="list">
+      <h2 class="sec">Each Congress</h2>
+      <div class="congresses" id="congresses"><p class="status">Loading…</p></div>
+      <p class="totals" id="totals"></p>
+    </section>
+  </main>
+  <footer><div class="wrap">
+    Every letter here was published on a member of Congress's own website and preserved by the
+    <a href="https://web.archive.org/">Wayback Machine</a>. A letter belongs to the Congress in session on its date,
+    so each one appears in exactly one explorer.
+  </div></footer>
+</div>
+<script type="module" src="hub.js?v=20261112115936"></script>
+</body>
+</html>
