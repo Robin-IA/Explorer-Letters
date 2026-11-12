@@ -270,11 +270,96 @@ async function runSearch(query) {
   }));
 }
 
+// ------------------------------------------------------------- by topic
+//
+// The Letters from Congress vocabulary (vocabulary/, build_vocabulary.py) as
+// a tree: topics, organizations, members, and the recipients nobody has
+// reviewed yet, each level alphabetical. A term opens its letters through the
+// search, which matches topics, recipients and member names.
+
+let TREE = null;
+
+function treeNode(n, needle, depth) {
+  const kids = (n.children || []).map(c => treeNode(c, needle, depth + 1)).filter(Boolean);
+  const hit = needle && n.label.toLowerCase().includes(needle);
+  if (needle && !hit && !kids.length) return null;
+  const unrev = n.status === 'candidate';
+  if (n.kind === 'category') {
+    // Distinct terms anywhere below: a term nested under another counts, and a
+    // member listed under both Senators and Representatives counts once.
+    const ids = new Set();
+    (function walk(x) { for (const c of x.children || []) { if (c.kind !== 'category') ids.add(c.id); walk(c); } })(n);
+    const terms = ids.size;
+    const open = depth === 0 || Boolean(needle);
+    return el('li', {}, el('details', { open },
+      el('summary', {}, el('span', { class: 'cat' }, marked(n.label, needle)),
+        el('span', { class: 'n' }, `${num(terms)} ${terms === 1 ? 'term' : 'terms'}`)),
+      n.label === 'Not yet reviewed' ? el('span', { class: 'hint' },
+        'Recipients as the letters’ file names give them. Not yet checked: some are fragments, some the same name written two ways.') : null,
+      el('ul', {}, ...kids)));
+  }
+  const link = el('a', { href: `?q=${encodeURIComponent(n.label)}`, class: unrev ? 'unrev' : null,
+                         title: `Letters for ${n.label}` }, marked(n.label, needle));
+  const line = [link,
+    n.letters ? el('span', { class: 'n' }, `${num(n.letters)} letters`) : null];
+  if (kids.length) {
+    return el('li', {}, el('details', { open: Boolean(needle) },
+      el('summary', {}, ...line), el('ul', {}, ...kids)));
+  }
+  return el('li', {}, ...line);
+}
+
+async function showTopics(filter) {
+  $('#list').hidden = true;
+  const out = $('#results');
+  if (!TREE) {
+    fill(out, el('p', { class: 'status' }, 'Loading the vocabulary…'));
+    try {
+      const r = await fetch(`vocabulary-tree.json?v=${HUB.built}`);
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      TREE = await r.json();
+    } catch (err) {
+      fill(out, el('p', { class: 'status' }, `Could not load the vocabulary: ${err.message || err}`));
+      return;
+    }
+  }
+  const needle = (filter || '').trim().toLowerCase();
+  const tree = el('ul', {}, ...TREE.map(n => treeNode(n, needle, 0)).filter(Boolean));
+  const box = el('input', { type: 'search', value: filter || '', placeholder: 'Find a topic, an agency, a member…',
+                            'aria-label': 'Find a term' });
+  box.addEventListener('input', () => {
+    clearTimeout(window.__vt);
+    window.__vt = setTimeout(() => {
+      const q = box.value;
+      history.replaceState({}, '', `?view=topics${q ? `&find=${encodeURIComponent(q)}` : ''}`);
+      showTopics(q).then(() => { const b = $('.vocab input'); b.focus(); b.setSelectionRange(b.value.length, b.value.length); });
+    }, 200);
+  });
+  fill(out, el('section', { class: 'vocab' },
+    el('h2', { class: 'sec' }, 'By topic'),
+    el('p', { class: 'secnote' },
+      'The Letters from Congress vocabulary: what the letters are about, the organizations and people they were written to, ',
+      'and the members who wrote them. Alphabetical at every level; select a term to see its letters.'),
+    el('div', { class: 'tools' }, box,
+      el('button', { type: 'button', onclick: () => out.querySelectorAll('.tree details').forEach(d => { d.open = true; }) }, 'Open all'),
+      el('button', { type: 'button', onclick: () => out.querySelectorAll('.tree details').forEach((d, i) => { d.open = false; }) }, 'Close all')),
+    el('div', { class: 'tree' }, tree.children.length ? tree : el('p', { class: 'status' }, 'Nothing matches.'))));
+}
+
 // ------------------------------------------------------------- boot
 
 function fromUrl() {
-  const q = new URLSearchParams(location.search).get('q') || '';
+  const p = new URLSearchParams(location.search);
+  const q = p.get('q') || '';
   $('#q').value = q;
+  if (p.get('view') === 'topics' && !q) {
+    searchRun++;
+    showTopics(p.get('find') || '').then(() => {
+      const v = $('.vocab');
+      if (v && !p.get('find')) v.scrollIntoView({ block: 'start' });
+    });
+    return;
+  }
   runSearch(q);
 }
 

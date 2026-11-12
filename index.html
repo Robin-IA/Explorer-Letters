@@ -115,6 +115,23 @@ h2.sec { font-family: var(--serif); font-size: 2.4rem; color: var(--red-deep); m
 .congress.missing { opacity: .6; border-left-color: var(--hair); }
 .totals { margin: 2rem 0 0; color: var(--muted); font-size: 1.3rem; }
 
+/* By topic: the vocabulary as a tree, alphabetical at every level. */
+.vocab .tools { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; margin: 0 0 1.6rem; }
+.vocab .tools input { flex: 1; min-width: 22rem; max-width: 48rem; padding: .9rem 1.2rem; border: 2px solid var(--blue); border-radius: 8px; background: var(--panel); }
+.vocab .tools button { padding: .7rem 1.2rem; border: 1px solid var(--hair); border-radius: 8px; background: var(--panel); color: var(--blue-deep); }
+.tree { background: var(--panel); border: 1px solid var(--hair); border-radius: 8px; padding: 1.2rem 1.6rem; }
+.tree ul { padding-left: 2rem; border-left: 1px solid var(--hair); margin-left: .5rem; }
+.tree > ul { padding-left: 0; border-left: 0; margin-left: 0; }
+.tree li { margin: .15rem 0; }
+.tree summary { cursor: pointer; padding: .2rem 0; }
+.tree summary::marker { color: var(--red); }
+.tree .cat { font-family: var(--serif); color: var(--red-deep); font-size: 1.7rem; }
+.tree > ul > li > details > summary .cat { font-size: 2.2rem; }
+.tree .n { color: var(--muted); font-size: 1.2rem; margin-left: .5rem; font-variant-numeric: tabular-nums; }
+.tree .kind { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .06em; color: var(--faint); margin-left: .5rem; }
+.tree .unrev { color: var(--muted); }
+.tree .hint { display: block; font-size: 1.25rem; color: var(--muted); margin: .2rem 0 .4rem; font-family: var(--font); }
+
 /* Search results */
 .status { color: var(--muted); font-size: 1.35rem; margin-bottom: 1.6rem; }
 .small { font-size: 1.25rem; color: var(--muted); }
@@ -193,7 +210,7 @@ footer a { color: #fff; text-decoration: underline; }
         <svg width="28" height="28" viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="26" width="26" height="2.5" fill="#fff"/><rect x="2" y="4.5" width="26" height="2.5" fill="#fff"/><path d="M15 1 3 4.5h24z" fill="#fff"/><rect x="5" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="10.75" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="16.5" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="22.25" y="8.5" width="2.75" height="16" fill="#fff"/></svg>
         <span>Internet Archive</span>
       </a>
-      <nav aria-label="On this page"><a href="#by-congress">By Congress</a><a href="#each">Each Congress</a><a href="https://web.archive.org/">Wayback Machine</a></nav>
+      <nav aria-label="Letters from Congress"><a href="./">Home</a><a href="?view=topics">By topic</a><a href="./#by-congress">By Congress</a><a href="https://web.archive.org/">Wayback Machine</a></nav>
       <a class="dl" href="https://archive.org/details/democracys-library" title="Democracy's Library">
         <img src="img/democracys-library-horizontal-white.png" width="170" height="40" alt="Democracy's Library">
       </a>
@@ -243,6 +260,6 @@ footer a { color: #fff; text-decoration: underline; }
     the United States Congress.
   </div></footer>
 </div>
-<script type="module" src="hub.js?v=20261112125439"></script>
+<script type="module" src="hub.js?v=20261112133107"></script>
 </body>
 </html>
