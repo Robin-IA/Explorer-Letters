@@ -1,5 +1,5 @@
 {
- "built": "20261113091510",
+ "built": "20261113093557",
  "congresses": [
   {
    "number": 106,
@@ -133,13 +133,13 @@
    "path": "../Explorer-Congressional-Letters-109/",
    "samples": [
     {
-     "thumb": "thumbs/S7EEUQMPI73XEK25BP7N6RU46BWYOIMQ.webp",
+     "thumb": "thumbs/HX4LFNGRY345CKTKTK3H256WB46Y2VXU.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Swiss Government",
-     "subject": "",
-     "date": "2005-09-30",
-     "url": "https://web.archive.org/web/20091202110118id_/henrywaxman.house.gov/uploadedfiles/letter_to_swiss_government.pdf"
+     "to": "Reexamination Of Thailand Decision",
+     "subject": "US Trade Susan Schwab Reexamination Thailand Decision",
+     "date": "2005-08-05",
+     "url": "https://web.archive.org/web/20091202111730id_/henrywaxman.house.gov/uploadedfiles/letter_to_us_trade_representative_susan_schwab_urging_reexamination_of_thailand_decision.pdf"
     },
     {
      "thumb": "thumbs/ZEY6IPQCLMH23MV2C77XN6INX6A2RB6E.webp",
@@ -178,13 +178,13 @@
    "path": "../Explorer-Congressional-Letters-110/",
    "samples": [
     {
-     "thumb": "thumbs/RIRNWVFJMDD2GAKY2ABPJOIBMJWLGAT3.webp",
+     "thumb": "thumbs/IAFES5FFMAYHQ3VW3DSKT6SN3ZFE6ESQ.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Nicholson",
+     "to": "Us Trade Rep Schwab",
      "subject": "",
-     "date": "2007-09-26",
-     "url": "https://web.archive.org/web/20121030214501id_/waxman.house.gov/sites/waxman.house.gov/files/letter_to_secretary_nicholson.pdf"
+     "date": "2007-03-12",
+     "url": "https://web.archive.org/web/20121031033341id_/waxman.house.gov/sites/waxman.house.gov/files/letter_to_us_trade_rep_schwab_3-12-2007.pdf"
     },
     {
      "thumb": "thumbs/RTGFNPMI6WLGZV4XGDCU42GA6RG52XSH.webp",
@@ -196,15 +196,6 @@
      "url": "https://web.archive.org/web/20070309072350id_/maloney.house.gov/documents/911recovery/20070306_letter_to_agwunobi_final.pdf"
     },
     {
-     "thumb": "thumbs/QHI7WGFY2EDYBYH5OYFSA5CNL5HTHLER.webp",
-     "member": "Fortney Pete Stark",
-     "member_id": "S000810",
-     "to": "Centers for Medicare and Medicaid Services",
-     "subject": "",
-     "date": "2007-03-19",
-     "url": "https://web.archive.org/web/20090325194120id_/stark.house.gov/images/stories/110/letters/20070319_cmsletter.pdf"
-    },
-    {
      "thumb": "thumbs/3WSS46YIHORMG6SPCTT4M57KW74PMB3H.webp",
      "member": "Frank R. Wolf",
      "member_id": "W000672",
@@ -212,6 +203,15 @@
      "subject": "March 29",
      "date": "2007-08-31",
      "url": "https://web.archive.org/web/20070926231627id_/wolf.house.gov/uploads/potus%20letter%20march%2029%2020071.pdf"
+    },
+    {
+     "thumb": "thumbs/QHI7WGFY2EDYBYH5OYFSA5CNL5HTHLER.webp",
+     "member": "Fortney Pete Stark",
+     "member_id": "S000810",
+     "to": "Centers for Medicare and Medicaid Services",
+     "subject": "",
+     "date": "2007-03-19",
+     "url": "https://web.archive.org/web/20090325194120id_/stark.house.gov/images/stories/110/letters/20070319_cmsletter.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-110/data/letters-from-congress-110th.csv",
@@ -223,13 +223,13 @@
    "path": "../Explorer-Congressional-Letters-111/",
    "samples": [
     {
-     "thumb": "thumbs/72UAFVZ74ECOKSEV5MVBVVRLBLPVIR76.webp",
+     "thumb": "thumbs/GPRSQPRA6OP7G6PO4GIU4DITQ6GZZGVS.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "King Abdullah",
-     "subject": "",
-     "date": "2009-07-31",
-     "url": "https://web.archive.org/web/20090902185354id_/henrywaxman.house.gov/uploadedfiles/final_letter_to_king_abdullah_07-31-09.pdf"
+     "to": "Federal Communications Commission",
+     "subject": "Usf",
+     "date": "2009-04-01",
+     "url": "https://web.archive.org/web/20090429231018id_/henrywaxman.house.gov/uploadedfiles/letter_fcc-usf_4-1-09.pdf"
     },
     {
      "thumb": "thumbs/EJ7DSNZLGSY2EOKLUTB2K5FOMEC4IBRP.webp",
