@@ -1,5 +1,5 @@
 {
- "built": "20261113001308",
+ "built": "20261113013325",
  "congresses": [
   {
    "number": 106,
@@ -52,6 +52,15 @@
      "url": "https://web.archive.org/web/20090226041132id_/bobbyscott.house.gov/legislative/charitable_choice/letter.to.pres.bush.from.coalition.01.30.01.pdf"
     },
     {
+     "thumb": "thumbs/WIPCGYZLVETURDY2JTR52FQ3C7YEJ2TV.webp",
+     "member": "Tom Lantos",
+     "member_id": "L000090",
+     "to": "Department of Labor",
+     "subject": "SSI",
+     "date": "2002-09-12",
+     "url": "https://web.archive.org/web/20031226183755id_/house.gov/lantos/letter_020912_walsh_ssi.pdf"
+    },
+    {
      "thumb": "thumbs/E6CAPERPFGN4JIRYPXKHVFWBUFKLI46I.webp",
      "member": "Ron Wyden",
      "member_id": "W000779",
@@ -68,15 +77,6 @@
      "subject": "Moving Hr 3058",
      "date": "2001-07-26",
      "url": "https://web.archive.org/web/20080625220142id_/defazio.house.gov/images/zoom/mzctym/walden-defazio_letter_to_leadership_regarding_moving_hr_3058.pdf"
-    },
-    {
-     "thumb": "thumbs/HYSMCAFGDSRYI6GVGPXYNAGJXMGVIVVS.webp",
-     "member": "William Lipinski",
-     "member_id": "L000342",
-     "to": "The President",
-     "subject": "Unitedatsb",
-     "date": "2002-06-28",
-     "url": "https://web.archive.org/web/20031226055834id_/house.gov/lipinski/wh_unitedatsbletter062802.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-107/data/letters-from-congress-107th.csv",
@@ -160,13 +160,13 @@
      "url": "https://web.archive.org/web/20060428063239id_/leahy.senate.gov/press/200604/final%20cfv%20letter%20to%20cjs%20-%20signed.pdf"
     },
     {
-     "thumb": "thumbs/OJ6YMM5FCKDGLJV543KFY5FZ7LOPE5ID.webp",
-     "member": "Zoe Lofgren",
-     "member_id": "L000397",
-     "to": "Department of Justice",
-     "subject": "Patriot Act",
-     "date": "2005-11-08",
-     "url": "https://web.archive.org/web/20051230132949id_/house.gov/lofgren/gonzales_letter_re_patriot_act_11.8.05.pdf"
+     "thumb": "thumbs/UMAYJ5N6WZBACCGD6ZHXBRCI4JGTXGE6.webp",
+     "member": "Rush Holt",
+     "member_id": "H001032",
+     "to": "Bush",
+     "subject": "Ctr Cuts",
+     "date": "2005-01-12",
+     "url": "https://web.archive.org/web/20050113141535id_/holt.house.gov/pdf/joint%20letter%20to%20bush%20on%20ctr%20cuts.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-109/data/letters-from-congress-109th.csv",
