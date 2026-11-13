@@ -1,5 +1,5 @@
 {
- "built": "20261113064526",
+ "built": "20261113072039",
  "congresses": [
   {
    "number": 106,
@@ -88,13 +88,13 @@
    "path": "../Explorer-Congressional-Letters-108/",
    "samples": [
     {
-     "thumb": "thumbs/T74ZXREUIUVUOBPGVGU5VNFPNHZDRZZL.webp",
+     "thumb": "thumbs/OJC5YWBAP6MCQ7LSR63EBRHY577EM2XF.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Department of Defense",
+     "to": "Nussle And Spratt",
      "subject": "",
-     "date": "2004-09-22",
-     "url": "https://web.archive.org/web/20091104012457id_/henrywaxman.house.gov/uploadedfiles/letter_to_dod.pdf"
+     "date": "2003-02-28",
+     "url": "https://web.archive.org/web/20091202102226id_/henrywaxman.house.gov/uploadedfiles/letter_to_nussle_and_spratt.pdf"
     },
     {
      "thumb": "thumbs/R7O2SQVHOQ5Z7N4BICFUEYJJDVRJYKBO.webp",
@@ -133,6 +133,15 @@
    "path": "../Explorer-Congressional-Letters-109/",
    "samples": [
     {
+     "thumb": "thumbs/TBWLY55DGWCKBFE67VQHP4IFBHDJTE5I.webp",
+     "member": "Henry A. Waxman",
+     "member_id": "W000215",
+     "to": "U S Ambassador Portman",
+     "subject": "Andean Free Trade Agreement",
+     "date": "2005-11-10",
+     "url": "https://web.archive.org/web/20091202084655id_/henrywaxman.house.gov/uploadedfiles/letter_to_u.s._ambassador_portman_regarding_u.s._andean_free_trade_agreement.pdf"
+    },
+    {
      "thumb": "thumbs/ZEY6IPQCLMH23MV2C77XN6INX6A2RB6E.webp",
      "member": "Fortney Pete Stark",
      "member_id": "S000810",
@@ -151,22 +160,13 @@
      "url": "https://web.archive.org/web/20050205100017id_/house.gov/dingell/documents/letters/gao_covert_propaganda.pdf"
     },
     {
-     "thumb": "thumbs/JDR6TE4Y4X5SF3CLFLLKWS4CQBD5XR5Z.webp",
-     "member": "Barney Frank",
-     "member_id": "F000339",
-     "to": "Uae Embassy",
-     "subject": "House",
-     "date": "2006-03-16",
-     "url": "https://web.archive.org/web/20060611071328id_/house.gov/frank/house%20letter%20to%20uae%20embassy.pdf"
-    },
-    {
-     "thumb": "thumbs/XEUTVD6AV26ZTRSKFHX2FCUG6MT6EWN2.webp",
-     "member": "Carolyn B. Maloney",
-     "member_id": "M000087",
-     "to": "Central Intelligence Agency",
-     "subject": "",
-     "date": "2005-01-31",
-     "url": "https://web.archive.org/web/20050205173055id_/house.gov/maloney/013105cialetter.pdf"
+     "thumb": "thumbs/RZ43UUWLALI4TZGAFHYWB7D4BG5D6W2Z.webp",
+     "member": "George Miller",
+     "member_id": "M000725",
+     "to": "Justice",
+     "subject": "Blogs Blog",
+     "date": "2005-07-06",
+     "url": "https://web.archive.org/web/20110116130220id_/georgemiller.house.gov/blogs/blog/letter_to_justice.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-109/data/letters-from-congress-109th.csv",
