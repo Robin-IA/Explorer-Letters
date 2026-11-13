@@ -1,5 +1,5 @@
 {
- "built": "20261112193544",
+ "built": "20261112200835",
  "congresses": [
   {
    "number": 106,
@@ -377,13 +377,13 @@
      "url": "https://web.archive.org/web/20170226054959id_/rubio.senate.gov/public/_cache/files/12037935-e81c-40a2-9a54-1852ba697df9/1.6.15-letter-to-obama-re-cuba-hr.pdf"
     },
     {
-     "thumb": "thumbs/T4B4JVI4MQWA3TZYJZVNS7IYCJYLSSSA.webp",
-     "member": "Ted Cruz",
-     "member_id": "C001098",
-     "to": "Department of State",
-     "subject": "",
-     "date": "2015-01-29",
-     "url": "https://web.archive.org/web/20150206124252id_/cruz.senate.gov/files/documents/letters/20150129_letter_to_secretary_kerry.pdf"
+     "thumb": "thumbs/M6ATSVYEDONTSTJRQGFR3HIWYJCL4VUK.webp",
+     "member": "Sherrod Brown",
+     "member_id": "B000944",
+     "to": "Army Corps of Engineers",
+     "subject": "Jan 15 (final)",
+     "date": "2015-01-30",
+     "url": "https://web.archive.org/web/20201006140430id_/brown.senate.gov/imo/media/doc/gltf%20letter%20to%20usace%20jan%2015%20(final).pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-114/data/letters-from-congress-114th.csv"
