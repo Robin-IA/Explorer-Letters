@@ -1,5 +1,5 @@
 {
- "built": "20261113074102",
+ "built": "20261113080117",
  "congresses": [
   {
    "number": 106,
@@ -151,15 +151,6 @@
      "url": "https://web.archive.org/web/20050221094945id_/house.gov/stark/news/109th/letters/letter%20to%20the%20budget%20comm%20-%202005-02-08%20-%20400dpi.pdf"
     },
     {
-     "thumb": "thumbs/RZ43UUWLALI4TZGAFHYWB7D4BG5D6W2Z.webp",
-     "member": "George Miller",
-     "member_id": "M000725",
-     "to": "Justice",
-     "subject": "Blogs Blog",
-     "date": "2005-07-06",
-     "url": "https://web.archive.org/web/20110116130220id_/georgemiller.house.gov/blogs/blog/letter_to_justice.pdf"
-    },
-    {
      "thumb": "thumbs/SWRRU7HL3J3WZ7U5J6S232JI4WAX4FVF.webp",
      "member": "John D. Dingell",
      "member_id": "D000355",
@@ -167,6 +158,15 @@
      "subject": "Covert Propaganda",
      "date": "2005-01-11",
      "url": "https://web.archive.org/web/20050205100017id_/house.gov/dingell/documents/letters/gao_covert_propaganda.pdf"
+    },
+    {
+     "thumb": "thumbs/RZ43UUWLALI4TZGAFHYWB7D4BG5D6W2Z.webp",
+     "member": "George Miller",
+     "member_id": "M000725",
+     "to": "Justice",
+     "subject": "Blogs Blog",
+     "date": "2005-07-06",
+     "url": "https://web.archive.org/web/20110116130220id_/georgemiller.house.gov/blogs/blog/letter_to_justice.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-109/data/letters-from-congress-109th.csv",
