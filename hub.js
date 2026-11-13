@@ -682,6 +682,59 @@ function showMembers(find, sort) {
       : el('p', { class: 'status' }, 'No member matches.')));
 }
 
+// ------------------------------------------------------------- about
+//
+// ?view=about: what the whole collection is, how it was built and what it
+// misses. Each explorer's own About page keeps that Congress's figures and its
+// data download; this one adds them up from the same index.json files.
+
+function showAbout() {
+  const out = $('#results');
+  const ok = [...HUB.congresses].sort((a, b) => a.number - b.number)
+    .map(c => [c, INDEXES.get(c.number)]).filter(([, i]) => i && !i.failed);
+  const letters = ok.reduce((s, [, i]) => s + (i.letters || 0), 0);
+  const wrote = everyMember().filter(p => p.letters).length;
+  const first = ok[0] && (ok[0][1].congress || {});
+  const last = ok.length && (ok[ok.length - 1][1].congress || {});
+  const built = ok.map(([, i]) => i.built).filter(Boolean).sort().pop();
+  fill(out, el('section', { class: 'about' },
+    el('h2', { class: 'sec' }, 'About Letters from Congress'),
+
+    el('p', {}, `Letters that members of Congress published on their own websites — to
+      government agencies, companies, the President and each other — as the Wayback
+      Machine archived them: ${num(letters)} letters from ${num(wrote)} members, from the
+      ${first.ordinal || ''} Congress to the ${last.ordinal || ''}. Each Congress has its
+      own explorer; this page searches across them all, by `,
+      el('a', { href: '?view=topics' }, 'topic'), ' and by ',
+      el('a', { href: '?view=by-member' }, 'member'), '.'),
+
+    el('h3', {}, 'Why the archive matters'),
+    el('p', {}, `When a member of Congress leaves office, their website may not remain.
+      The Wayback Machine archived these sites, so for many of these letters the archive
+      is the only copy left.`),
+
+    el('h3', {}, 'What’s missing'),
+    el('p', {}, `Only letters the Wayback Machine archived and we have found so far. Older
+      Congresses have fewer.`),
+
+    el('h3', {}, 'Each Congress, and its data'),
+    el('table', { class: 'members' }, el('thead', {}, el('tr', {},
+        el('th', { scope: 'col' }, 'Congress'), el('th', { scope: 'col', class: 'n' }, 'Letters'),
+        el('th', { scope: 'col' }, 'About and data'))),
+      el('tbody', {}, ...[...ok].reverse().map(([c, i]) => {
+        const k = i.congress || {};
+        return el('tr', {},
+          el('td', {}, el('a', { href: congressLink(c) }, `${k.ordinal || c.number} Congress`),
+            k.dates ? el('span', { class: 'ch' }, ` ${k.dates}`) : null),
+          el('td', { class: 'n tab' }, num(i.letters)),
+          el('td', {}, el('a', { href: congressLink(c, 'view=about') },
+            `About the ${k.ordinal || c.number} Congress`)));
+      }))),
+
+    el('p', {}, 'Built at the Internet Archive from the Wayback Machine’s archive of ',
+      `congressional websites, for Democracy’s Library.${built ? ` Updated ${built}.` : ''}`)));
+}
+
 // ------------------------------------------------------------- boot
 
 function fromUrl() {
@@ -703,6 +756,12 @@ function fromUrl() {
     searchRun++;
     if (p.get('person')) showPerson(p.get('person'));
     else showMembers(p.get('find') || '', p.get('sort') || 'name');
+    $('#results').scrollIntoView({ block: 'start' });
+    return;
+  }
+  if (p.get('view') === 'about' && !q) {
+    searchRun++;
+    showAbout();
     $('#results').scrollIntoView({ block: 'start' });
     return;
   }
