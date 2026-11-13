@@ -182,8 +182,13 @@ function termMatcher(node) {
     return (row) => (row.topics || '').split(/[;,]/).some(t => t.trim() === node.label);
   }
   if (node.kind === 'member') {
+    // The letters a member wrote, and those reviews say were addressed to
+    // them ("Grassley", "Boehner and Pelosi"): node.names holds only those
+    // reviewed recipient names (build_vocabulary.py).
     const id = node.id.slice(2);
-    return (row) => row.member === id;
+    const to = new Set((node.names || []).map(n => n.toLowerCase()));
+    return (row) => row.member === id
+      || (to.size > 0 && to.has((row.recipient || '').toLowerCase()));
   }
   const plain = new Set();
   const dated = [];
@@ -341,8 +346,12 @@ async function runSearch(query, term) {
                     title: `${m.name} in the ${(INDEXES.get(c.number).congress || {}).ordinal} Congress` },
             `${(INDEXES.get(c.number).congress || {}).ordinal || c.number} · ${num(n)}`)))))) : null,
     el('h2', { class: 'sec' }, term ? `Letters: ${term.label}` : 'Letters'),
-    term ? el('p', { class: 'secnote' }, el('a', { href: '?view=topics' }, '← By topic'),
-      (term.names || []).length > 1 ? ` · also written as ${term.names.filter(n => n !== term.label).map(n => n.replace(/@(\d{4})-(\d{4})$/, ' ($1–$2)')).join(', ')}` : '') : null,
+    term ? el('p', { class: 'secnote' }, el('a', { href: '?view=topics' }, '← Congress Member or Topic'),
+      term.kind === 'member'
+        ? ((term.names || []).length
+          ? ` · the letters they wrote, and those addressed to them as ${term.names.join(', ')}`
+          : ' · the letters they wrote')
+        : (term.names || []).length > 1 ? ` · also written as ${term.names.filter(n => n !== term.label).map(n => n.replace(/@(\d{4})-(\d{4})$/, ' ($1–$2)')).join(', ')}` : '') : null,
     status,
     ...groups.values(),
     term ? null : fullTextSection(query, run));
@@ -440,7 +449,8 @@ function treeNode(n, needle, depth) {
   const link = el('a', { href: `?term=${encodeURIComponent(n.id)}`, class: unrev ? 'unrev' : null,
                          title: `Letters for ${n.label}` }, marked(n.label, needle));
   const line = [link,
-    n.letters ? el('span', { class: 'n' }, `${num(n.letters)} letters`) : null];
+    n.letters ? el('span', { class: 'n' }, `${num(n.letters)} letters`
+      + (n.kind === 'member' && n.to ? ` · ${num(n.to)} to them` : '')) : null];
   if (kids.length) {
     return el('li', {}, el('details', { open: Boolean(needle) },
       el('summary', {}, ...line), el('ul', {}, ...kids)));
