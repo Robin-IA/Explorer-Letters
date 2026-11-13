@@ -209,6 +209,11 @@ function termMatcher(node) {
     return (row) => row.member === id
       || (to.size > 0 && to.has((row.recipient || '').toLowerCase()));
   }
+  // A committee: the letters on its stationery, which carry its name as a
+  // tag (committees.py), as well as the letters addressed to it.
+  const tagged = node.tag
+    ? (row) => (row.topics || '').split(/[;,]/).some(t => t.trim() === node.tag)
+    : () => false;
   const plain = new Set();
   const dated = [];
   for (const n of node.names || [node.label]) {
@@ -216,6 +221,7 @@ function termMatcher(node) {
     if (m) dated.push([m[1].toLowerCase(), m[2], m[3]]); else plain.add(n.toLowerCase());
   }
   return (row) => {
+    if (tagged(row)) return true;
     const r = (row.recipient || '').toLowerCase();
     if (!r) return false;
     if (plain.has(r)) return true;
@@ -370,6 +376,7 @@ async function runSearch(query, term) {
         ? ((term.names || []).length
           ? ` · the letters they wrote, and those addressed to them as ${term.names.join(', ')}`
           : ' · the letters they wrote')
+        : term.tag ? ' · the letters written on its stationery, and those addressed to it'
         : (term.names || []).length > 1 ? ` · also written as ${term.names.filter(n => n !== term.label).map(n => n.replace(/@(\d{4})-(\d{4})$/, ' ($1–$2)')).join(', ')}` : '',
       ...seeAlso(term, ' · See also: ')) : null,
     status,
@@ -470,7 +477,7 @@ function seeAlso(node, lead) {
   return [lead, ...see.flatMap((s, i) => [i ? ', ' : '',
     el('a', { href: `?term=${encodeURIComponent(s.id)}` }, s.label)])];
 }
-const MEMBERS_SECTION = 'C-members-of-congress';
+const MEMBERS_SECTION = 'C-congress-members';
 
 function treeNode(n, needle, depth) {
   const kids = (n.children || []).map(c => treeNode(c, needle, depth + 1)).filter(Boolean);
@@ -479,14 +486,16 @@ function treeNode(n, needle, depth) {
   const unrev = n.status === 'candidate';
   if (n.kind === 'category') {
     // No count of terms beside a category (EXPLORERS.md, 2026-11-13).
-    // Top-level sections start open, except Members of Congress: it comes
+    // Top-level sections start open, except Congress Members: it comes
     // first and stays collapsed, being 1,600 names long. A search opens all.
     const open = (depth === 0 && n.id !== MEMBERS_SECTION) || Boolean(needle);
     return el('li', {}, el('details', { open },
       el('summary', {}, el('span', { class: 'cat' }, marked(n.label, needle))),
-      n.id === 'C-members-of-congress' ? el('span', { class: 'hint' },
+      n.id === MEMBERS_SECTION ? el('span', { class: 'hint' },
         'Members with letters. ', el('a', { href: '?view=by-member' },
           'Every member of Congress, letters or not, with years served, party and state →')) : null,
+      n.label === 'Committees' ? el('span', { class: 'hint' },
+        'Letters written on a committee’s stationery, read from the letterhead, and letters addressed to the committee.') : null,
       n.label === 'Not yet reviewed' ? el('span', { class: 'hint' },
         'Recipients as the letters’ file names give them. Not yet checked: some are fragments, some the same name written two ways.') : null,
       el('ul', {}, ...kids)));
@@ -519,8 +528,10 @@ async function showTopics(filter) {
     }
   }
   const needle = (filter || '').trim().toLowerCase();
-  // Members of Congress is its own section, above Topics (EXPLORERS.md,
-  // 2026-11-13); the rest keep the vocabulary's order.
+  // Congress Members comes first, collapsed (EXPLORERS.md, 2026-11-13);
+  // the rest keep the vocabulary's order: Committees, Government officials,
+  // Topics, Companies and organizations, Foreign and international, and
+  // Not yet reviewed.
   const ordered = [...TREE.filter(n => n.id === MEMBERS_SECTION),
                    ...TREE.filter(n => n.id !== MEMBERS_SECTION)];
   const tree = el('ul', {}, ...ordered.map(n => treeNode(n, needle, 0)).filter(Boolean));
@@ -537,8 +548,9 @@ async function showTopics(filter) {
   fill(out, el('section', { class: 'vocab' },
     el('h2', { class: 'sec' }, 'Congress Member or Topic'),
     el('p', { class: 'secnote' },
-      'The Letters from Congress vocabulary: what the letters are about, the organizations and people they were written to, ',
-      'and the members who wrote them. Alphabetical at every level; select a term to see its letters. ',
+      'The Letters from Congress vocabulary: the members who wrote the letters, the committees they wrote for, ',
+      'the officials, organizations and people they wrote to, and what the letters are about. ',
+      'Alphabetical at every level; select a term to see its letters. ',
       el('a', { href: '?view=by-member' }, 'Members of Congress'),
       ' lists every member, including those with no letters found.'),
     el('div', { class: 'tools' }, box,
