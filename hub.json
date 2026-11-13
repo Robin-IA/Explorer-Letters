@@ -1,5 +1,5 @@
 {
- "built": "20261113022357",
+ "built": "20261113032921",
  "congresses": [
   {
    "number": 106,
@@ -43,6 +43,15 @@
    "path": "../Explorer-Congressional-Letters-107/",
    "samples": [
     {
+     "thumb": "thumbs/KKK67WG4I4NSPM7BAERM25TTMTE23X5I.webp",
+     "member": "Henry A. Waxman",
+     "member_id": "W000215",
+     "to": "The President",
+     "subject": "",
+     "date": "2001-11-08",
+     "url": "https://web.archive.org/web/20121030122737id_/waxman.house.gov/sites/waxman.house.gov/files/110801_letter_to_potus.pdf"
+    },
+    {
      "thumb": "thumbs/DAXV2ZLQ64QMQ2W4KWGUL73GZYGZFFXY.webp",
      "member": "Robert C. \"Bobby\" Scott",
      "member_id": "S000185",
@@ -68,15 +77,6 @@
      "subject": "Graham",
      "date": "2002-10-09",
      "url": "https://web.archive.org/web/20030430090033id_/wyden.senate.gov/media/2002/cia_graham_letter.pdf"
-    },
-    {
-     "thumb": "thumbs/UMUVS7BPY6SKEOCTXPWJ3YWGKS6RB4RN.webp",
-     "member": "Peter A. DeFazio",
-     "member_id": "D000191",
-     "to": "Congressional leadership",
-     "subject": "Moving Hr 3058",
-     "date": "2001-07-26",
-     "url": "https://web.archive.org/web/20080625220142id_/defazio.house.gov/images/zoom/mzctym/walden-defazio_letter_to_leadership_regarding_moving_hr_3058.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-107/data/letters-from-congress-107th.csv",
@@ -133,6 +133,15 @@
    "path": "../Explorer-Congressional-Letters-109/",
    "samples": [
     {
+     "thumb": "thumbs/JDR6TE4Y4X5SF3CLFLLKWS4CQBD5XR5Z.webp",
+     "member": "Barney Frank",
+     "member_id": "F000339",
+     "to": "Uae Embassy",
+     "subject": "House",
+     "date": "2006-03-16",
+     "url": "https://web.archive.org/web/20060611071328id_/house.gov/frank/house%20letter%20to%20uae%20embassy.pdf"
+    },
+    {
      "thumb": "thumbs/XEUTVD6AV26ZTRSKFHX2FCUG6MT6EWN2.webp",
      "member": "Carolyn B. Maloney",
      "member_id": "M000087",
@@ -158,15 +167,6 @@
      "subject": "200604 Cfv",
      "date": "2006-04-12",
      "url": "https://web.archive.org/web/20060428063239id_/leahy.senate.gov/press/200604/final%20cfv%20letter%20to%20cjs%20-%20signed.pdf"
-    },
-    {
-     "thumb": "thumbs/UMAYJ5N6WZBACCGD6ZHXBRCI4JGTXGE6.webp",
-     "member": "Rush Holt",
-     "member_id": "H001032",
-     "to": "Bush",
-     "subject": "Ctr Cuts",
-     "date": "2005-01-12",
-     "url": "https://web.archive.org/web/20050113141535id_/holt.house.gov/pdf/joint%20letter%20to%20bush%20on%20ctr%20cuts.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-109/data/letters-from-congress-109th.csv",
