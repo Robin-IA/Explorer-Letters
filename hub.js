@@ -171,6 +171,27 @@ function renderList() {
 
 // ----------------------------------------------------------- the search
 
+// A letter's Wayback address. search.json gives each letter's place in its
+// member's file (payload/member/<id>.json), which holds its URL key and
+// capture time; columns come from the explorer's index.json. One fetch per
+// member per Congress, shared by every row that needs it.
+const MEMBER_FILES = new Map();
+function letterUrl(c, id, rowIdx) {
+  const idx = INDEXES.get(c.number) || {};
+  const key = `${c.number}/${id}`;
+  if (!MEMBER_FILES.has(key)) {
+    MEMBER_FILES.set(key, fetch(`${base(c)}${idx.data_base || 'payload/member/'}${encodeURIComponent(id)}.json?v=${stampOf(c.number)}`)
+      .then(r => (r.ok ? r.json() : null)).catch(() => null));
+  }
+  return MEMBER_FILES.get(key).then(rows => {
+    const row = rows && rows[rowIdx];
+    const cols = idx.columns || [];
+    const k = row && row[cols.indexOf('key')];
+    const ts = row && row[cols.indexOf('timestamp')];
+    return k && /^\d{14}$/.test(ts || '') ? `https://web.archive.org/web/${ts}id_/${k}` : null;
+  });
+}
+
 let searchRun = 0;
 
 // A vocabulary term's letters, exactly: a topic by its tag, a member by who
@@ -351,7 +372,8 @@ async function runSearch(query, term) {
         ? ((term.names || []).length
           ? ` · the letters they wrote, and those addressed to them as ${term.names.join(', ')}`
           : ' · the letters they wrote')
-        : (term.names || []).length > 1 ? ` · also written as ${term.names.filter(n => n !== term.label).map(n => n.replace(/@(\d{4})-(\d{4})$/, ' ($1–$2)')).join(', ')}` : '') : null,
+        : (term.names || []).length > 1 ? ` · also written as ${term.names.filter(n => n !== term.label).map(n => n.replace(/@(\d{4})-(\d{4})$/, ' ($1–$2)')).join(', ')}` : '',
+      ...seeAlso(term, ' · See also: ')) : null,
     status,
     ...groups.values(),
     term ? null : fullTextSection(query, run));
@@ -376,14 +398,14 @@ async function runSearch(query, term) {
       data.members.forEach((id, i) => {
         if ((names.get(id) || '').toLowerCase().includes(needle)) writers.add(i);
       });
-      for (const [mIdx, rIdx, year, , subject, exact, topics] of data.rows) {
+      for (const [mIdx, rIdx, year, rowIdx, subject, exact, topics] of data.rows) {
         const recipient = rIdx >= 0 ? data.recipients[rIdx] : '';
         if (match ? match({ member: data.members[mIdx], recipient, year, topics })
             : (writers.has(mIdx)
             || subject.toLowerCase().includes(needle)
             || recipient.toLowerCase().includes(needle)
             || (topics || '').toLowerCase().includes(needle))) {
-          hits.push([data.members[mIdx], recipient, year, subject, exact]);
+          hits.push([data.members[mIdx], recipient, year, subject, exact, rowIdx]);
           if (hits.length >= CAP) break;
         }
       }
@@ -393,20 +415,36 @@ async function runSearch(query, term) {
         box.replaceChildren();
       } else {
         const all = `view=search&q=${encodeURIComponent(query.trim())}`;
+        const row = ([id, to, year, subject, exact, rowIdx]) => {
+          // The subject opens the letter itself. Until the member's file has
+          // given its Wayback address, it opens the member's page instead.
+          const open = el('a', { href: congressLink(c, `member=${encodeURIComponent(id)}`),
+                                 target: '_blank', rel: 'noopener' },
+            marked(subject || 'Open the letter', needle));
+          letterUrl(c, id, rowIdx).then(url => {
+            if (url) { open.href = url; open.title = 'Opens the letter on the Wayback Machine'; }
+          });
+          return el('tr', {},
+            el('td', { class: 'yr tab', title: exact ? null : 'Year first archived; the letter carries no date' }, year ? `${year}${exact ? '' : '*'}` : ''),
+            el('td', { class: 'who' }, el('a', { href: congressLink(c, `member=${encodeURIComponent(id)}`) }, names.get(id) || id)),
+            el('td', { class: 'to' }, marked(to, needle)),
+            el('td', {}, open));
+        };
+        const tbody = el('tbody', {}, ...hits.slice(0, PER_CONGRESS).map(row));
+        // A term's letters can't be handed to the explorer's own search, so
+        // the rest open here; a word search links to the explorer, as before.
+        const more = hits.length <= PER_CONGRESS ? null : term
+          ? el('button', { class: 'more-btn', type: 'button', onclick: e => {
+            tbody.append(...hits.slice(PER_CONGRESS).map(row)); e.target.remove();
+          } }, `Show all ${num(hits.length)}`)
+          : el('p', { class: 'more' }, el('a', { href: congressLink(c, all) },
+            `All ${num(hits.length)} in the ${k.ordinal} Congress →`));
         fill(box,
           el('h3', {},
             el('a', { class: 'nm', href: congressLink(c) }, `${k.ordinal} Congress`),
             el('span', { class: 'ct tab' }, `${num(hits.length)}${hits.length >= CAP ? '+' : ''} letters`)),
-          el('table', { class: 'hits' }, el('tbody', {}, ...hits.slice(0, PER_CONGRESS).map(([id, to, year, subject, exact]) =>
-            el('tr', {},
-              el('td', { class: 'yr tab', title: exact ? null : 'Year first archived; the letter carries no date' }, year ? `${year}${exact ? '' : '*'}` : ''),
-              el('td', { class: 'who' }, el('a', { href: congressLink(c, `member=${encodeURIComponent(id)}`) }, names.get(id) || id)),
-              el('td', { class: 'to' }, marked(to, needle)),
-              el('td', {}, marked(subject || '(no subject)', needle)))))),
-          hits.length > PER_CONGRESS && !term
-            ? el('p', { class: 'more' }, el('a', { href: congressLink(c, all) },
-              `All ${num(hits.length)} in the ${k.ordinal} Congress →`))
-            : null);
+          el('table', { class: 'hits' }, tbody),
+          more);
       }
     }
     status.textContent = done < newest.length
@@ -425,6 +463,15 @@ async function runSearch(query, term) {
 // search, which matches topics, recipients and member names.
 
 let TREE = null;
+
+// A term's related terms (vocabulary/related.csv), as links: "See also:
+// Citigroup" on Citibank, and the reverse.
+function seeAlso(node, lead) {
+  const see = node.see || [];
+  if (!see.length) return [];
+  return [lead, ...see.flatMap((s, i) => [i ? ', ' : '',
+    el('a', { href: `?term=${encodeURIComponent(s.id)}` }, s.label)])];
+}
 const MEMBERS_SECTION = 'C-members-of-congress';
 
 function treeNode(n, needle, depth) {
@@ -450,7 +497,8 @@ function treeNode(n, needle, depth) {
                          title: `Letters for ${n.label}` }, marked(n.label, needle));
   const line = [link,
     n.letters ? el('span', { class: 'n' }, `${num(n.letters)} letters`
-      + (n.kind === 'member' && n.to ? ` · ${num(n.to)} to them` : '')) : null];
+      + (n.kind === 'member' && n.to ? ` · ${num(n.to)} to them` : '')) : null,
+    (n.see || []).length ? el('span', { class: 'n' }, ...seeAlso(n, 'See also: ')) : null];
   if (kids.length) {
     return el('li', {}, el('details', { open: Boolean(needle) },
       el('summary', {}, ...line), el('ul', {}, ...kids)));
