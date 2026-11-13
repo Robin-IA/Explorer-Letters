@@ -1,5 +1,5 @@
 {
- "built": "20261113043447",
+ "built": "20261113054014",
  "congresses": [
   {
    "number": 106,
@@ -142,6 +142,15 @@
      "url": "https://web.archive.org/web/20050221094945id_/house.gov/stark/news/109th/letters/letter%20to%20the%20budget%20comm%20-%202005-02-08%20-%20400dpi.pdf"
     },
     {
+     "thumb": "thumbs/SWRRU7HL3J3WZ7U5J6S232JI4WAX4FVF.webp",
+     "member": "John D. Dingell",
+     "member_id": "D000355",
+     "to": "Government Accountability Office",
+     "subject": "Covert Propaganda",
+     "date": "2005-01-11",
+     "url": "https://web.archive.org/web/20050205100017id_/house.gov/dingell/documents/letters/gao_covert_propaganda.pdf"
+    },
+    {
      "thumb": "thumbs/JDR6TE4Y4X5SF3CLFLLKWS4CQBD5XR5Z.webp",
      "member": "Barney Frank",
      "member_id": "F000339",
@@ -158,15 +167,6 @@
      "subject": "",
      "date": "2005-01-31",
      "url": "https://web.archive.org/web/20050205173055id_/house.gov/maloney/013105cialetter.pdf"
-    },
-    {
-     "thumb": "thumbs/C6B2HSQ6JTUPXDQXHLRZY4KKFRYZFFA3.webp",
-     "member": "Charles E. Schumer",
-     "member_id": "S000148",
-     "to": "Bush",
-     "subject": "Schumerwebsite Pressroom Caucus",
-     "date": "2005-02-10",
-     "url": "https://web.archive.org/web/20050226093517id_/schumer.senate.gov/schumerwebsite/pressroom/letters/caucus%20letter%20to%20bush%2002.10.05.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-109/data/letters-from-congress-109th.csv",
@@ -187,13 +187,22 @@
      "url": "https://web.archive.org/web/20070309072350id_/maloney.house.gov/documents/911recovery/20070306_letter_to_agwunobi_final.pdf"
     },
     {
-     "thumb": "thumbs/MFNV4QCAE7HVOJS6D7VORRAKJ5LKQPRR.webp",
+     "thumb": "thumbs/3WSS46YIHORMG6SPCTT4M57KW74PMB3H.webp",
+     "member": "Frank R. Wolf",
+     "member_id": "W000672",
+     "to": "The President",
+     "subject": "March 29",
+     "date": "2007-08-31",
+     "url": "https://web.archive.org/web/20070926231627id_/wolf.house.gov/uploads/potus%20letter%20march%2029%2020071.pdf"
+    },
+    {
+     "thumb": "thumbs/WVRDWXSKLO7PPO2LCY57AYXYEQXTE7LU.webp",
      "member": "Barney Frank",
      "member_id": "F000339",
-     "to": "Bush",
-     "subject": "Mexican Trucking",
-     "date": "2007-07-02",
-     "url": "https://web.archive.org/web/20090629170117id_/house.gov/frank/letters/2007/07-02-07-mexican-trucking-letter-to-bush.pdf"
+     "to": "Gates Contract Interrogator Final",
+     "subject": "",
+     "date": "2007-01-22",
+     "url": "https://web.archive.org/web/20070205063010id_/house.gov/frank/letter%20to%20gates%20-%20contract%20interrogator%20final.pdf"
     },
     {
      "thumb": "thumbs/RF5UEU6K7UTDS2YTSYYG7VVMKZWOH2AU.webp",
@@ -203,15 +212,6 @@
      "subject": "Csd",
      "date": "2007-08-08",
      "url": "https://web.archive.org/web/20201028112417id_/menendez.senate.gov/imo/media/doc/8-8-07%20letter%20to%20commissioner%20basham%20on%20csd.pdf"
-    },
-    {
-     "thumb": "thumbs/D3YMUD4RT36QL7SHC5K4EXY3HDNAAHVV.webp",
-     "member": "Patrick J. Leahy",
-     "member_id": "L000174",
-     "to": "Day",
-     "subject": "200701 Joint",
-     "date": "2007-01-16",
-     "url": "https://web.archive.org/web/20070201022308id_/leahy.senate.gov/press/200701/signed%20joint%20letter%20to%20day_01%2016%2007.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-110/data/letters-from-congress-110th.csv",
