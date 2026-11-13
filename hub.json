@@ -1,5 +1,5 @@
 {
- "built": "20261113093557",
+ "built": "20261113095608",
  "congresses": [
   {
    "number": 106,
@@ -43,13 +43,13 @@
    "path": "../Explorer-Congressional-Letters-107/",
    "samples": [
     {
-     "thumb": "thumbs/KKK67WG4I4NSPM7BAERM25TTMTE23X5I.webp",
+     "thumb": "thumbs/VNSLYDQ2LKMYFOUVIX5A3HHOXY7A3KIY.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "The President",
-     "subject": "",
-     "date": "2001-11-08",
-     "url": "https://web.archive.org/web/20121030122737id_/waxman.house.gov/sites/waxman.house.gov/files/110801_letter_to_potus.pdf"
+     "to": "Department of Justice",
+     "subject": "Reno Referral Charles Duncan",
+     "date": "2001-04-02",
+     "url": "https://web.archive.org/web/20091202034156id_/henrywaxman.house.gov/uploadedfiles/letter_to_ag_reno_on_referral_of_charles_a._duncan.pdf"
     },
     {
      "thumb": "thumbs/DAXV2ZLQ64QMQ2W4KWGUL73GZYGZFFXY.webp",
@@ -88,13 +88,13 @@
    "path": "../Explorer-Congressional-Letters-108/",
    "samples": [
     {
-     "thumb": "thumbs/OJC5YWBAP6MCQ7LSR63EBRHY577EM2XF.webp",
+     "thumb": "thumbs/WLN4VVY5YTVUBX5SYMU7PVUVQBE5DTWF.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Nussle And Spratt",
+     "to": "Mlb Commissioner Selig",
      "subject": "",
-     "date": "2003-02-28",
-     "url": "https://web.archive.org/web/20091202102226id_/henrywaxman.house.gov/uploadedfiles/letter_to_nussle_and_spratt.pdf"
+     "date": "2003-02-19",
+     "url": "https://web.archive.org/web/20091202101332id_/henrywaxman.house.gov/uploadedfiles/letter_to_mlb_commissioner_selig.pdf"
     },
     {
      "thumb": "thumbs/R7O2SQVHOQ5Z7N4BICFUEYJJDVRJYKBO.webp",
@@ -133,13 +133,13 @@
    "path": "../Explorer-Congressional-Letters-109/",
    "samples": [
     {
-     "thumb": "thumbs/HX4LFNGRY345CKTKTK3H256WB46Y2VXU.webp",
+     "thumb": "thumbs/DU3MGTD3MODXJNYBMD5HO45PTRUCRDYK.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Reexamination Of Thailand Decision",
-     "subject": "US Trade Susan Schwab Reexamination Thailand Decision",
-     "date": "2005-08-05",
-     "url": "https://web.archive.org/web/20091202111730id_/henrywaxman.house.gov/uploadedfiles/letter_to_us_trade_representative_susan_schwab_urging_reexamination_of_thailand_decision.pdf"
+     "to": "Centers for Disease Control",
+     "subject": "",
+     "date": "2005-01-07",
+     "url": "https://web.archive.org/web/20091104042247id_/henrywaxman.house.gov/uploadedfiles/letter_to_cdc.pdf"
     },
     {
      "thumb": "thumbs/ZEY6IPQCLMH23MV2C77XN6INX6A2RB6E.webp",
@@ -286,6 +286,15 @@
      "url": "https://web.archive.org/web/20121030122610id_/waxman.house.gov/sites/waxman.house.gov/files/signed_letter_to_biden_re_oil_and_gas_tax_subsidies.pdf"
     },
     {
+     "thumb": "thumbs/ZT3RE27NVZOR464E3JNWJB7XVNVN57LX.webp",
+     "member": "Fortney Pete Stark",
+     "member_id": "S000810",
+     "to": "Department of Agriculture",
+     "subject": "",
+     "date": "2011-02-17",
+     "url": "https://web.archive.org/web/20110304060241id_/stark.house.gov/images/stories/112/letters/20110217vilsack.pdf"
+    },
+    {
      "thumb": "thumbs/B32YUAW6OG43EDTA6ZZF3GMKVTNOFKZD.webp",
      "member": "Ron Wyden",
      "member_id": "W000779",
@@ -293,15 +302,6 @@
      "subject": "Boiler Mact Concerns",
      "date": "2011-02-18",
      "url": "https://web.archive.org/web/20121218063335id_/wyden.senate.gov/imo/media/doc/02-18-2011%20letter%20to%20epa%20on%20boiler%20mact%20concerns.pdf"
-    },
-    {
-     "thumb": "thumbs/SUK2JHKAKCLG4RP4FDP5USDEL2VQSCES.webp",
-     "member": "Sherrod Brown",
-     "member_id": "B000944",
-     "to": "Gates",
-     "subject": "",
-     "date": "2011-01-05",
-     "url": "https://web.archive.org/web/20121031035658id_/brown.senate.gov/download/letter-to-secretary-gates"
     }
    ],
    "download": "../Explorer-Congressional-Letters-112/data/letters-from-congress-112th.csv",
