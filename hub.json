@@ -1,5 +1,5 @@
 {
- "built": "20261113095608",
+ "built": "20261113101537",
  "congresses": [
   {
    "number": 106,
@@ -43,13 +43,13 @@
    "path": "../Explorer-Congressional-Letters-107/",
    "samples": [
     {
-     "thumb": "thumbs/VNSLYDQ2LKMYFOUVIX5A3HHOXY7A3KIY.webp",
+     "thumb": "thumbs/3KBPLPHDJJZNJAUUBVPOMA5ODS5KMITI.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Department of Justice",
-     "subject": "Reno Referral Charles Duncan",
-     "date": "2001-04-02",
-     "url": "https://web.archive.org/web/20091202034156id_/henrywaxman.house.gov/uploadedfiles/letter_to_ag_reno_on_referral_of_charles_a._duncan.pdf"
+     "to": "Department of Commerce",
+     "subject": "Committee",
+     "date": "2001-03-23",
+     "url": "https://web.archive.org/web/20091202062542id_/henrywaxman.house.gov/uploadedfiles/letter_to_commerce_committee.pdf"
     },
     {
      "thumb": "thumbs/DAXV2ZLQ64QMQ2W4KWGUL73GZYGZFFXY.webp",
@@ -88,13 +88,13 @@
    "path": "../Explorer-Congressional-Letters-108/",
    "samples": [
     {
-     "thumb": "thumbs/WLN4VVY5YTVUBX5SYMU7PVUVQBE5DTWF.webp",
+     "thumb": "thumbs/HZQNG5NYW3NFSTOJQQQ5HGUCAQOWKF4P.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Mlb Commissioner Selig",
-     "subject": "",
-     "date": "2003-02-19",
-     "url": "https://web.archive.org/web/20091202101332id_/henrywaxman.house.gov/uploadedfiles/letter_to_mlb_commissioner_selig.pdf"
+     "to": "Department of Commerce",
+     "subject": "Department IG",
+     "date": "2003-01-29",
+     "url": "https://web.archive.org/web/20091202085142id_/henrywaxman.house.gov/uploadedfiles/letter_to_commerce_department_ig.pdf"
     },
     {
      "thumb": "thumbs/R7O2SQVHOQ5Z7N4BICFUEYJJDVRJYKBO.webp",
@@ -133,13 +133,13 @@
    "path": "../Explorer-Congressional-Letters-109/",
    "samples": [
     {
-     "thumb": "thumbs/DU3MGTD3MODXJNYBMD5HO45PTRUCRDYK.webp",
+     "thumb": "thumbs/RLRONB6VFZDS467CF3LJ7RKUUX54KZ6G.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Centers for Disease Control",
+     "to": "Governor Johanns",
      "subject": "",
-     "date": "2005-01-07",
-     "url": "https://web.archive.org/web/20091104042247id_/henrywaxman.house.gov/uploadedfiles/letter_to_cdc.pdf"
+     "date": "2005-01-05",
+     "url": "https://web.archive.org/web/20091007125241id_/henrywaxman.house.gov/uploadedfiles/letter_to_governor_johanns.pdf"
     },
     {
      "thumb": "thumbs/ZEY6IPQCLMH23MV2C77XN6INX6A2RB6E.webp",
@@ -178,13 +178,13 @@
    "path": "../Explorer-Congressional-Letters-110/",
    "samples": [
     {
-     "thumb": "thumbs/IAFES5FFMAYHQ3VW3DSKT6SN3ZFE6ESQ.webp",
+     "thumb": "thumbs/BHXR6WDEBOCIUFMO7R5FKDZEWEYR7XIX.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Us Trade Rep Schwab",
+     "to": "Ceq Chairman James Connaughton",
      "subject": "",
-     "date": "2007-03-12",
-     "url": "https://web.archive.org/web/20121031033341id_/waxman.house.gov/sites/waxman.house.gov/files/letter_to_us_trade_rep_schwab_3-12-2007.pdf"
+     "date": "2007-01-22",
+     "url": "https://web.archive.org/web/20091202090000id_/henrywaxman.house.gov/uploadedfiles/letter_to_ceq_chairman_james_connaughton.pdf"
     },
     {
      "thumb": "thumbs/RTGFNPMI6WLGZV4XGDCU42GA6RG52XSH.webp",
@@ -223,15 +223,6 @@
    "path": "../Explorer-Congressional-Letters-111/",
    "samples": [
     {
-     "thumb": "thumbs/GPRSQPRA6OP7G6PO4GIU4DITQ6GZZGVS.webp",
-     "member": "Henry A. Waxman",
-     "member_id": "W000215",
-     "to": "Federal Communications Commission",
-     "subject": "Usf",
-     "date": "2009-04-01",
-     "url": "https://web.archive.org/web/20090429231018id_/henrywaxman.house.gov/uploadedfiles/letter_fcc-usf_4-1-09.pdf"
-    },
-    {
      "thumb": "thumbs/EJ7DSNZLGSY2EOKLUTB2K5FOMEC4IBRP.webp",
      "member": "Chuck Grassley",
      "member_id": "G000386",
@@ -239,6 +230,15 @@
      "subject": "Coburn Marine Corps Accounting",
      "date": "2009-02-03",
      "url": "https://web.archive.org/web/20100304185901id_/grassley.senate.gov/about/upload/defense-02-03-09-letter-to-dod-w-coburn-marine-corps-accounting.pdf"
+    },
+    {
+     "thumb": "thumbs/GPRSQPRA6OP7G6PO4GIU4DITQ6GZZGVS.webp",
+     "member": "Henry A. Waxman",
+     "member_id": "W000215",
+     "to": "Federal Communications Commission",
+     "subject": "Usf",
+     "date": "2009-04-01",
+     "url": "https://web.archive.org/web/20090429231018id_/henrywaxman.house.gov/uploadedfiles/letter_fcc-usf_4-1-09.pdf"
     },
     {
      "thumb": "thumbs/P6BXZOPDNMLOJFVFZQHPVJKV4VU4XWY7.webp",
@@ -277,15 +277,6 @@
      "url": "https://web.archive.org/web/20110311011816id_/grassley.senate.gov/about/upload/judiciary-01-27-11-letter-to-atf-sw-border-strategy.pdf"
     },
     {
-     "thumb": "thumbs/MTJQD4OP6UKROGS5AYVLCK7VFF6RNA7B.webp",
-     "member": "Henry A. Waxman",
-     "member_id": "W000215",
-     "to": "The President",
-     "subject": "Oil Gas Tax Subsidies",
-     "date": "2011-06-15",
-     "url": "https://web.archive.org/web/20121030122610id_/waxman.house.gov/sites/waxman.house.gov/files/signed_letter_to_biden_re_oil_and_gas_tax_subsidies.pdf"
-    },
-    {
      "thumb": "thumbs/ZT3RE27NVZOR464E3JNWJB7XVNVN57LX.webp",
      "member": "Fortney Pete Stark",
      "member_id": "S000810",
@@ -302,6 +293,15 @@
      "subject": "Boiler Mact Concerns",
      "date": "2011-02-18",
      "url": "https://web.archive.org/web/20121218063335id_/wyden.senate.gov/imo/media/doc/02-18-2011%20letter%20to%20epa%20on%20boiler%20mact%20concerns.pdf"
+    },
+    {
+     "thumb": "thumbs/AAZU7GTU4K6Y2KR3HWFT7YHYKHFOBQX3.webp",
+     "member": "Henry A. Waxman",
+     "member_id": "W000215",
+     "to": "Democratic Leadership",
+     "subject": "Debt Ceiling",
+     "date": "2011-04-15",
+     "url": "https://web.archive.org/web/20110505045227id_/henrywaxman.house.gov/uploadedfiles/debt_ceiling_2011_04_15_letter_to_democratic_leadership.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-112/data/letters-from-congress-112th.csv",
