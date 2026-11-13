@@ -423,15 +423,10 @@ function treeNode(n, needle, depth) {
   if (needle && !hit && !kids.length) return null;
   const unrev = n.status === 'candidate';
   if (n.kind === 'category') {
-    // Distinct terms anywhere below: a term nested under another counts, and a
-    // member listed under both Senators and Representatives counts once.
-    const ids = new Set();
-    (function walk(x) { for (const c of x.children || []) { if (c.kind !== 'category') ids.add(c.id); walk(c); } })(n);
-    const terms = ids.size;
+    // No count of terms beside a category (EXPLORERS.md, 2026-11-13).
     const open = depth === 0 || Boolean(needle);
     return el('li', {}, el('details', { open },
-      el('summary', {}, el('span', { class: 'cat' }, marked(n.label, needle)),
-        el('span', { class: 'n' }, `${num(terms)} ${terms === 1 ? 'term' : 'terms'}`)),
+      el('summary', {}, el('span', { class: 'cat' }, marked(n.label, needle))),
       n.id === 'C-members-of-congress' ? el('span', { class: 'hint' },
         'Members with letters. ', el('a', { href: '?view=by-member' },
           'Every member of Congress, letters or not, with years served, party and state →')) : null,
@@ -477,7 +472,7 @@ async function showTopics(filter) {
     }, 200);
   });
   fill(out, el('section', { class: 'vocab' },
-    el('h2', { class: 'sec' }, 'By topic'),
+    el('h2', { class: 'sec' }, 'By topic or Congress Member'),
     el('p', { class: 'secnote' },
       'The Letters from Congress vocabulary: what the letters are about, the organizations and people they were written to, ',
       'and the members who wrote them. Alphabetical at every level; select a term to see its letters. ',
