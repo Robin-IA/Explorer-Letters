@@ -178,6 +178,28 @@ h2.sec { font-family: var(--serif); font-size: 2.4rem; color: var(--red-deep); m
 .hits td.who { width: 22%; }
 .hits td.to { width: 24%; color: var(--muted); }
 .more { margin-top: .8rem; font-size: 1.35rem; font-weight: 500; }
+.members-sec .tools, .vocab .tools { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; margin: 0 0 1.6rem; }
+.members-sec .tools input { flex: 1; min-width: 22rem; max-width: 48rem; padding: .9rem 1.2rem; border: 2px solid var(--blue); border-radius: 8px; background: var(--panel); }
+.members-sec .tools select { padding: .8rem 1rem; border: 1px solid var(--hair); border-radius: 8px; background: var(--panel); color: var(--ink); }
+.members-sec .person h2.nm { font-family: var(--serif); font-size: 2.4rem; margin: 0 0 .2rem; }
+.members { width: 100%; background: var(--panel); border: 1px solid var(--hair); border-radius: 8px; border-collapse: separate; border-spacing: 0; }
+.members th { text-align: left; font-size: 1.2rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: .9rem 1rem; border-bottom: 2px solid var(--red-tint); }
+.members td { padding: .7rem 1rem; border-bottom: 1px solid var(--hair); vertical-align: top; }
+.members tr:last-child td { border-bottom: 0; }
+.members .n { text-align: right; font-variant-numeric: tabular-nums; }
+.members td.none { color: var(--muted); }
+.members .ch { display: block; font-size: 1.15rem; color: var(--muted); }
+/* On a phone, one block per member: the name, then years · party · state · letters. */
+@media (max-width: 720px) {
+  .members thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .members, .members tbody, .members tr { display: block; }
+  .members tr { padding: .8rem 1rem; border-bottom: 1px solid var(--hair); }
+  .members tr:last-child { border-bottom: 0; }
+  .members td { display: inline; padding: 0; border: 0; font-size: 1.3rem; color: var(--muted); }
+  .members td.who { display: block; font-size: 1.5rem; color: var(--ink); margin-bottom: .2rem; }
+  .members td:nth-child(n+3):not(:empty)::before { content: " · "; }
+  .members td.n::after { content: " letters"; }
+}
 
 footer { background: var(--red-deep); color: #f3e6e8; font-size: 1.3rem; padding: 2.4rem 0 3rem; }
 footer a { color: #fff; text-decoration: underline; }
@@ -238,7 +260,7 @@ footer a { color: #fff; text-decoration: underline; }
         <svg width="28" height="28" viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="26" width="26" height="2.5" fill="#fff"/><rect x="2" y="4.5" width="26" height="2.5" fill="#fff"/><path d="M15 1 3 4.5h24z" fill="#fff"/><rect x="5" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="10.75" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="16.5" y="8.5" width="2.75" height="16" fill="#fff"/><rect x="22.25" y="8.5" width="2.75" height="16" fill="#fff"/></svg>
         <span>Internet Archive</span>
       </a>
-      <nav aria-label="Letters from Congress"><a href="./">Home</a><a href="?view=topics">By topic</a><a href="./#by-congress">By Congress</a><a href="https://web.archive.org/">Wayback Machine</a></nav>
+      <nav aria-label="Letters from Congress"><a href="./">Home</a><a href="?view=topics">By topic</a><a href="?view=by-member">By member</a><a href="./#by-congress">By Congress</a></nav>
       <a class="dl" href="https://archive.org/details/democracys-library" title="Democracy's Library">
         <img src="img/democracys-library-horizontal-white.png" width="170" height="40" alt="Democracy's Library">
       </a>
@@ -298,6 +320,6 @@ footer a { color: #fff; text-decoration: underline; }
   </div>
 </footer>
 </div>
-<script type="module" src="hub.js?v=20261113104823"></script>
+<script type="module" src="hub.js?v=20261113105824"></script>
 </body>
 </html>

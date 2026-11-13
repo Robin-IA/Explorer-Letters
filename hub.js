@@ -432,6 +432,9 @@ function treeNode(n, needle, depth) {
     return el('li', {}, el('details', { open },
       el('summary', {}, el('span', { class: 'cat' }, marked(n.label, needle)),
         el('span', { class: 'n' }, `${num(terms)} ${terms === 1 ? 'term' : 'terms'}`)),
+      n.id === 'C-members-of-congress' ? el('span', { class: 'hint' },
+        'Members with letters. ', el('a', { href: '?view=by-member' },
+          'Every member of Congress, letters or not, with years served, party and state →')) : null,
       n.label === 'Not yet reviewed' ? el('span', { class: 'hint' },
         'Recipients as the letters’ file names give them. Not yet checked: some are fragments, some the same name written two ways.') : null,
       el('ul', {}, ...kids)));
@@ -477,11 +480,136 @@ async function showTopics(filter) {
     el('h2', { class: 'sec' }, 'By topic'),
     el('p', { class: 'secnote' },
       'The Letters from Congress vocabulary: what the letters are about, the organizations and people they were written to, ',
-      'and the members who wrote them. Alphabetical at every level; select a term to see its letters.'),
+      'and the members who wrote them. Alphabetical at every level; select a term to see its letters. ',
+      el('a', { href: '?view=by-member' }, 'Members of Congress'),
+      ' lists every member, including those with no letters found.'),
     el('div', { class: 'tools' }, box,
       el('button', { type: 'button', onclick: () => out.querySelectorAll('.tree details').forEach(d => { d.open = true; }) }, 'Open all'),
       el('button', { type: 'button', onclick: () => out.querySelectorAll('.tree details').forEach((d, i) => { d.open = false; }) }, 'Close all')),
     el('div', { class: 'tree' }, tree.children.length ? tree : el('p', { class: 'status' }, 'Nothing matches.'))));
+}
+
+// ------------------------------------------------------------ by member
+//
+// Every member of every Congress the explorers cover, letters or not, one row
+// per person, gathered from the explorers' index.json files. A member with no
+// letters is listed too: each explorer's member page links their website as
+// archived during that Congress, which shows it was looked at (#79).
+//
+// ?view=by-member, not ?view=members: on the Internet Archive Canada address,
+// ?view=members is an old 119th-explorer link and is forwarded there
+// (publish_iac.sh). ?person= likewise, not ?member=.
+
+function everyMember() {
+  const byId = new Map();
+  const oldest = [...HUB.congresses].sort((a, b) => a.number - b.number);
+  for (const c of oldest) {
+    const idx = INDEXES.get(c.number);
+    if (!idx || idx.failed) continue;
+    for (const m of idx.members || []) {
+      const p = byId.get(m.id) || { id: m.id, terms: [], parties: [], states: [], chambers: [],
+                                     since: m.since, letters: 0 };
+      p.name = m.name; p.last = m.last;       // the newest Congress's spelling
+      p.terms.push([c, m.letters || 0]);
+      p.letters += m.letters || 0;
+      if (m.since && (!p.since || m.since < p.since)) p.since = m.since;
+      // Service ends where the newest Congress says it does: its "until", or
+      // the date the member left during it; neither means still serving.
+      p.until = m.until || (m.left ? +m.left.slice(0, 4) : null);
+      for (const [list, v] of [[p.parties, m.party], [p.states, m.state],
+                               [p.chambers, m.chamber === 'sen' ? 'Senate' : 'House']]) {
+        if (v && !list.includes(v)) list.push(v);
+      }
+      byId.set(m.id, p);
+    }
+  }
+  return [...byId.values()];
+}
+
+const yearsServed = p => (p.since ? `${p.since}–${p.until || 'present'}` : '');
+
+// A party switch arrives as "Democrat → Republican (2004-08-09)", and the
+// Congresses before it say just "Democrat". Show the path once, without the
+// dates, and drop any party already inside a longer path.
+function partyLine(parties) {
+  const plain = parties.map(x => x.replace(/\s*\(\d{4}-\d{2}-\d{2}\)/g, '').trim()).filter(Boolean);
+  const steps = s => s.split(/\s*→\s*/);
+  const keep = plain.filter((x, i) => plain.indexOf(x) === i
+    && !plain.some(y => y !== x && steps(y).length > steps(x).length
+      && steps(x).every(s => steps(y).includes(s))));
+  return keep.join(', ');
+}
+
+function showPerson(id) {
+  const p = everyMember().find(x => x.id === id);
+  const out = $('#results');
+  if (!p) { fill(out, el('p', { class: 'status' }, 'No member with that ID in these Congresses.')); return; }
+  const back = el('a', { href: '?view=by-member' }, '← By member');
+  fill(out, el('section', { class: 'members-sec' },
+    el('p', { class: 'secnote' }, back),
+    el('div', { class: 'person' },
+      el('h2', { class: 'nm' }, p.name),
+      el('div', { class: 'meta' }, [p.chambers.join(', '), yearsServed(p), partyLine(p.parties),
+        p.states.join(', '), `${num(p.letters)} ${p.letters === 1 ? 'letter' : 'letters'}`]
+        .filter(Boolean).join(' · ')),
+      el('p', { class: 'small' }, p.letters
+        ? 'Each Congress they served in. Select one to see their letters there.'
+        : 'No letters found in any Congress they served in. Select one to see their website as the Wayback Machine archived it then.'),
+      el('div', { class: 'chips' }, ...[...p.terms].reverse().map(([c, n]) =>
+        el('a', { href: congressLink(c, `member=${encodeURIComponent(p.id)}`),
+                  title: `${p.name} in the ${(INDEXES.get(c.number).congress || {}).ordinal} Congress` },
+          `${(INDEXES.get(c.number).congress || {}).ordinal || c.number} · ${num(n)}`))))));
+}
+
+function showMembers(find, sort) {
+  $('#list').hidden = true;
+  const out = $('#results');
+  const all = everyMember();
+  const needle = (find || '').trim().toLowerCase();
+  const rows = all.filter(p => !needle || p.name.toLowerCase().includes(needle)
+    || p.states.some(s => s.toLowerCase() === needle));
+  if (sort === 'letters') rows.sort((a, b) => b.letters - a.letters || a.last.localeCompare(b.last));
+  else if (sort === 'state') rows.sort((a, b) => a.states[0].localeCompare(b.states[0]) || a.last.localeCompare(b.last));
+  else rows.sort((a, b) => a.last.localeCompare(b.last) || a.name.localeCompare(b.name));
+  const withLetters = all.filter(p => p.letters).length;
+
+  const url = (f, s) => `?view=by-member${f ? `&find=${encodeURIComponent(f)}` : ''}${s && s !== 'name' ? `&sort=${s}` : ''}`;
+  const box = el('input', { type: 'search', value: find || '', placeholder: 'Find a member, or a state (CA)…',
+                            'aria-label': 'Find a member' });
+  const order = el('select', { 'aria-label': 'Sort by' },
+    ...[['name', 'By surname'], ['letters', 'Most letters'], ['state', 'By state']].map(([v, t]) =>
+      el('option', { value: v, selected: (sort || 'name') === v }, t)));
+  const redo = () => {
+    history.replaceState({}, '', url(box.value, order.value));
+    showMembers(box.value, order.value);
+    const b = $('.members-sec input'); b.focus(); b.setSelectionRange(b.value.length, b.value.length);
+  };
+  box.addEventListener('input', () => { clearTimeout(window.__mt); window.__mt = setTimeout(redo, 200); });
+  order.addEventListener('change', () => { history.replaceState({}, '', url(box.value, order.value)); showMembers(box.value, order.value); });
+
+  fill(out, el('section', { class: 'members-sec' },
+    el('h2', { class: 'sec' }, 'By member'),
+    el('p', { class: 'secnote' },
+      `Every member of Congress in these explorers: ${num(all.length)} people, `
+      + `${num(withLetters)} with letters found and ${num(all.length - withLetters)} without. `
+      + 'A member with no letters still links to their website as the Wayback Machine archived it, '
+      + 'so you can see what was there.'),
+    el('div', { class: 'tools' }, box, order),
+    el('p', { class: 'status', role: 'status' }, `${num(rows.length)} of ${num(all.length)} members`),
+    rows.length
+      ? el('table', { class: 'members' },
+        el('thead', {}, el('tr', {},
+          el('th', { scope: 'col' }, 'Member'), el('th', { scope: 'col' }, 'Years served'),
+          el('th', { scope: 'col' }, 'Party'), el('th', { scope: 'col' }, 'State'),
+          el('th', { scope: 'col', class: 'n' }, 'Letters'))),
+        el('tbody', {}, ...rows.map(p => el('tr', {},
+          el('td', { class: 'who' }, el('a', { href: `?view=by-member&person=${encodeURIComponent(p.id)}` },
+            marked(p.name, needle)), el('span', { class: 'ch' }, p.chambers.join(', '))),
+          el('td', { class: 'tab' }, yearsServed(p)),
+          el('td', {}, partyLine(p.parties)),
+          el('td', {}, p.states.join(', ')),
+          el('td', { class: `n tab${p.letters ? '' : ' none'}` }, num(p.letters))))))
+      : el('p', { class: 'status' }, 'No member matches.')));
 }
 
 // ------------------------------------------------------------- boot
@@ -499,6 +627,13 @@ function fromUrl() {
     };
     if (TREE) go();
     else fetch(`vocabulary-tree.json?v=${HUB.built}`).then(r => r.json()).then(t => { TREE = t; go(); });
+    return;
+  }
+  if (p.get('view') === 'by-member' && !q) {
+    searchRun++;
+    if (p.get('person')) showPerson(p.get('person'));
+    else showMembers(p.get('find') || '', p.get('sort') || 'name');
+    $('#results').scrollIntoView({ block: 'start' });
     return;
   }
   if (p.get('view') === 'topics' && !q) {
