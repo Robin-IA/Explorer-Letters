@@ -148,6 +148,16 @@ h2.sec { font-family: var(--serif); font-size: 2.4rem; color: var(--red-deep); m
 
 /* Search results */
 .status { color: var(--muted); font-size: 1.35rem; margin-bottom: 1.6rem; }
+/* Full-text results across every Congress: description, where and who, then the passage. */
+.fulltext-sec { margin-top: 3.2rem; }
+.fulltext-list { list-style: none; margin: 0; padding: 0; }
+.fulltext { padding: 1.2rem 0; border-bottom: 1px solid var(--hair); }
+.fulltext .ft-title { display: inline-block; min-height: 2.4rem; padding-top: .3rem; max-width: 100%; overflow-wrap: anywhere; font-size: 1.6rem; font-weight: 600; }
+.fulltext .ft-meta { display: flex; flex-wrap: wrap; gap: .3rem; align-items: center; font-size: 1.3rem; color: var(--muted); margin: .3rem 0; }
+.fulltext .ft-meta a { display: inline-flex; align-items: center; min-height: 2.4rem; }
+.fulltext .ft-excerpt { font-size: 1.4rem; line-height: 1.55; overflow-wrap: anywhere; margin: .2rem 0 0; }
+.fulltext .ocr { font-size: 1.1rem; font-weight: 600; border: 1px solid var(--hair); border-radius: 3px; padding: 0 .5rem; color: var(--muted); }
+.more-btn { margin-top: 1.4rem; min-height: 4rem; padding: 0 1.8rem; border: 1px solid var(--blue); border-radius: 6px; background: var(--panel); color: var(--blue); font-weight: 600; cursor: pointer; }
 .small { font-size: 1.25rem; color: var(--muted); }
 .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr)); gap: 1rem; }
 .person { background: var(--panel); border: 1px solid var(--hair); border-top: 3px solid var(--blue); border-radius: 8px; padding: 1.2rem 1.4rem; }
@@ -288,6 +298,6 @@ footer a { color: #fff; text-decoration: underline; }
   </div>
 </footer>
 </div>
-<script type="module" src="hub.js?v=20261112202614"></script>
+<script type="module" src="hub.js?v=20261112212043"></script>
 </body>
 </html>

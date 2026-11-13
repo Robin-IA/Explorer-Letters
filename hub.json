@@ -1,5 +1,5 @@
 {
- "built": "20261112202614",
+ "built": "20261112212043",
  "congresses": [
   {
    "number": 106,
@@ -34,7 +34,8 @@
      "url": "https://web.archive.org/web/20010110075732id_/murkowski.senate.gov/pdfs/letter_to_the_president.pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-106/data/letters-from-congress-106th.csv"
+   "download": "../Explorer-Congressional-Letters-106/data/letters-from-congress-106th.csv",
+   "search": true
   },
   {
    "number": 107,
@@ -78,7 +79,8 @@
      "url": "https://web.archive.org/web/20031226055834id_/house.gov/lipinski/wh_unitedatsbletter062802.pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-107/data/letters-from-congress-107th.csv"
+   "download": "../Explorer-Congressional-Letters-107/data/letters-from-congress-107th.csv",
+   "search": true
   },
   {
    "number": 108,
@@ -122,7 +124,8 @@
      "url": "https://web.archive.org/web/20040823232019id_/wyden.senate.gov/leg_issues/letters/08082004%20wyden%20letter%20to%20rumsfeld.pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-108/data/letters-from-congress-108th.csv"
+   "download": "../Explorer-Congressional-Letters-108/data/letters-from-congress-108th.csv",
+   "search": true
   },
   {
    "number": 109,
@@ -166,7 +169,8 @@
      "url": "https://web.archive.org/web/20051230132949id_/house.gov/lofgren/gonzales_letter_re_patriot_act_11.8.05.pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-109/data/letters-from-congress-109th.csv"
+   "download": "../Explorer-Congressional-Letters-109/data/letters-from-congress-109th.csv",
+   "search": true
   },
   {
    "number": 110,
@@ -210,7 +214,8 @@
      "url": "https://web.archive.org/web/20070201022308id_/leahy.senate.gov/press/200701/signed%20joint%20letter%20to%20day_01%2016%2007.pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-110/data/letters-from-congress-110th.csv"
+   "download": "../Explorer-Congressional-Letters-110/data/letters-from-congress-110th.csv",
+   "search": true
   },
   {
    "number": 111,
@@ -254,7 +259,8 @@
      "url": "https://web.archive.org/web/20090430081116id_/maloney.house.gov/documents/govreform/census/independentcensus/appaa%20letter%20to%20maloney%20on%20hr%201254%203-09(2).pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-111/data/letters-from-congress-111th.csv"
+   "download": "../Explorer-Congressional-Letters-111/data/letters-from-congress-111th.csv",
+   "search": true
   },
   {
    "number": 112,
@@ -298,7 +304,8 @@
      "url": "https://web.archive.org/web/20121031035658id_/brown.senate.gov/download/letter-to-secretary-gates"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-112/data/letters-from-congress-112th.csv"
+   "download": "../Explorer-Congressional-Letters-112/data/letters-from-congress-112th.csv",
+   "search": true
   },
   {
    "number": 113,
@@ -342,7 +349,8 @@
      "url": "https://web.archive.org/web/20141205235923id_/mccaskill.senate.gov/imo/media/doc/uspsletter.pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-113/data/letters-from-congress-113th.csv"
+   "download": "../Explorer-Congressional-Letters-113/data/letters-from-congress-113th.csv",
+   "search": true
   },
   {
    "number": 114,
@@ -386,7 +394,8 @@
      "url": "https://web.archive.org/web/20201006140430id_/brown.senate.gov/imo/media/doc/gltf%20letter%20to%20usace%20jan%2015%20(final).pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-114/data/letters-from-congress-114th.csv"
+   "download": "../Explorer-Congressional-Letters-114/data/letters-from-congress-114th.csv",
+   "search": true
   },
   {
    "number": 115,
@@ -430,7 +439,8 @@
      "url": "https://web.archive.org/web/20170121001029id_/feinstein.senate.gov/public/_cache/files/5/3/5333680f-aecb-4797-b3b3-9038a3eb6ed6/letter-to-sessions-on-hacking-investigation.pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-115/data/letters-from-congress-115th.csv"
+   "download": "../Explorer-Congressional-Letters-115/data/letters-from-congress-115th.csv",
+   "search": true
   },
   {
    "number": 116,
@@ -474,7 +484,8 @@
      "url": "https://web.archive.org/web/20250206100436id_/baldwin.senate.gov/imo/media/doc/senator%20baldwin%20letter%20usda%20rural%20development%201.11.19.pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-116/data/letters-from-congress-116th.csv"
+   "download": "../Explorer-Congressional-Letters-116/data/letters-from-congress-116th.csv",
+   "search": true
   },
   {
    "number": 117,
@@ -518,7 +529,8 @@
      "url": "https://web.archive.org/web/20210106170119id_/bennet.senate.gov/public/_cache/files/d/6/d64b4d2d-6e59-4553-9e28-cce2f31887fa/dod-insurrection-act-letter-response-to-questions.pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-117/data/letters-from-congress-117th.csv"
+   "download": "../Explorer-Congressional-Letters-117/data/letters-from-congress-117th.csv",
+   "search": true
   },
   {
    "number": 118,
@@ -562,7 +574,8 @@
      "url": "https://web.archive.org/web/20230105141053id_/lankford.senate.gov/imo/media/doc/2023-1-3%20sen.%20lankford%20tricare%20pharmacy%20program%20letter%20to%20dha,%20esi,%20cigna[2].pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-118/data/letters-from-congress-118th.csv"
+   "download": "../Explorer-Congressional-Letters-118/data/letters-from-congress-118th.csv",
+   "search": true
   },
   {
    "number": 119,
@@ -606,7 +619,8 @@
      "url": "https://web.archive.org/web/20250420171014id_/schiff.senate.gov/wp-content/uploads/2025/02/letter-to-ag-bondi-re-bop-facilities-for-ice-1.pdf"
     }
    ],
-   "download": "../Explorer-Congressional-Letters-119/data/letters-from-congress-119th.csv"
+   "download": "../Explorer-Congressional-Letters-119/data/letters-from-congress-119th.csv",
+   "search": true
   }
  ]
 }

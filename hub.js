@@ -209,6 +209,96 @@ function findNode(nodes, id) {
   return null;
 }
 
+// ------------------------------------------------------------- full text
+// Every explorer carries a Pagefind index of its letters' own text
+// (build/build_search.py). The home page loads the newest Congress's and
+// merges in the others, so one search ranks letters across all of them.
+// A Congress whose index is missing is left out and the status says so.
+let fullTextLoad = null;
+function fullTextIndex() {
+  return (fullTextLoad ??= (async () => {
+    const byNumber = new Map(HUB.congresses.map(c => [c.number, c]));
+    // hub.json says which explorers have an index (build_hub.py).
+    const present = [...HUB.congresses].filter(c => c.search).sort((a, b) => b.number - a.number);
+    if (!present.length) return null;
+    // Absolute addresses: Pagefind otherwise looks for its files beside this
+    // page rather than beside the explorer the index belongs to.
+    const at = c => new URL(`${c.path}pagefind/`, location.href).href;
+    const pf = await import(`${at(present[0])}pagefind.js`);
+    await pf.options({ basePath: at(present[0]) });
+    for (const c of present.slice(1)) await pf.mergeIndex(at(c));
+    return { pf, byNumber, present: present.length };
+  })().catch(() => null));
+}
+
+// Pagefind escapes the letter's text and wraps matches in <mark>; built as
+// nodes, never inserted as markup, so nothing in a letter can become markup.
+const decodeEntities = s => s.replace(/&(lt|gt|quot|#39|#x27|amp);/g,
+  m => ({ '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&#x27;': "'", '&amp;': '&' })[m]);
+function excerptNodes(html) {
+  const out = [];
+  let on = false;
+  for (const piece of String(html || '').split(/(<mark>|<\/mark>)/)) {
+    if (piece === '<mark>') { on = true; continue; }
+    if (piece === '</mark>') { on = false; continue; }
+    if (piece) out.push(on ? el('mark', {}, decodeEntities(piece)) : decodeEntities(piece));
+  }
+  return out;
+}
+
+function fullTextSection(query, run) {
+  const status = el('p', { class: 'status', role: 'status' }, 'Searching the text of the letters…');
+  const list = el('ol', { class: 'fulltext-list' });
+  const more = el('button', { class: 'more-btn', type: 'button' });
+  const section = el('section', { class: 'fulltext-sec', 'aria-labelledby': 'ft-h' },
+    el('h2', { class: 'sec', id: 'ft-h' }, 'In the letters’ own words'), status, list);
+  (async () => {
+    const ix = await fullTextIndex();
+    if (run !== searchRun) return;
+    if (!ix) { status.textContent = 'Full-text search is not available yet.'; return; }
+    const res = await ix.pf.search(query.trim());
+    if (run !== searchRun) return;
+    const total = res.results.length;
+    const missing = HUB.congresses.length - ix.present;
+    status.textContent = (total
+      ? `${num(total)} letters contain “${query.trim()}”, across ${ix.present} Congresses.`
+      : `No letter’s text contains “${query.trim()}”.`)
+      + ' About two thirds of letters have readable text; scans are read by OCR.'
+      + (missing ? ` ${missing} Congresses are not searchable by text yet.` : '');
+    let next = 0;
+    const page = async () => {
+      const batch = await Promise.all(res.results.slice(next, next + 20).map(r => r.data()));
+      next += batch.length;
+      list.append(...batch.map(d => {
+        const m = d.meta || {};
+        const c = ix.byNumber.get(Number(m.congress));
+        const ids = (m.member_ids || '').split(';').filter(Boolean);
+        const names = (m.members || '').split('; ');
+        const who = ids.map((id, i) => c
+          ? el('a', { href: congressLink(c, `member=${encodeURIComponent(id)}`) }, names[i] || id)
+          : (names[i] || id));
+        return el('li', { class: 'fulltext' },
+          el('a', { class: 'ft-title', href: d.url, target: '_blank', rel: 'noopener' }, m.title || 'Letter'),
+          el('span', { class: 'ft-meta' },
+            c ? el('a', { href: congressLink(c) }, `${(INDEXES.get(c.number)?.congress || {}).ordinal || c.number} Congress`) : null,
+            c ? ' · ' : null,
+            ...who.flatMap((a, i) => (i ? [', ', a] : [a])),
+            m.recipient ? ` to ${m.recipient}` : '',
+            m.date ? ` · ${m.date}` : '',
+            m.source === 'ocr'
+              ? el('span', { class: 'ocr', title: 'Read by OCR from a scanned page; the excerpt may contain misreadings' }, 'OCR')
+              : null),
+          el('p', { class: 'ft-excerpt' }, ...excerptNodes(d.excerpt)));
+      }));
+      if (next < total) { more.textContent = `Show more — ${num(total - next)} more`; if (!more.isConnected) section.append(more); }
+      else more.remove();
+    };
+    more.addEventListener('click', page);
+    if (total) await page();
+  })().catch(() => { status.textContent = 'Full-text search is unavailable right now.'; });
+  return section;
+}
+
 async function runSearch(query, term) {
   const run = ++searchRun;
   const needle = term ? '' : (query || '').trim().toLowerCase();
@@ -254,7 +344,8 @@ async function runSearch(query, term) {
     term ? el('p', { class: 'secnote' }, el('a', { href: '?view=topics' }, '← By topic'),
       (term.names || []).length > 1 ? ` · also written as ${term.names.filter(n => n !== term.label).map(n => n.replace(/@(\d{4})-(\d{4})$/, ' ($1–$2)')).join(', ')}` : '') : null,
     status,
-    ...groups.values());
+    ...groups.values(),
+    term ? null : fullTextSection(query, run));
 
   let total = 0, done = 0, failed = 0;
   await Promise.all(newest.map(async c => {
