@@ -106,7 +106,7 @@ function renderList() {
         el('div', { class: 'dt' }, `Could not load (${idx.failed})`));
     }
     const k = idx.congress || {};
-    // A card, not one big link, so the download and the pictures sit beside
+    // A card, not one big link, so the About link and the pictures sit beside
     // the explorer link rather than inside it.
     return el('div', { class: 'congress' },
       el('a', { class: 'nm', href: congressLink(c) }, `${k.ordinal || c.number} Congress`),
@@ -119,10 +119,8 @@ function renderList() {
         : null,
       el('div', { class: 'acts' },
         el('a', { href: congressLink(c) }, 'Open the explorer'),
-        c.download
-          ? el('a', { href: c.download, download: '' }, 'Download data')
-          : el('span', { class: 'soon', title: 'The data file for this Congress is not built yet' },
-            'Download data · coming soon')));
+        // The data download is on the explorer's About page now.
+        el('a', { href: congressLink(c, 'view=about') }, 'About and data')));
   }));
 
   // Letters by Congress, oldest to newest, so the growth reads left to right.
