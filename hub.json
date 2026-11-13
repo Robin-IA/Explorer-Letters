@@ -1,5 +1,5 @@
 {
- "built": "20261113080117",
+ "built": "20261113082049",
  "congresses": [
   {
    "number": 106,
@@ -106,6 +106,15 @@
      "url": "https://web.archive.org/web/20040324055955id_/schumer.senate.gov/schumerwebsite/pressroom/letters/education%20conference%20call%20report%202.25.04.pdf"
     },
     {
+     "thumb": "thumbs/54XJOYZXYP44PKQEGEWGQ5KSGTRYLKJK.webp",
+     "member": "John D. Dingell",
+     "member_id": "D000355",
+     "to": "The President",
+     "subject": "Help",
+     "date": "2003-09-10",
+     "url": "https://web.archive.org/web/20101010232121id_/dingell.house.gov/documents/letters/help_letter_to_president.pdf"
+    },
+    {
      "thumb": "thumbs/I6QHMO7NOPIWYBLEAAQOEHFA7X443R2O.webp",
      "member": "Carl Levin",
      "member_id": "L000261",
@@ -113,15 +122,6 @@
      "subject": "",
      "date": "2003-02-06",
      "url": "https://web.archive.org/web/20030619090822id_/levin.senate.gov/perryletter.pdf"
-    },
-    {
-     "thumb": "thumbs/4ZYEDKM5GCPE4564WAZ3BB7WZOUDDDBH.webp",
-     "member": "Ron Wyden",
-     "member_id": "W000779",
-     "to": "Department of Defense",
-     "subject": "Leg Issues Wyden",
-     "date": "2004-08-08",
-     "url": "https://web.archive.org/web/20040823232019id_/wyden.senate.gov/leg_issues/letters/08082004%20wyden%20letter%20to%20rumsfeld.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-108/data/letters-from-congress-108th.csv",
@@ -133,13 +133,13 @@
    "path": "../Explorer-Congressional-Letters-109/",
    "samples": [
     {
-     "thumb": "thumbs/TBWLY55DGWCKBFE67VQHP4IFBHDJTE5I.webp",
+     "thumb": "thumbs/S7EEUQMPI73XEK25BP7N6RU46BWYOIMQ.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "U S Ambassador Portman",
-     "subject": "Andean Free Trade Agreement",
-     "date": "2005-11-10",
-     "url": "https://web.archive.org/web/20091202084655id_/henrywaxman.house.gov/uploadedfiles/letter_to_u.s._ambassador_portman_regarding_u.s._andean_free_trade_agreement.pdf"
+     "to": "Swiss Government",
+     "subject": "",
+     "date": "2005-09-30",
+     "url": "https://web.archive.org/web/20091202110118id_/henrywaxman.house.gov/uploadedfiles/letter_to_swiss_government.pdf"
     },
     {
      "thumb": "thumbs/ZEY6IPQCLMH23MV2C77XN6INX6A2RB6E.webp",
@@ -178,6 +178,15 @@
    "path": "../Explorer-Congressional-Letters-110/",
    "samples": [
     {
+     "thumb": "thumbs/RIRNWVFJMDD2GAKY2ABPJOIBMJWLGAT3.webp",
+     "member": "Henry A. Waxman",
+     "member_id": "W000215",
+     "to": "Nicholson",
+     "subject": "",
+     "date": "2007-09-26",
+     "url": "https://web.archive.org/web/20121030214501id_/waxman.house.gov/sites/waxman.house.gov/files/letter_to_secretary_nicholson.pdf"
+    },
+    {
      "thumb": "thumbs/RTGFNPMI6WLGZV4XGDCU42GA6RG52XSH.webp",
      "member": "Carolyn B. Maloney",
      "member_id": "M000087",
@@ -203,15 +212,6 @@
      "subject": "",
      "date": "2007-01-22",
      "url": "https://web.archive.org/web/20070205063010id_/house.gov/frank/letter%20to%20gates%20-%20contract%20interrogator%20final.pdf"
-    },
-    {
-     "thumb": "thumbs/RF5UEU6K7UTDS2YTSYYG7VVMKZWOH2AU.webp",
-     "member": "Robert Menendez",
-     "member_id": "M000639",
-     "to": "Commissioner Basham",
-     "subject": "Csd",
-     "date": "2007-08-08",
-     "url": "https://web.archive.org/web/20201028112417id_/menendez.senate.gov/imo/media/doc/8-8-07%20letter%20to%20commissioner%20basham%20on%20csd.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-110/data/letters-from-congress-110th.csv",
