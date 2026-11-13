@@ -416,6 +416,7 @@ async function runSearch(query, term) {
 // search, which matches topics, recipients and member names.
 
 let TREE = null;
+const MEMBERS_SECTION = 'C-members-of-congress';
 
 function treeNode(n, needle, depth) {
   const kids = (n.children || []).map(c => treeNode(c, needle, depth + 1)).filter(Boolean);
@@ -424,7 +425,9 @@ function treeNode(n, needle, depth) {
   const unrev = n.status === 'candidate';
   if (n.kind === 'category') {
     // No count of terms beside a category (EXPLORERS.md, 2026-11-13).
-    const open = depth === 0 || Boolean(needle);
+    // Top-level sections start open, except Members of Congress: it comes
+    // first and stays collapsed, being 1,600 names long. A search opens all.
+    const open = (depth === 0 && n.id !== MEMBERS_SECTION) || Boolean(needle);
     return el('li', {}, el('details', { open },
       el('summary', {}, el('span', { class: 'cat' }, marked(n.label, needle))),
       n.id === 'C-members-of-congress' ? el('span', { class: 'hint' },
@@ -460,7 +463,11 @@ async function showTopics(filter) {
     }
   }
   const needle = (filter || '').trim().toLowerCase();
-  const tree = el('ul', {}, ...TREE.map(n => treeNode(n, needle, 0)).filter(Boolean));
+  // Members of Congress is its own section, above Topics (EXPLORERS.md,
+  // 2026-11-13); the rest keep the vocabulary's order.
+  const ordered = [...TREE.filter(n => n.id === MEMBERS_SECTION),
+                   ...TREE.filter(n => n.id !== MEMBERS_SECTION)];
+  const tree = el('ul', {}, ...ordered.map(n => treeNode(n, needle, 0)).filter(Boolean));
   const box = el('input', { type: 'search', value: filter || '', placeholder: 'Find a topic, an agency, a member…',
                             'aria-label': 'Find a term' });
   box.addEventListener('input', () => {
@@ -472,7 +479,7 @@ async function showTopics(filter) {
     }, 200);
   });
   fill(out, el('section', { class: 'vocab' },
-    el('h2', { class: 'sec' }, 'By topic or Congress Member'),
+    el('h2', { class: 'sec' }, 'Congress Member or Topic'),
     el('p', { class: 'secnote' },
       'The Letters from Congress vocabulary: what the letters are about, the organizations and people they were written to, ',
       'and the members who wrote them. Alphabetical at every level; select a term to see its letters. ',
