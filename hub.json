@@ -1,5 +1,5 @@
 {
- "built": "20261114161208",
+ "built": "20261114180945",
  "congresses": [
   {
    "number": 106,
@@ -376,15 +376,6 @@
      "url": "https://web.archive.org/web/20161109062254id_/grassley.senate.gov/sites/default/files/judiciary/upload/public%20safety%20officers%20benefits,%2001-12-15,%20letter%20to%20doj,%20fallen%20iowans%20benefits.pdf"
     },
     {
-     "thumb": "thumbs/TD3LU33MYY3UMLX5GL6252TU7I2X5EDQ.webp",
-     "member": "Marco Rubio",
-     "member_id": "R000595",
-     "to": "The President",
-     "subject": "Cuba Hr",
-     "date": "2015-01-06",
-     "url": "https://web.archive.org/web/20170226054959id_/rubio.senate.gov/public/_cache/files/12037935-e81c-40a2-9a54-1852ba697df9/1.6.15-letter-to-obama-re-cuba-hr.pdf"
-    },
-    {
      "thumb": "thumbs/M6ATSVYEDONTSTJRQGFR3HIWYJCL4VUK.webp",
      "member": "Sherrod Brown",
      "member_id": "B000944",
@@ -392,6 +383,15 @@
      "subject": "Jan 15 (final)",
      "date": "2015-01-30",
      "url": "https://web.archive.org/web/20201006140430id_/brown.senate.gov/imo/media/doc/gltf%20letter%20to%20usace%20jan%2015%20(final).pdf"
+    },
+    {
+     "thumb": "thumbs/TD3LU33MYY3UMLX5GL6252TU7I2X5EDQ.webp",
+     "member": "Marco Rubio",
+     "member_id": "R000595",
+     "to": "The President",
+     "subject": "Cuba Hr",
+     "date": "2015-01-06",
+     "url": "https://web.archive.org/web/20170226054959id_/rubio.senate.gov/public/_cache/files/12037935-e81c-40a2-9a54-1852ba697df9/1.6.15-letter-to-obama-re-cuba-hr.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-114/data/letters-from-congress-114th.csv",
