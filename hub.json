@@ -1,5 +1,5 @@
 {
- "built": "20261114203715",
+ "built": "20261115100434",
  "congresses": [
   {
    "number": 106,
@@ -7,13 +7,13 @@
    "path": "../Explorer-Congressional-Letters-106/",
    "samples": [
     {
-     "thumb": "thumbs/D4UGWTOEFKBRXDG2FAPDS3W3TELXMW6V.webp",
+     "thumb": "thumbs/VNSLYDQ2LKMYFOUVIX5A3HHOXY7A3KIY.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Food and Drug Administration",
-     "subject": "Interim Associate Legislative Affairs Melinda Plaisier",
-     "date": "1999-05-24",
-     "url": "https://web.archive.org/web/20091202064324id_/henrywaxman.house.gov/uploadedfiles/letter_from_fda_interim_associate_commissioner_for_legislative_affairs_melinda_plaisier.pdf"
+     "to": "Department of Justice",
+     "subject": "Reno Referral Charles Duncan",
+     "date": "1999-04-13",
+     "url": "https://web.archive.org/web/20091202034156id_/henrywaxman.house.gov/uploadedfiles/letter_to_ag_reno_on_referral_of_charles_a._duncan.pdf"
     },
     {
      "thumb": "thumbs/3JQBBGW73GL5ALPHLXLXDIYDPIRXCDLG.webp",
@@ -25,13 +25,13 @@
      "url": "https://web.archive.org/web/20010110075732id_/murkowski.senate.gov/pdfs/letter_to_the_president.pdf"
     },
     {
-     "thumb": "thumbs/MW3RFQ2B4AGF4WV677PXNE5OXOKWXKRW.webp",
-     "member": "Bill Pascrell, Jr.",
-     "member_id": "P000096",
-     "to": "Federal Aviation Administration",
-     "subject": "Helicopter Noise",
-     "date": "2000-01-26",
-     "url": "https://web.archive.org/web/20220920001552id_/pascrell.house.gov/uploadedfiles/faa_helicopter_noise_letter.pdf"
+     "thumb": "thumbs/PYRZFCUNDG44FSX2YWK6FODDSAPWONPA.webp",
+     "member": "John F. Kerry",
+     "member_id": "K000148",
+     "to": "Pres Clinton1",
+     "subject": "Senators",
+     "date": "2000-09-05",
+     "url": "https://web.archive.org/web/20110303173039id_/kerry.senate.gov/imo/media/doc/senators%20kerry%20&%20kennedy%202000%20letter%20to%20pres.%20clinton1.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-106/data/letters-from-congress-106th.csv",
@@ -52,6 +52,15 @@
      "url": "https://web.archive.org/web/20091202062542id_/henrywaxman.house.gov/uploadedfiles/letter_to_commerce_committee.pdf"
     },
     {
+     "thumb": "thumbs/WIPCGYZLVETURDY2JTR52FQ3C7YEJ2TV.webp",
+     "member": "Tom Lantos",
+     "member_id": "L000090",
+     "to": "Department of Labor",
+     "subject": "SSI",
+     "date": "2002-09-12",
+     "url": "https://web.archive.org/web/20031226183755id_/house.gov/lantos/letter_020912_walsh_ssi.pdf"
+    },
+    {
      "thumb": "thumbs/DAXV2ZLQ64QMQ2W4KWGUL73GZYGZFFXY.webp",
      "member": "Robert C. \"Bobby\" Scott",
      "member_id": "S000185",
@@ -66,17 +75,8 @@
      "member_id": "W000779",
      "to": "Central Intelligence Agency",
      "subject": "Graham",
-     "date": "2002-10-09",
+     "date": "2002-10-07",
      "url": "https://web.archive.org/web/20030430090033id_/wyden.senate.gov/media/2002/cia_graham_letter.pdf"
-    },
-    {
-     "thumb": "thumbs/WIPCGYZLVETURDY2JTR52FQ3C7YEJ2TV.webp",
-     "member": "Tom Lantos",
-     "member_id": "L000090",
-     "to": "Department of Labor",
-     "subject": "SSI",
-     "date": "2002-09-12",
-     "url": "https://web.archive.org/web/20031226183755id_/house.gov/lantos/letter_020912_walsh_ssi.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-107/data/letters-from-congress-107th.csv",
@@ -165,7 +165,7 @@
      "member_id": "M000725",
      "to": "Justice",
      "subject": "Blogs Blog",
-     "date": "2005-07-06",
+     "date": "2005-06-30",
      "url": "https://web.archive.org/web/20110116130220id_/georgemiller.house.gov/blogs/blog/letter_to_justice.pdf"
     }
    ],
@@ -201,17 +201,17 @@
      "member_id": "W000672",
      "to": "The President",
      "subject": "March 29",
-     "date": "2007-08-31",
+     "date": "2007-03-29",
      "url": "https://web.archive.org/web/20070926231627id_/wolf.house.gov/uploads/potus%20letter%20march%2029%2020071.pdf"
     },
     {
-     "thumb": "thumbs/QHI7WGFY2EDYBYH5OYFSA5CNL5HTHLER.webp",
+     "thumb": "thumbs/D2RCBRA4KOY6DKT3R7DYX76IDOEKK7DB.webp",
      "member": "Fortney Pete Stark",
      "member_id": "S000810",
-     "to": "Centers for Medicare and Medicaid Services",
+     "to": "Congressional leadership",
      "subject": "",
-     "date": "2007-03-19",
-     "url": "https://web.archive.org/web/20090325194120id_/stark.house.gov/images/stories/110/letters/20070319_cmsletter.pdf"
+     "date": "2007-03-05",
+     "url": "https://web.archive.org/web/20090325182326id_/stark.house.gov/images/stories/110/letters/20070305_approps.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-110/data/letters-from-congress-110th.csv",
@@ -223,13 +223,13 @@
    "path": "../Explorer-Congressional-Letters-111/",
    "samples": [
     {
-     "thumb": "thumbs/EJ7DSNZLGSY2EOKLUTB2K5FOMEC4IBRP.webp",
+     "thumb": "thumbs/FNIGWXWVWBBGDWDXEHQBXC7HNMALWCFT.webp",
      "member": "Chuck Grassley",
      "member_id": "G000386",
-     "to": "Department of Defense",
-     "subject": "Coburn Marine Corps Accounting",
-     "date": "2009-02-03",
-     "url": "https://web.archive.org/web/20100304185901id_/grassley.senate.gov/about/upload/defense-02-03-09-letter-to-dod-w-coburn-marine-corps-accounting.pdf"
+     "to": "Baucus",
+     "subject": "Fmap",
+     "date": "2009-02-04",
+     "url": "https://web.archive.org/web/20220824020147id_/grassley.senate.gov/imo/media/doc/stimulus-2-5-09-gao-letter-to-baucus-regarding-fmap.pdf"
     },
     {
      "thumb": "thumbs/GPRSQPRA6OP7G6PO4GIU4DITQ6GZZGVS.webp",
@@ -255,7 +255,7 @@
      "member_id": "M000087",
      "to": "Maloney",
      "subject": "Restoring the Integrity of American Statistics Act \u2014 Population Association of America to Carolyn Maloney",
-     "date": "2009-03-30",
+     "date": "2009-03-16",
      "url": "https://web.archive.org/web/20090430081116id_/maloney.house.gov/documents/govreform/census/independentcensus/appaa%20letter%20to%20maloney%20on%20hr%201254%203-09(2).pdf"
     }
    ],
@@ -286,22 +286,22 @@
      "url": "https://web.archive.org/web/20110304060241id_/stark.house.gov/images/stories/112/letters/20110217vilsack.pdf"
     },
     {
-     "thumb": "thumbs/B32YUAW6OG43EDTA6ZZF3GMKVTNOFKZD.webp",
-     "member": "Ron Wyden",
-     "member_id": "W000779",
-     "to": "Environmental Protection Agency",
-     "subject": "Boiler Mact Concerns",
-     "date": "2011-02-18",
-     "url": "https://web.archive.org/web/20121018103050id_/wyden.senate.gov/download/letter-to-epa-on-boiler-mact-concerns"
-    },
-    {
-     "thumb": "thumbs/SUK2JHKAKCLG4RP4FDP5USDEL2VQSCES.webp",
+     "thumb": "thumbs/SIPQ7MUC2FUPX3EO6EJE6EY4ETBM765I.webp",
      "member": "Sherrod Brown",
      "member_id": "B000944",
-     "to": "Gates",
+     "to": "Federal Reserve",
      "subject": "",
-     "date": "2011-01-05",
-     "url": "https://web.archive.org/web/20121031035658id_/brown.senate.gov/download/letter-to-secretary-gates"
+     "date": "2011-01-03",
+     "url": "https://web.archive.org/web/20121028135209id_/brown.senate.gov/download/letter-to-fed"
+    },
+    {
+     "thumb": "thumbs/YQ3CU3I7YX325ZIHKY4CVX2WZ26V3DPU.webp",
+     "member": "Ron Wyden",
+     "member_id": "W000779",
+     "to": "Immigration and Customs Enforcement",
+     "subject": "DOJ Domain Seizures",
+     "date": "2011-02-02",
+     "url": "https://web.archive.org/web/20121018103926id_/wyden.senate.gov/download/letter-to-ice-and-doj-asking-questions-about-domain-seizures-"
     }
    ],
    "download": "../Explorer-Congressional-Letters-112/data/letters-from-congress-112th.csv",
@@ -313,13 +313,13 @@
    "path": "../Explorer-Congressional-Letters-113/",
    "samples": [
     {
-     "thumb": "thumbs/6DJRFNCY2WZYFM6DUJRZVE4TRKUSAMSO.webp",
+     "thumb": "thumbs/MGVZQ3WAE6WYJTEDWMDYM3GLOI5B3EEY.webp",
      "member": "Chuck Grassley",
      "member_id": "G000386",
      "to": "Department of Justice",
-     "subject": "Trade Baucus Eu Working Group AG Priority",
-     "date": "2013-01-24",
-     "url": "https://web.archive.org/web/20130222004113id_/grassley.senate.gov/issues/upload/ag-trade-01-24-13-signed-letter-to-baucus-eu-working-group-ag-a-priority-docx.pdf"
+     "subject": "Bop Jets Sequester",
+     "date": "2013-01-25",
+     "url": "https://web.archive.org/web/20130227103343id_/grassley.senate.gov/judiciary/upload/sequester-01-25-13-letter-to-holder-bop-jets-on-sequester.pdf"
     },
     {
      "thumb": "thumbs/DN6NPNAJRMNJQH4NFQ7O2UZEWN7EM6MM.webp",
@@ -345,7 +345,7 @@
      "member_id": "B000944",
      "to": "Federal Reserve",
      "subject": "Occ",
-     "date": "2013-01-14",
+     "date": "2013-01-15",
      "url": "https://web.archive.org/web/20130216153054id_/brown.senate.gov/download/letter-to-fed-and-occ"
     }
    ],
@@ -376,15 +376,6 @@
      "url": "https://web.archive.org/web/20161109062254id_/grassley.senate.gov/sites/default/files/judiciary/upload/public%20safety%20officers%20benefits,%2001-12-15,%20letter%20to%20doj,%20fallen%20iowans%20benefits.pdf"
     },
     {
-     "thumb": "thumbs/M6ATSVYEDONTSTJRQGFR3HIWYJCL4VUK.webp",
-     "member": "Sherrod Brown",
-     "member_id": "B000944",
-     "to": "Army Corps of Engineers",
-     "subject": "Jan 15 (final)",
-     "date": "2015-01-30",
-     "url": "https://web.archive.org/web/20201006140430id_/brown.senate.gov/imo/media/doc/gltf%20letter%20to%20usace%20jan%2015%20(final).pdf"
-    },
-    {
      "thumb": "thumbs/TD3LU33MYY3UMLX5GL6252TU7I2X5EDQ.webp",
      "member": "Marco Rubio",
      "member_id": "R000595",
@@ -392,6 +383,15 @@
      "subject": "Cuba Hr",
      "date": "2015-01-06",
      "url": "https://web.archive.org/web/20170226054959id_/rubio.senate.gov/public/_cache/files/12037935-e81c-40a2-9a54-1852ba697df9/1.6.15-letter-to-obama-re-cuba-hr.pdf"
+    },
+    {
+     "thumb": "thumbs/T4B4JVI4MQWA3TZYJZVNS7IYCJYLSSSA.webp",
+     "member": "Ted Cruz",
+     "member_id": "C001098",
+     "to": "Department of State",
+     "subject": "",
+     "date": "2015-01-29",
+     "url": "https://web.archive.org/web/20150206124252id_/cruz.senate.gov/files/documents/letters/20150129_letter_to_secretary_kerry.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-114/data/letters-from-congress-114th.csv",
@@ -403,13 +403,13 @@
    "path": "../Explorer-Congressional-Letters-115/",
    "samples": [
     {
-     "thumb": "thumbs/NP4MTMR2GPX2UFTIMG6FVB3RIT4HWB4Y.webp",
+     "thumb": "thumbs/ZDFCLFKZE2XTAOWPBNKTG2XZVJGZAYJZ.webp",
      "member": "Elizabeth Warren",
      "member_id": "W000817",
-     "to": "Department of Health and Human Services",
-     "subject": "2017 01 17warren",
-     "date": "2017-01-17",
-     "url": "https://web.archive.org/web/20170222040529id_/warren.senate.gov/files/documents/2017-01-17warren_letter_to_price.pdf"
+     "to": "Ben Carson",
+     "subject": "",
+     "date": "2017-01-10",
+     "url": "https://web.archive.org/web/20170123235219id_/warren.senate.gov/files/documents/2017-01-10_letter_to_ben_carson.pdf"
     },
     {
      "thumb": "thumbs/N37S6MLL6ECOYEWIC3KY6KFCENWPFU3Q.webp",
@@ -430,13 +430,13 @@
      "url": "https://web.archive.org/web/20170125025910id_/tester.senate.gov/files/letters/01-23-17%20senator%20tester%20letter%20to%20jeff%20bezos%20.pdf"
     },
     {
-     "thumb": "thumbs/HGQDHJLCIARYE6A3SDKUN4EC2W4L57VI.webp",
-     "member": "Dianne Feinstein",
-     "member_id": "F000062",
-     "to": "Department of Justice",
-     "subject": "Hacking Investigation",
-     "date": "2017-01-17",
-     "url": "https://web.archive.org/web/20170121001029id_/feinstein.senate.gov/public/_cache/files/5/3/5333680f-aecb-4797-b3b3-9038a3eb6ed6/letter-to-sessions-on-hacking-investigation.pdf"
+     "thumb": "thumbs/UUMVGQGEAYOKG2HIKS7HQOKS3H3W2WIS.webp",
+     "member": "Tammy Baldwin",
+     "member_id": "B001230",
+     "to": "Department of Health and Human Services",
+     "subject": "Stock purchases in Innate Immunotherapeutics \u2014 to Representative Tom Price, 15 January 2017",
+     "date": "2017-01-15",
+     "url": "https://web.archive.org/web/20170126143557id_/baldwin.senate.gov/imo/media/doc/01.15.17%20-%20signed%20letter%20to%20price%20stock%20purchases.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-115/data/letters-from-congress-115th.csv",
@@ -466,22 +466,22 @@
      "url": "https://web.archive.org/web/20190319150428id_/rubio.senate.gov/public/_cache/files/fa3f30b2-9c5b-4acc-bfeb-6e6c44b8ae9f/19.01.08-mr-letter-to-gov-desantis-re-citrus-block-grant.pdf"
     },
     {
-     "thumb": "thumbs/AE4OIUNDHJNGR5N6WQJ7CHC5AKX6KVA5.webp",
-     "member": "Sherrod Brown",
-     "member_id": "B000944",
-     "to": "Office of Management and Budget",
-     "subject": "Contractor Employee Back Pay",
-     "date": "2019-01-10",
-     "url": "https://web.archive.org/web/20201009171213id_/brown.senate.gov/imo/media/doc/van%20hollen%20%20letter%20to%20omb%20on%20contractor%20employee%20back%20pay.pdf"
+     "thumb": "thumbs/AAO67XV4SXIEFOCK56XWMOBWXPXI275U.webp",
+     "member": "Michael F. Bennet",
+     "member_id": "B001267",
+     "to": "Bor",
+     "subject": "Hemp",
+     "date": "2019-01-15",
+     "url": "https://web.archive.org/web/20200114045815id_/bennet.senate.gov/public/_cache/files/8/0/80f0f31d-d4e7-40ba-be81-0f84f3c3edb6/2019-1-16-bennet-tester-letter-to-bor-on-hemp.pdf"
     },
     {
-     "thumb": "thumbs/ZWXXSZ3IS6ENZLY3YO2DTNLAASGOYXAL.webp",
+     "thumb": "thumbs/KOVLAS3KQTINEZDQYSZGFDZ6GNEQRFHG.webp",
      "member": "Tammy Baldwin",
      "member_id": "B001230",
-     "to": "Department of Agriculture",
-     "subject": "Rural Development",
-     "date": "2019-01-11",
-     "url": "https://web.archive.org/web/20250206100436id_/baldwin.senate.gov/imo/media/doc/senator%20baldwin%20letter%20usda%20rural%20development%201.11.19.pdf"
+     "to": "Internal Revenue Service",
+     "subject": "Shutdown",
+     "date": "2019-01-10",
+     "url": "https://web.archive.org/web/20250204072923id_/baldwin.senate.gov/imo/media/doc/irs%20shutdown%20letter%202019.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-116/data/letters-from-congress-116th.csv",
@@ -493,13 +493,13 @@
    "path": "../Explorer-Congressional-Letters-117/",
    "samples": [
     {
-     "thumb": "thumbs/5GCTYLUP6RTZELGR5VFCIWNNQO5JC3IB.webp",
+     "thumb": "thumbs/LQPJPPSCSVIKBMHYEXQW2UQHSMEH5VCS.webp",
      "member": "Marco Rubio",
      "member_id": "R000595",
-     "to": "Department of Health and Human Services",
-     "subject": "Mab Drugs Follow up",
-     "date": "2021-01-05",
-     "url": "https://web.archive.org/web/20220105184944id_/rubio.senate.gov/public/_cache/files/99f9989a-88fb-47d8-bdf7-d26e7a07bb24/01.05.21--rubio-letter-to-hhs--mab-drugs--follow-up.pdf"
+     "to": "The President",
+     "subject": "Colombia",
+     "date": "2021-01-11",
+     "url": "https://web.archive.org/web/20220111192514id_/rubio.senate.gov/public/_cache/files/e7652b1d-199f-45e2-84fb-f0fccbed2afd/01.11.22-rubio-letter-to-potus-re-colombia.pdf"
     },
     {
      "thumb": "thumbs/T6AYCEQFHOUW7PDD3666OAZ55U2QGVUU.webp",
@@ -511,22 +511,22 @@
      "url": "https://web.archive.org/web/20210120201543id_/warren.senate.gov/imo/media/doc/2021.01.11%20letter%20to%20hhs%20re%20funds%20for%20underserved%20communities_v2.pdf"
     },
     {
-     "thumb": "thumbs/MVRTDPP46JFRCHBH2RLYG3DOLIH57J77.webp",
-     "member": "James Lankford",
-     "member_id": "L000575",
-     "to": "The President",
-     "subject": "Administration",
-     "date": "2021-01-27",
-     "url": "https://web.archive.org/web/20210426121139id_/lankford.senate.gov/imo/media/doc/portman%20federal%20regulations%20letter%20to%20biden%20administration.pdf"
-    },
-    {
-     "thumb": "thumbs/XMQRM5RPTD57KAIRVSMBJOE7ZL3A7S33.webp",
+     "thumb": "thumbs/UNUKXYZBAMJKDQC72B6THSJD4W5NHGO4.webp",
      "member": "Russ Fulcher",
      "member_id": "F000469",
-     "to": "The President",
-     "subject": "Concern Jcpoa",
-     "date": "2021-02-03",
-     "url": "https://web.archive.org/web/20250710084921id_/fulcher.house.gov/_cache/files/5/3/53509299-0127-4387-9b91-1c0cd9f7e307/641996e17db403e4c1a4f1ab1d3dce560a52b13f694d63089b7fd2412e777635.letter-to-president-biden---concern-over-jcpoa.pdf"
+     "to": "Federal Communications Commission",
+     "subject": "Rdof",
+     "date": "2021-01-13",
+     "url": "https://web.archive.org/web/20250711093916id_/fulcher.house.gov/_cache/files/0/e/0e3e9407-eb05-41a7-a805-8878b0920519/4349da2ff377d2fae533efb362a28267fb14ba949101e71ae507f1e8a7556df5.letter-to-fcc-chairman---rdof.pdf"
+    },
+    {
+     "thumb": "thumbs/2YXUVTWYKU7RK4ZRR3KI3YDDQ2PAITPL.webp",
+     "member": "James Lankford",
+     "member_id": "L000575",
+     "to": "Department of Education",
+     "subject": "Nsba Parents Domestic Terrorists",
+     "date": "2021-01-13",
+     "url": "https://web.archive.org/web/20220823075600id_/lankford.senate.gov/imo/media/doc/letter%20to%20cardona%20about%20nsba%20letter%20calling%20parents%20domestic%20terrorists.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-117/data/letters-from-congress-117th.csv",
@@ -538,13 +538,13 @@
    "path": "../Explorer-Congressional-Letters-118/",
    "samples": [
     {
-     "thumb": "thumbs/SCA3O2WZBJDVCGY7ZPNZUQID4MJK4H4H.webp",
+     "thumb": "thumbs/Y35MLWDPQ5UGZCEQLJKJBXSWRCANJXPC.webp",
      "member": "Elizabeth Warren",
      "member_id": "W000817",
-     "to": "The President",
-     "subject": "Administration Vigilante Groups Southern US Border January 2023pdf1",
-     "date": "2023-01-06",
-     "url": "https://web.archive.org/web/20240810012740id_/warren.senate.gov/imo/media/doc/senators_letter_to_the_biden_administration_on_vigilante_groups_at_the_southern_us_border_-_january_2023pdf1.pdf"
+     "to": "Whd",
+     "subject": "Independent Contractor Rule Abortion Benefit",
+     "date": "2023-01-05",
+     "url": "https://web.archive.org/web/20230810101049id_/warren.senate.gov/imo/media/doc/2022.01.05%20letter%20to%20whd%20re.%20independent%20contractor%20rule%20and%20abortion%20benefit.pdf"
     },
     {
      "thumb": "thumbs/NDYRFFAAF47X52LJ2UAWHJRPFE26BH7Z.webp",
@@ -592,15 +592,6 @@
      "url": "https://web.archive.org/web/20250108025030id_/warren.senate.gov/imo/media/doc/letter_to_mrpetehegseth.pdf"
     },
     {
-     "thumb": "thumbs/KBYYJJWVNV3G6U75KD5SKI6K2E6OBCCS.webp",
-     "member": "Russ Fulcher",
-     "member_id": "F000469",
-     "to": "The Speaker of the House",
-     "subject": "Potus",
-     "date": "2025-03-26",
-     "url": "https://web.archive.org/web/20250326041947id_/fulcher.house.gov/_cache/files/6/5/65a6530e-8a92-47e6-8dae-406655740b99/3a5e027b42e034f22eac501426a726620796d8ea2e3020a464ad29073a05dc65.potus-letter-to-speaker-pelosi.pdf"
-    },
-    {
      "thumb": "thumbs/XKKDHRNQECGOUASNGDPBUS5NFKYCRKFA.webp",
      "member": "Julia Brownley",
      "member_id": "B001285",
@@ -610,13 +601,22 @@
      "url": "https://web.archive.org/web/20250729010306id_/juliabrownley.house.gov/wp-content/uploads/2025/05/hoyer-eo-projects-letter-to-omb-nec-signed-ii-1.27.2558491-1-1.pdf"
     },
     {
-     "thumb": "thumbs/KPXB5Z47WYTR54KDUYXZ2VXUXSJCV67J.webp",
+     "thumb": "thumbs/WQ5M3DXQWWZYBPV4NRUIJSLFFPM4SND4.webp",
      "member": "Adam B. Schiff",
      "member_id": "S001150",
-     "to": "Department of Justice",
-     "subject": "Bop Facilities ICE",
-     "date": "2025-02-01",
-     "url": "https://web.archive.org/web/20250420171014id_/schiff.senate.gov/wp-content/uploads/2025/02/letter-to-ag-bondi-re-bop-facilities-for-ice-1.pdf"
+     "to": "Fio Treasury",
+     "subject": "Insurance Datapdf",
+     "date": "2025-01-15",
+     "url": "https://web.archive.org/web/20250724184425id_/schiff.senate.gov/wp-content/uploads/2025/01/letter_to_fio_treasury_on_insurance_datapdf.pdf"
+    },
+    {
+     "thumb": "thumbs/JCWENXGOJCT2FX55MWCO3YWLUUT43SUW.webp",
+     "member": "Mark R. Warner",
+     "member_id": "W000805",
+     "to": "Congressional leadership",
+     "subject": "Immigration Border Security",
+     "date": "2025-01-22",
+     "url": "https://web.archive.org/web/20250123010606id_/warner.senate.gov/public/_cache/files/c/5/c56f5862-9aaa-4a89-a90c-8b813b7f144d/e6159ab656a66988ad4d24eb1c15cc2804beede74c47ce91b257d70925b08f88.letter-to-majority-leader-thune-on-immigration-and-border-security.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-119/data/letters-from-congress-119th.csv",
