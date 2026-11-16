@@ -1,5 +1,5 @@
 {
- "built": "20261116003938",
+ "built": "20261116014443",
  "congresses": [
   {
    "number": 106,
@@ -7,38 +7,38 @@
    "path": "../Explorer-Congressional-Letters-106/",
    "samples": [
     {
-     "thumb": "thumbs/V774VYASTMHXZ35YKJOI4AC6TWXZQW4D.webp",
+     "thumb": "thumbs/ZW4AE4U2CPQIONKLSQZ3VNXJLALP556J.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Mr. Walker",
-     "subject": "Request GAO Online Prescription Drug Sales",
-     "date": "1999-03-02",
-     "url": "https://web.archive.org/web/20091202064339id_/henrywaxman.house.gov/uploadedfiles/letter_of_request_to_gao_regarding_online_prescription_drug_sales.pdf"
+     "to": "Henry A. Waxman",
+     "subject": "On the Safety of Rezulin \u2014 Food and Drug Administration to Representative Waxman, 25 February 1999",
+     "date": "1999-02-25",
+     "url": "https://web.archive.org/web/20031224233757id_/henrywaxman.house.gov/news_files/news_files/pdfs/news_letters_rezulin_2_19_99_fda_safety.pdf"
     },
     {
-     "thumb": "thumbs/4PQQQIJQAAE5KCEMIWE6SYVSO6YUPJVF.webp",
+     "thumb": "thumbs/SVXW6PKBJVOXTROQO56GPJ3NVZMXN3QU.webp",
      "member": "David Bonior",
      "member_id": "B000619",
-     "to": "General Reno",
-     "subject": "Reform 99 02 11 Reno",
-     "date": "1999-02-11",
-     "url": "https://web.archive.org/web/20010116080158id_/davidbonior.house.gov/reform/letters/99-02-11_reno.pdf"
+     "to": "Department of State",
+     "subject": "On a Cocaine Seizure Destined for Cuba \u2014 to Secretary Albright, 6 January 1999",
+     "date": "1999-01-06",
+     "url": "https://web.archive.org/web/20010116080204id_/davidbonior.house.gov/reform/letters/99-01-06ltr.pdf"
     },
     {
-     "thumb": "thumbs/5RLICR7ALF4DSSOSA5OPBTCCXCESBOZC.webp",
+     "thumb": "thumbs/XHZACEC5ISJWJK67JWY75UWBZ4KIJZ4H.webp",
      "member": "Frank R. Lautenberg",
      "member_id": "L000123",
-     "to": "Frank R. Lautenberg",
-     "subject": "Highspeed Coneg",
-     "date": "2000-02-18",
-     "url": "https://web.archive.org/web/20001012142758id_/lautenberg.senate.gov/highspeed/letters/coneg.pdf"
+     "to": "United States Senate",
+     "subject": "On Cosponsoring the High-Speed Rail Investment Act \u2014 Dear Colleague, 10 November 1999",
+     "date": "1999-11-10",
+     "url": "https://web.archive.org/web/20001012142532id_/lautenberg.senate.gov/highspeed/letters/sendc111099.pdf"
     },
     {
      "thumb": "thumbs/OXV4NB7XNTRUSPMMVGZAJACNFUDJXKHE.webp",
      "member": "Samuel Brownback",
      "member_id": "B000953",
      "to": "Samuel Brownback",
-     "subject": "Coaches",
+     "subject": "On the High School and College Sports Gambling Prohibition Act \u2014 College Coaches to Senator Brownback, 10 March 2000",
      "date": "2000-03-10",
      "url": "https://web.archive.org/web/20010112064832id_/brownback.senate.gov/coaches_letter.pdf"
     }
