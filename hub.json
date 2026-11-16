@@ -1,5 +1,5 @@
 {
- "built": "20261116111751",
+ "built": "20261116132239",
  "congresses": [
   {
    "number": 106,
@@ -7,13 +7,13 @@
    "path": "../Explorer-Congressional-Letters-106/",
    "samples": [
     {
-     "thumb": "thumbs/ZW4AE4U2CPQIONKLSQZ3VNXJLALP556J.webp",
+     "thumb": "thumbs/6YFGZH3NOG7BKWEXDDNKDESTRMS2PLOQ.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Henry A. Waxman",
-     "subject": "On the Safety of Rezulin \u2014 Food and Drug Administration to Representative Waxman, 25 February 1999",
-     "date": "1999-02-25",
-     "url": "https://web.archive.org/web/20031224233757id_/henrywaxman.house.gov/news_files/news_files/pdfs/news_letters_rezulin_2_19_99_fda_safety.pdf"
+     "to": "Dan Burton",
+     "subject": "On the Majority's Proposed Committee Rules \u2014 to Chairman Burton, 5 January 1999",
+     "date": "1999-01-05",
+     "url": "https://web.archive.org/web/20091202034039id_/henrywaxman.house.gov/uploadedfiles/letter_on_the_majoritys_proposed_committee_rules.pdf"
     },
     {
      "thumb": "thumbs/SVXW6PKBJVOXTROQO56GPJ3NVZMXN3QU.webp",
@@ -61,15 +61,6 @@
      "url": "https://web.archive.org/web/20091202103335id_/henrywaxman.house.gov/uploadedfiles/1_24_01_letter_from_rep._tierney_to_chairman_shays.pdf"
     },
     {
-     "thumb": "thumbs/FM75S773FPRPIMBLN2BXAMYWNMSEB5Z2.webp",
-     "member": "David Bonior",
-     "member_id": "B000619",
-     "to": "W. Weldon",
-     "subject": "On the Department of Defense's Information Assurance Efforts \u2014 General Accounting Office to Representative Weldon, 11 June 1998",
-     "date": "2001-01-16",
-     "url": "https://web.archive.org/web/20010116110654id_/davidbonior.house.gov/hasc/testimony/105thcongress/98-06-11gaoletter.pdf"
-    },
-    {
      "thumb": "thumbs/5VVVIWUAF3KZVXUQPL6WABZDCOU4R4NL.webp",
      "member": "John D. Dingell",
      "member_id": "D000355",
@@ -86,6 +77,15 @@
      "subject": "On Fully Funding the Federal Share of Special Education Under the IDEA \u2014 Nebraska Legislative Council to Senator Hagel, 25 April 2001",
      "date": "2001-04-25",
      "url": "https://web.archive.org/web/20030901184343id_/harkin.senate.gov/disabilities/idea-letters/nebraska-leg-1.pdf"
+    },
+    {
+     "thumb": "thumbs/GUFWFB4V3DQPO6WQ4S7KLIWBKCRDXPYY.webp",
+     "member": "George Radanovich",
+     "member_id": "R000004",
+     "to": "Environmental Protection Agency",
+     "subject": "On Washington Aqueduct Sediment Discharge Permit \u2014 to Administrator Whitman, 11 February 2002",
+     "date": "2002-02-11",
+     "url": "https://web.archive.org/web/20040227165807id_/house.gov/radanovich/press/2002/feb02/021102washingtonaqueductletter.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-107/data/letters-from-congress-107th.csv",
@@ -169,13 +169,13 @@
      "url": "https://web.archive.org/web/20050205100017id_/house.gov/dingell/documents/letters/gao_covert_propaganda.pdf"
     },
     {
-     "thumb": "thumbs/CD7JIJXFTEIBV6ZMYCFDKX2IEIUVKN7G.webp",
-     "member": "George Miller",
-     "member_id": "M000725",
-     "to": "Secretary Rumsfeld",
-     "subject": "Newweb DOD",
-     "date": "2005-04-28",
-     "url": "https://web.archive.org/web/20080203160808id_/georgemiller.house.gov/newweb/dodletter.pdf"
+     "thumb": "thumbs/DEFC454OKMIMJ55YF657R6QYDQUPBXLD.webp",
+     "member": "Charles E. Schumer",
+     "member_id": "S000148",
+     "to": "Governor Pataki",
+     "subject": "Schumerwebsite Pressroom Pataki",
+     "date": "2005-01-19",
+     "url": "https://web.archive.org/web/20050124093441id_/schumer.senate.gov/schumerwebsite/pressroom/letters/011905.pataki.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-109/data/letters-from-congress-109th.csv",
