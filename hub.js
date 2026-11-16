@@ -529,7 +529,7 @@ async function showTopics(filter) {
   }
   const needle = (filter || '').trim().toLowerCase();
   // Congress Members comes first, collapsed (EXPLORERS.md, 2026-11-13);
-  // the rest keep the vocabulary's order: Committees, Government officials,
+  // the rest keep the vocabulary's order: Congressional committees and caucuses, Executive branch, Legislative branch, Judicial branch,
   // Topics, Companies and organizations, Foreign and international, and
   // Not yet reviewed.
   const ordered = [...TREE.filter(n => n.id === MEMBERS_SECTION),
