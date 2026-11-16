@@ -1,5 +1,5 @@
 {
- "built": "20261116144531",
+ "built": "20261116145659",
  "congresses": [
   {
    "number": 106,
@@ -322,6 +322,15 @@
    "path": "../Explorer-Congressional-Letters-113/",
    "samples": [
     {
+     "thumb": "thumbs/2JQA5UFG2YY5JRZKAWWRZRTNIF7ZLBBP.webp",
+     "member": "Claire McCaskill",
+     "member_id": "M001170",
+     "to": "Mr. President",
+     "subject": "Potusigvacancies",
+     "date": "2013-01-24",
+     "url": "https://web.archive.org/web/20140711074253id_/mccaskill.senate.gov/imo/media/doc/letterpotusigvacancies.pdf"
+    },
+    {
      "thumb": "thumbs/MGVZQ3WAE6WYJTEDWMDYM3GLOI5B3EEY.webp",
      "member": "Chuck Grassley",
      "member_id": "G000386",
@@ -338,15 +347,6 @@
      "subject": "Saeed Abedini",
      "date": "2013-01-15",
      "url": "https://web.archive.org/web/20200131083410id_/blunt.senate.gov/imo/media/doc/1-15-13%20letter%20to%20state%20re%20saeed%20abedini.pdf"
-    },
-    {
-     "thumb": "thumbs/2JQA5UFG2YY5JRZKAWWRZRTNIF7ZLBBP.webp",
-     "member": "Claire McCaskill",
-     "member_id": "M001170",
-     "to": "Mr. President",
-     "subject": "Potusigvacancies",
-     "date": "2013-01-24",
-     "url": "https://web.archive.org/web/20140711074253id_/mccaskill.senate.gov/imo/media/doc/letterpotusigvacancies.pdf"
     },
     {
      "thumb": "thumbs/CPZZ2IO4CAINLIAPQA4RUWLANMPJB2L6.webp",
@@ -367,15 +367,6 @@
    "path": "../Explorer-Congressional-Letters-114/",
    "samples": [
     {
-     "thumb": "thumbs/LSVCUD3P2IMJH6DAPBOKRTO4FTNAPN6D.webp",
-     "member": "Claire McCaskill",
-     "member_id": "M001170",
-     "to": "Leader McConnell",
-     "subject": "Tomcconnellonhouserulechange",
-     "date": "2015-01-09",
-     "url": "https://web.archive.org/web/20161109020019id_/mccaskill.senate.gov/imo/media/doc/lettertomcconnellonhouserulechange.pdf"
-    },
-    {
      "thumb": "thumbs/FFJFID6UFEVQ5KL2RSARLODSTE2WQOYS.webp",
      "member": "Chuck Grassley",
      "member_id": "G000386",
@@ -392,6 +383,15 @@
      "subject": "Cuba Hr",
      "date": "2015-01-06",
      "url": "https://web.archive.org/web/20170226054959id_/rubio.senate.gov/public/_cache/files/12037935-e81c-40a2-9a54-1852ba697df9/E8DF3A50DEAC842479A4C6B6109A924A.1.6.15-letter-to-obama-re-cuba-hr.pdf"
+    },
+    {
+     "thumb": "thumbs/LSVCUD3P2IMJH6DAPBOKRTO4FTNAPN6D.webp",
+     "member": "Claire McCaskill",
+     "member_id": "M001170",
+     "to": "Leader McConnell",
+     "subject": "Tomcconnellonhouserulechange",
+     "date": "2015-01-09",
+     "url": "https://web.archive.org/web/20161109020019id_/mccaskill.senate.gov/imo/media/doc/lettertomcconnellonhouserulechange.pdf"
     },
     {
      "thumb": "thumbs/T4B4JVI4MQWA3TZYJZVNS7IYCJYLSSSA.webp",
@@ -556,15 +556,6 @@
      "url": "https://web.archive.org/web/20230810101049id_/warren.senate.gov/imo/media/doc/2022.01.05%20letter%20to%20whd%20re.%20independent%20contractor%20rule%20and%20abortion%20benefit.pdf"
     },
     {
-     "thumb": "thumbs/UOTUP3SBQY3BZT27IPIPVFP3XRDUPSZ7.webp",
-     "member": "Michael F. Bennet",
-     "member_id": "B001267",
-     "to": "Secretary Mayorkas",
-     "subject": "Tps Venezuela",
-     "date": "2023-01-23",
-     "url": "https://web.archive.org/web/20230206165146id_/bennet.senate.gov/public/_cache/files/e/8/e86ff048-1d4e-4eab-b7fd-3e1c9d4dc445/9798E1BA0A9D404D6BB13DD086E1A507.tps-venezuela-letter-1.23.23.pdf"
-    },
-    {
      "thumb": "thumbs/Q53LD3BKMMFSTIYWMYHVKRCQ6I5LDDUH.webp",
      "member": "Marco Rubio",
      "member_id": "R000595",
@@ -572,6 +563,15 @@
      "subject": "Migrant Landings Florida Keys",
      "date": "2023-01-05",
      "url": "https://web.archive.org/web/20230106054254id_/rubio.senate.gov/public/_cache/files/65897086-f246-437a-b317-8b421bb21164/C586CEDB5B3B934F04BFBD9188B0C167.01.05.23---rubio-letter-to-dhs---migrant-landings-in-florida-keys.pdf"
+    },
+    {
+     "thumb": "thumbs/UOTUP3SBQY3BZT27IPIPVFP3XRDUPSZ7.webp",
+     "member": "Michael F. Bennet",
+     "member_id": "B001267",
+     "to": "Secretary Mayorkas",
+     "subject": "Tps Venezuela",
+     "date": "2023-01-23",
+     "url": "https://web.archive.org/web/20230206165146id_/bennet.senate.gov/public/_cache/files/e/8/e86ff048-1d4e-4eab-b7fd-3e1c9d4dc445/9798E1BA0A9D404D6BB13DD086E1A507.tps-venezuela-letter-1.23.23.pdf"
     },
     {
      "thumb": "thumbs/DCEOV375RNGU3XBFOKHE7A52SQLOX3GY.webp",
