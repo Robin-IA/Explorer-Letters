@@ -1,5 +1,5 @@
 {
- "built": "20261116014443",
+ "built": "20261116035035",
  "congresses": [
   {
    "number": 106,
@@ -52,29 +52,29 @@
    "path": "../Explorer-Congressional-Letters-107/",
    "samples": [
     {
-     "thumb": "thumbs/6YFGZH3NOG7BKWEXDDNKDESTRMS2PLOQ.webp",
+     "thumb": "thumbs/YSMZICYHTU3EZVPAG2MZVAMWXAWGCI7D.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Chainnan Burton",
-     "subject": "Majoritys Proposed Committee Rules",
-     "date": "2001-03-06",
-     "url": "https://web.archive.org/web/20091202034039id_/henrywaxman.house.gov/uploadedfiles/letter_on_the_majoritys_proposed_committee_rules.pdf"
+     "to": "Christopher Shays",
+     "subject": "On Subpoenaing the National Missile Defense Testing Report \u2014 to Representative Shays, 24 January 2001",
+     "date": "2001-01-24",
+     "url": "https://web.archive.org/web/20091202103335id_/henrywaxman.house.gov/uploadedfiles/1_24_01_letter_from_rep._tierney_to_chairman_shays.pdf"
     },
     {
-     "thumb": "thumbs/BYSP2PRUQGDD7JDJVC4KMBAYZUATFHJQ.webp",
+     "thumb": "thumbs/FM75S773FPRPIMBLN2BXAMYWNMSEB5Z2.webp",
      "member": "David Bonior",
      "member_id": "B000619",
-     "to": "Henry",
-     "subject": "Reform 050498 Lt",
+     "to": "W. Weldon",
+     "subject": "On the Department of Defense's Information Assurance Efforts \u2014 General Accounting Office to Representative Weldon, 11 June 1998",
      "date": "2001-01-16",
-     "url": "https://web.archive.org/web/20010116080222id_/davidbonior.house.gov/reform/letters/050498lt.pdf"
+     "url": "https://web.archive.org/web/20010116110654id_/davidbonior.house.gov/hasc/testimony/105thcongress/98-06-11gaoletter.pdf"
     },
     {
      "thumb": "thumbs/5VVVIWUAF3KZVXUQPL6WABZDCOU4R4NL.webp",
      "member": "John D. Dingell",
      "member_id": "D000355",
-     "to": "Attorney General Ashcroft",
-     "subject": "Ashcroft710",
+     "to": "Department of Justice",
+     "subject": "On Prosecuting Attempted Firearm Purchases Under False Pretenses and the Brady Act \u2014 to Attorney General Ashcroft, 10 July 2001",
      "date": "2001-07-10",
      "url": "https://web.archive.org/web/20101010032447id_/dingell.house.gov/documents/letters/ashcroft710.pdf"
     },
@@ -82,8 +82,8 @@
      "thumb": "thumbs/S572BVHLG5WFVXAZM357PXWMUW2G4P26.webp",
      "member": "Tom Harkin",
      "member_id": "H000206",
-     "to": "Senator Hagel",
-     "subject": "Disabilities Idea Nebraska Leg",
+     "to": "Charles Hagel",
+     "subject": "On Fully Funding the Federal Share of Special Education Under the IDEA \u2014 Nebraska Legislative Council to Senator Hagel, 25 April 2001",
      "date": "2001-04-25",
      "url": "https://web.archive.org/web/20030901184343id_/harkin.senate.gov/disabilities/idea-letters/nebraska-leg-1.pdf"
     }
