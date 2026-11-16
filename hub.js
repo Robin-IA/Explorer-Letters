@@ -715,7 +715,11 @@ function showAbout() {
 
     el('h3', {}, 'What’s missing'),
     el('p', {}, `Only letters the Wayback Machine archived and we have found so far. Older
-      Congresses have fewer.`),
+      Congresses have fewer. A letter posted without “letter” in its file name or web
+      address is not here yet, and letters published as web pages or Word files rather than PDFs are only partly here.`),
+    el('p', {}, `Members who have left Congress are here too. Each letter is credited to the
+      member who held its website address on the letter’s date, because the same address
+      can pass from one member to the next.`),
 
     el('h3', {}, 'Each Congress, and its data'),
     el('table', { class: 'members' }, el('thead', {}, el('tr', {},
