@@ -376,7 +376,7 @@ async function runSearch(query, term) {
         ? ((term.names || []).length
           ? ` · the letters they wrote, and those addressed to them as ${term.names.join(', ')}`
           : ' · the letters they wrote')
-        : term.tag ? ' · the letters written on its stationery, and those addressed to it'
+        : term.tag && !term.filed ? ' · the letters written on its stationery, and those addressed to it'
         : (term.names || []).length > 1 ? ` · also written as ${term.names.filter(n => n !== term.label).map(n => n.replace(/@(\d{4})-(\d{4})$/, ' ($1–$2)')).join(', ')}` : '',
       ...seeAlso(term, ' · See also: ')) : null,
     status,
