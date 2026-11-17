@@ -174,6 +174,12 @@ h2.sec { font-family: var(--serif); font-size: 2.4rem; color: var(--red-deep); m
 .hits { table-layout: fixed; }
 .hits td { padding: .8rem .8rem .8rem 0; border-bottom: 1px solid var(--hair); vertical-align: top; overflow-wrap: anywhere; }
 .hits tr:last-child td { border-bottom: 0; }
+/* A letter's subjects as pills, as the explorers' member pages show them (#1286). */
+.topics { display: block; margin-top: .3rem; }
+.topics a.topic { display: inline-flex; align-items: center; margin: .15rem .3rem 0 0; padding: .05rem .45rem;
+  border-radius: 10px; font-size: 1.05rem; background: #eef1fb; color: #3a4a8c;
+  border: 1px solid #dde3f6; min-height: 2.4rem; }
+.topics a.topic:hover { background: #e2e8fa; text-decoration: none; }
 .hits td.yr { width: 5.4rem; color: var(--muted); }
 .hits td.who { width: 22%; }
 .hits td.to { width: 24%; color: var(--muted); }
@@ -316,7 +322,7 @@ footer p.updated { margin: 1em 0 0; }
     <br>The images on this page, the letters and the photograph of the Capitol, are in the public domain. The
     photograph is by the Architect of the Capitol; its use implies no endorsement by the Architect of the Capitol or
     the United States Congress.
-    <p class="updated">Last updated <time datetime="2026-11-17T17:43-05:00">November 17, 2026, 5:43 PM EST</time>.</p>
+    <p class="updated">Last updated <time datetime="2026-11-17T18:35-05:00">November 17, 2026, 6:35 PM EST</time>.</p>
   <!-- explorer-checks:note -->
 <p class="explorer-checks-note" style="font-size:clamp(1.3333rem, 0.875em, 1.6rem);margin:1em 0 0">
   Meets WCAG 2.2 Level AA accessibility (and WCAG 2.1 AA and 2.0 AA), checked
@@ -327,6 +333,6 @@ footer p.updated { margin: 1em 0 0; }
   </div>
 </footer>
 </div>
-<script type="module" src="hub.js?v=20261117174358"></script>
+<script type="module" src="hub.js?v=20261117183515"></script>
 </body>
 </html>

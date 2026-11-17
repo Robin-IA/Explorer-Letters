@@ -410,7 +410,7 @@ async function runSearch(query, term) {
             || subject.toLowerCase().includes(needle)
             || recipient.toLowerCase().includes(needle)
             || (topics || '').toLowerCase().includes(needle))) {
-          hits.push([data.members[mIdx], recipient, year, subject, exact, rowIdx]);
+          hits.push([data.members[mIdx], recipient, year, subject, exact, rowIdx, topics]);
           if (hits.length >= CAP) break;
         }
       }
@@ -420,7 +420,20 @@ async function runSearch(query, term) {
         box.replaceChildren();
       } else {
         const all = `view=search&q=${encodeURIComponent(query.trim())}`;
-        const row = ([id, to, year, subject, exact, rowIdx]) => {
+        const ids = await ensureTermIds();
+        if (run !== searchRun) return;
+        // The letter's subjects as clickable pills beneath its title, as the
+        // member pages show them (#1286): each opens its term's list, or a
+        // search for it when it has no term page.
+        const topicPills = topics => {
+          const tags = [...new Set((topics || '').split(',').map(t => t.trim()).filter(Boolean))];
+          if (!tags.length) return null;
+          return el('span', { class: 'topics' }, ...tags.map(t => {
+            const tid = ids.get(t.toLowerCase());
+            return el('a', { class: 'topic', href: tid ? `?term=${encodeURIComponent(tid)}` : `?q=${encodeURIComponent(t)}` }, t);
+          }));
+        };
+        const row = ([id, to, year, subject, exact, rowIdx, topics]) => {
           // The subject opens the letter itself. Until the member's file has
           // given its Wayback address, it opens the member's page instead.
           const open = el('a', { href: congressLink(c, `member=${encodeURIComponent(id)}`),
@@ -433,7 +446,7 @@ async function runSearch(query, term) {
             el('td', { class: 'yr tab', title: exact ? null : 'Year first archived; the letter carries no date' }, year ? `${year}${exact ? '' : '*'}` : ''),
             el('td', { class: 'who' }, el('a', { href: congressLink(c, `member=${encodeURIComponent(id)}`) }, names.get(id) || id)),
             el('td', { class: 'to' }, marked(to, needle)),
-            el('td', {}, open));
+            el('td', {}, open, topicPills(topics)));
         };
         const tbody = el('tbody', {}, ...hits.slice(0, PER_CONGRESS).map(row));
         // A term's letters can't be handed to the explorer's own search, so
@@ -468,6 +481,32 @@ async function runSearch(query, term) {
 // search, which matches topics, recipients and member names.
 
 let TREE = null;
+// Lowercased term label (and each other name it is written as) -> term id,
+// for linking a letter's subjects to their term pages (#1286).
+let TERM_IDS = null;
+function termIds() {
+  if (TERM_IDS || !TREE) return TERM_IDS;
+  TERM_IDS = new Map();
+  const walk = nodes => {
+    for (const n of nodes || []) {
+      for (const name of [n.label, ...(n.names || [])]) {
+        const k = (name || '').replace(/@\d{4}-\d{4}$/, '').trim().toLowerCase();
+        if (k && !TERM_IDS.has(k)) TERM_IDS.set(k, n.id);
+      }
+      walk(n.children);
+    }
+  };
+  walk(TREE);
+  return TERM_IDS;
+}
+async function ensureTermIds() {
+  if (!TREE) {
+    try {
+      TREE = await (await fetch(`vocabulary-tree.json?v=${HUB.built}`)).json();
+    } catch { return new Map(); }
+  }
+  return termIds() || new Map();
+}
 
 // A term's related terms (vocabulary/related.csv), as links: "See also:
 // Citigroup" on Citibank, and the reverse.
