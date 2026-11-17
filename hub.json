@@ -1,5 +1,5 @@
 {
- "built": "20261117163142",
+ "built": "20261117171018",
  "congresses": [
   {
    "number": 106,
@@ -376,6 +376,15 @@
      "url": "https://web.archive.org/web/20161109062254id_/grassley.senate.gov/sites/default/files/judiciary/upload/public%20safety%20officers%20benefits,%2001-12-15,%20letter%20to%20doj,%20fallen%20iowans%20benefits.pdf"
     },
     {
+     "thumb": "thumbs/673SL5C34IPCX7TN6KOHAPDDY4KIM5U2.webp",
+     "member": "Edward J. Markey",
+     "member_id": "M000133",
+     "to": "Edward J. Markey",
+     "subject": "2014 Dj Henry DOJ Response",
+     "date": "2015-01-08",
+     "url": "https://web.archive.org/web/20200902011259id_/markey.senate.gov/imo/media/doc/2014%20dj%20henry%20letter%20doj%20response.pdf"
+    },
+    {
      "thumb": "thumbs/TD3LU33MYY3UMLX5GL6252TU7I2X5EDQ.webp",
      "member": "Marco Rubio",
      "member_id": "R000595",
@@ -392,15 +401,6 @@
      "subject": "Tomcconnellonhouserulechange",
      "date": "2015-01-09",
      "url": "https://web.archive.org/web/20161109020019id_/mccaskill.senate.gov/imo/media/doc/lettertomcconnellonhouserulechange.pdf"
-    },
-    {
-     "thumb": "thumbs/T4B4JVI4MQWA3TZYJZVNS7IYCJYLSSSA.webp",
-     "member": "Ted Cruz",
-     "member_id": "C001098",
-     "to": "Department of State",
-     "subject": "",
-     "date": "2015-01-29",
-     "url": "https://web.archive.org/web/20150206124252id_/cruz.senate.gov/files/documents/letters/20150129_letter_to_secretary_kerry.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-114/data/letters-from-congress-114th.csv",
