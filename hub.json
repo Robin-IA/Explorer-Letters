@@ -1,5 +1,5 @@
 {
- "built": "20261117150312",
+ "built": "20261117163142",
  "congresses": [
   {
    "number": 106,
@@ -61,6 +61,15 @@
      "url": "https://web.archive.org/web/20091202103335id_/henrywaxman.house.gov/uploadedfiles/1_24_01_letter_from_rep._tierney_to_chairman_shays.pdf"
     },
     {
+     "thumb": "thumbs/6JQSKJKF76ASPZ3277XPUPDXMHYDZR4P.webp",
+     "member": "David Bonior",
+     "member_id": "B000619",
+     "to": "The President",
+     "subject": "On Nominations to the Commission on United States-Pacific Trade and Investment Policy \u2014 to The President, 26 July 1995",
+     "date": "1995-07-26",
+     "url": "https://web.archive.org/web/20010116113508id_/davidbonior.house.gov/reform/letters/d05.pdf"
+    },
+    {
      "thumb": "thumbs/5VVVIWUAF3KZVXUQPL6WABZDCOU4R4NL.webp",
      "member": "John D. Dingell",
      "member_id": "D000355",
@@ -77,15 +86,6 @@
      "subject": "On Fully Funding the Federal Share of Special Education Under the IDEA \u2014 Nebraska Legislative Council to Senator Hagel, 25 April 2001",
      "date": "2001-04-25",
      "url": "https://web.archive.org/web/20030901184343id_/harkin.senate.gov/disabilities/idea-letters/nebraska-leg-1.pdf"
-    },
-    {
-     "thumb": "thumbs/GUFWFB4V3DQPO6WQ4S7KLIWBKCRDXPYY.webp",
-     "member": "George Radanovich",
-     "member_id": "R000004",
-     "to": "Environmental Protection Agency",
-     "subject": "On Washington Aqueduct Sediment Discharge Permit \u2014 to Administrator Whitman, 11 February 2002",
-     "date": "2002-02-11",
-     "url": "https://web.archive.org/web/20040227165807id_/house.gov/radanovich/press/2002/feb02/021102washingtonaqueductletter.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-107/data/letters-from-congress-107th.csv",
@@ -241,13 +241,13 @@
      "url": "https://web.archive.org/web/20090724135614id_/grassley.senate.gov/news/upload/letter-from-special-ig-neil-m-barofsky-to-senator-chuck-grassley-4.pdf"
     },
     {
-     "thumb": "thumbs/OHS2EGVCJKMFBGIGI4BRPZKTPWGPS33Z.webp",
+     "thumb": "thumbs/CRT4TRQUWMG6U6S2ZVDWSQORDJWOAYUI.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Governor Schwarzenegger",
-     "subject": "Arra Ed Funds",
-     "date": "2009-03-17",
-     "url": "https://web.archive.org/web/20090429230611id_/henrywaxman.house.gov/uploadedfiles/delegation_letter_arra_ed_funds.pdf"
+     "to": "Dan Burton",
+     "subject": "On Committee Subpoena Procedures \u2014 Representative Waxman to Chairman Burton, 20 February 1997",
+     "date": "1997-02-20",
+     "url": "https://web.archive.org/web/20091202034008id_/henrywaxman.house.gov/uploadedfiles/letter_on_violation_of_agreement_on_issuing_subpoenas.pdf"
     },
     {
      "thumb": "thumbs/DAWN3YYDYZJ2KQEITNCPIT6ZVSXHERKA.webp",
@@ -412,13 +412,13 @@
    "path": "../Explorer-Congressional-Letters-115/",
    "samples": [
     {
-     "thumb": "thumbs/MQHAUM6S2ZFOCT4FIUOTVE64DBGB2VAJ.webp",
+     "thumb": "thumbs/KOMHLOTONHCRIF23B4N3YSSPHG5OKL7Q.webp",
      "member": "Elizabeth Warren",
      "member_id": "W000817",
-     "to": "Department of Education",
-     "subject": "On Questions Ahead of the Nomination Hearing for Secretary of Education \u2014 to Secretary-Designate DeVos, 9 January 2017",
-     "date": "2017-01-09",
-     "url": "https://web.archive.org/web/20170114024503id_/warren.senate.gov/files/documents/2017-01-09_betsy_devos_letter.pdf"
+     "to": "Senator Thurmond",
+     "subject": "On Opposing Jefferson B. Sessions's Judicial Nomination \u2014 Coretta Scott King to Chairman Thurmond, 19 March 1986",
+     "date": "1986-03-19",
+     "url": "https://web.archive.org/web/20180919012907id_/warren.senate.gov/files/documents/scott-king-1986-letter-and-testimony-signed.pdf"
     },
     {
      "thumb": "thumbs/DZTCAYLCBFCJ3IC6RMS76CZKTPJ5Q76L.webp",
@@ -529,13 +529,13 @@
      "url": "https://web.archive.org/web/20250711093916id_/fulcher.house.gov/_cache/files/0/e/0e3e9407-eb05-41a7-a805-8878b0920519/4349da2ff377d2fae533efb362a28267fb14ba949101e71ae507f1e8a7556df5.letter-to-fcc-chairman---rdof.pdf"
     },
     {
-     "thumb": "thumbs/YUQ6CAD3NQPRUCEVB2Z2KFMDIVIBZ3HW.webp",
+     "thumb": "thumbs/DRMS74KXLLVSZ3RPF6F3I7ZZHDX6R4TZ.webp",
      "member": "James Lankford",
      "member_id": "L000575",
-     "to": "Small Business Administration",
-     "subject": "On Keeping Planned Parenthood Affiliates from Paycheck Protection Program Loans \u2014 to Administrator Carranza, 14 January 2021",
-     "date": "2021-01-14",
-     "url": "https://web.archive.org/web/20210417012412id_/lankford.senate.gov/imo/media/doc/pp%20letter.pdf"
+     "to": "United States Congress",
+     "subject": "On Counting the Electoral Votes \u2014 Vice President Pence to Members of Congress, 6 January 2021",
+     "date": "2021-01-06",
+     "url": "https://web.archive.org/web/20210227164044id_/lankford.senate.gov/imo/media/doc/vice%20president%20pence%20dear%20colleague%20letter.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-117/data/letters-from-congress-117th.csv",
