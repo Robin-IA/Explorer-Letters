@@ -1,5 +1,5 @@
 {
- "built": "20261118112340",
+ "built": "20261118131747",
  "congresses": [
   {
    "number": 105,
@@ -7,7 +7,7 @@
    "path": "../Explorer-Congressional-Letters-105/",
    "samples": [],
    "download": "../Explorer-Congressional-Letters-105/data/letters-from-congress-105th.csv",
-   "search": false
+   "search": true
   },
   {
    "number": 106,
