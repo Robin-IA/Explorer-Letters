@@ -752,13 +752,15 @@ function showAbout() {
       The Wayback Machine archived these sites, so for many of these letters the archive
       is the only copy left.`),
 
-    el('h3', {}, 'Letters to members, and letters with several signers'),
-    el('p', {}, `Letters written to a member of Congress are here too, when the member
-      published them on their own website: a letter from an agency, a governor or a
-      constituent group to the member is listed under that member, as received.`),
-    el('p', {}, `A letter signed by several members is listed once for each member who
-      published it on their own website. Each co-author's copy is listed under that member,
-      so the same letter can appear more than once.`),
+    // Robin, #1371 (19 November 2026): explain the numbers.
+    el('h3', {}, 'How the letters are counted'),
+    el('p', {}, `A letter written by several members appears for each of them: every
+      co-author who published it on their own website has it listed under their name, so
+      the same letter can be counted more than once.`),
+    el('p', {}, `A letter written to a member of Congress is included when the member
+      published it on their own website. It is filed under that member, as recipient.`),
+    el('p', {}, `The numbers will continue to grow and change as regular harvests find
+      letters the Wayback Machine has newly archived, and as letters are read and filed.`),
 
     el('h3', {}, 'What’s missing'),
     el('p', {}, `Only letters the Wayback Machine archived and we have found so far. Older
@@ -767,6 +769,9 @@ function showAbout() {
     el('p', {}, `Members who have left Congress are here too. Each letter is credited to the
       member who held its website address on the letter’s date, because the same address
       can pass from one member to the next.`),
+    el('p', {}, `Letters from Congress is incomplete: it holds only what members published on their websites and
+      what could be archived from the earliest days of the internet on. Letters in print are not included unless
+      they were digitized and published on a member's website.`),
 
     el('h3', { id: 'images' }, 'The images'),
     el('p', {}, `The images on this site, the letters and the photograph of the Capitol, are in the
