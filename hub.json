@@ -1,5 +1,5 @@
 {
- "built": "20261119101308",
+ "built": "20261119154753",
  "congresses": [
   {
    "number": 105,
@@ -70,15 +70,6 @@
      "url": "https://web.archive.org/web/20010116080204id_/davidbonior.house.gov/reform/letters/99-01-06ltr.pdf"
     },
     {
-     "thumb": "thumbs/XHZACEC5ISJWJK67JWY75UWBZ4KIJZ4H.webp",
-     "member": "Frank R. Lautenberg",
-     "member_id": "L000123",
-     "to": "United States Senate",
-     "subject": "On Cosponsoring the High-Speed Rail Investment Act \u2014 Dear Colleague, 10 November 1999",
-     "date": "1999-11-10",
-     "url": "https://web.archive.org/web/20001012142532id_/lautenberg.senate.gov/highspeed/letters/sendc111099.pdf"
-    },
-    {
      "thumb": "thumbs/OXV4NB7XNTRUSPMMVGZAJACNFUDJXKHE.webp",
      "member": "Samuel Brownback",
      "member_id": "B000953",
@@ -86,6 +77,15 @@
      "subject": "On the High School and College Sports Gambling Prohibition Act \u2014 College Coaches to Senator Brownback, 10 March 2000",
      "date": "2000-03-10",
      "url": "https://web.archive.org/web/20010112064832id_/brownback.senate.gov/coaches_letter.pdf"
+    },
+    {
+     "thumb": "thumbs/XHZACEC5ISJWJK67JWY75UWBZ4KIJZ4H.webp",
+     "member": "Frank R. Lautenberg",
+     "member_id": "L000123",
+     "to": "United States Senate",
+     "subject": "On Cosponsoring the High-Speed Rail Investment Act \u2014 Dear Colleague, 10 November 1999",
+     "date": "1999-11-10",
+     "url": "https://web.archive.org/web/20001012142532id_/lautenberg.senate.gov/highspeed/letters/sendc111099.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-106/data/letters-from-congress-106th.csv",

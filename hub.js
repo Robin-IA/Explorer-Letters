@@ -535,7 +535,7 @@ function treeNode(n, needle, depth) {
           'Every member of Congress, letters or not, with years served, party and state →')) : null,
       n.label === 'Committees' ? el('span', { class: 'hint' },
         'Letters written on a committee’s stationery, read from the letterhead, and letters addressed to the committee.') : null,
-      n.label === 'Not yet reviewed' ? el('span', { class: 'hint' },
+      n.label === 'Unfiled letters' ? el('span', { class: 'hint' },
         'Recipients as the letters’ file names give them. Not yet checked: some are fragments, some the same name written two ways.') : null,
       el('ul', {}, ...kids)));
   }
@@ -570,7 +570,7 @@ async function showTopics(filter) {
   // Congress Members comes first, collapsed (EXPLORERS.md, 2026-11-13);
   // the rest keep the vocabulary's order: Congressional committees and caucuses, Executive branch, Legislative branch, Judicial branch,
   // Topics, Companies and organizations, Foreign and international, and
-  // Not yet reviewed.
+  // Unfiled letters (#1367; Not yet reviewed until 19 November 2026).
   const ordered = [...TREE.filter(n => n.id === MEMBERS_SECTION),
                    ...TREE.filter(n => n.id !== MEMBERS_SECTION)];
   const tree = el('ul', {}, ...ordered.map(n => treeNode(n, needle, 0)).filter(Boolean));
@@ -752,6 +752,14 @@ function showAbout() {
       The Wayback Machine archived these sites, so for many of these letters the archive
       is the only copy left.`),
 
+    el('h3', {}, 'Letters to members, and letters with several signers'),
+    el('p', {}, `Letters written to a member of Congress are here too, when the member
+      published them on their own website: a letter from an agency, a governor or a
+      constituent group to the member is listed under that member, as received.`),
+    el('p', {}, `A letter signed by several members is listed once for each member who
+      published it on their own website. Each co-author's copy is listed under that member,
+      so the same letter can appear more than once.`),
+
     el('h3', {}, 'What’s missing'),
     el('p', {}, `Only letters the Wayback Machine archived and we have found so far. Older
       Congresses have fewer. A letter posted without “letter” in its file name or web
@@ -759,6 +767,12 @@ function showAbout() {
     el('p', {}, `Members who have left Congress are here too. Each letter is credited to the
       member who held its website address on the letter’s date, because the same address
       can pass from one member to the next.`),
+
+    el('h3', { id: 'images' }, 'The images'),
+    el('p', {}, `The images on this site, the letters and the photograph of the Capitol, are in the
+      public domain. The photograph is by the Architect of the Capitol; its use implies no endorsement
+      by the Architect of the Capitol or the United States Congress. Letters from Congress is not an
+      official government website.`),
 
     el('h3', {}, 'Each Congress, and its data'),
     el('table', { class: 'members' }, el('thead', {}, el('tr', {},
@@ -776,6 +790,8 @@ function showAbout() {
 
     el('p', {}, 'Built at the Internet Archive from the Wayback Machine’s archive of ',
       `congressional websites, for Democracy’s Library.${built ? ` Updated ${built}.` : ''}`)));
+  // The footer's image link (#1339) lands on its section once the view is drawn.
+  if (location.hash === '#images') document.getElementById('images')?.scrollIntoView({ block: 'start' });
 }
 
 // ------------------------------------------------------------- boot
