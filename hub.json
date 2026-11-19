@@ -1,11 +1,48 @@
 {
- "built": "20261119095223",
+ "built": "20261119101308",
  "congresses": [
   {
    "number": 105,
    "label": "105th Congress",
    "path": "../Explorer-Congressional-Letters-105/",
-   "samples": [],
+   "samples": [
+    {
+     "thumb": "thumbs/CRT4TRQUWMG6U6S2ZVDWSQORDJWOAYUI.webp",
+     "member": "Henry A. Waxman",
+     "member_id": "W000215",
+     "to": "Dan Burton",
+     "subject": "On Committee Subpoena Procedures \u2014 Representative Waxman to Chairman Burton, 20 February 1997",
+     "date": "1997-02-20",
+     "url": "https://web.archive.org/web/20091202034008id_/henrywaxman.house.gov/uploadedfiles/letter_on_violation_of_agreement_on_issuing_subpoenas.pdf"
+    },
+    {
+     "thumb": "thumbs/6A7YGWSXEMSJV5KXAAQDFTWSBI4Q5XK5.webp",
+     "member": "David Bonior",
+     "member_id": "B000619",
+     "to": "Attorney General Reno",
+     "subject": "On Attacks on Independent Counsel Starr \u2014 Representatives to Attorney General Reno, 17 March 1998",
+     "date": "1998-03-19",
+     "url": "https://web.archive.org/web/20010116080230id_/davidbonior.house.gov/reform/letters/ag319.pdf"
+    },
+    {
+     "thumb": "thumbs/34Y66REQLM4VX3KEJ72BKBNPT3QBEU53.webp",
+     "member": "John McCain",
+     "member_id": "M000303",
+     "to": "Mr. President",
+     "subject": "102897 Topresidentclinton00",
+     "date": "1997-10-28",
+     "url": "https://web.archive.org/web/20140221130105id_/mccain.senate.gov/public/_cache/files/d598fe60-1e84-4710-9af7-8f02c24a3ae8/102897lettertopresidentclinton00.pdf"
+    },
+    {
+     "thumb": "thumbs/6VAGN5SEWCB3JM4W2WU3ZZYHAQTHJK77.webp",
+     "member": "Conrad Burns",
+     "member_id": "B001126",
+     "to": "Conrad Burns",
+     "subject": "On Locating the VentureStar Launch Complex at Great Falls \u2014 Montana Economic Developers Association to Senator Burns, 28 April 1998",
+     "date": "1998-04-28",
+     "url": "https://web.archive.org/web/20010110223503id_/senate.gov/~burns/letters.pdf"
+    }
+   ],
    "download": "../Explorer-Congressional-Letters-105/data/letters-from-congress-105th.csv",
    "search": true
   },
@@ -69,15 +106,6 @@
      "url": "https://web.archive.org/web/20091202103335id_/henrywaxman.house.gov/uploadedfiles/1_24_01_letter_from_rep._tierney_to_chairman_shays.pdf"
     },
     {
-     "thumb": "thumbs/6JQSKJKF76ASPZ3277XPUPDXMHYDZR4P.webp",
-     "member": "David Bonior",
-     "member_id": "B000619",
-     "to": "The President",
-     "subject": "On Nominations to the Commission on United States-Pacific Trade and Investment Policy \u2014 to The President, 26 July 1995",
-     "date": "1995-07-26",
-     "url": "https://web.archive.org/web/20010116113508id_/davidbonior.house.gov/reform/letters/d05.pdf"
-    },
-    {
      "thumb": "thumbs/5VVVIWUAF3KZVXUQPL6WABZDCOU4R4NL.webp",
      "member": "John D. Dingell",
      "member_id": "D000355",
@@ -94,6 +122,15 @@
      "subject": "On Fully Funding the Federal Share of Special Education Under the IDEA \u2014 Nebraska Legislative Council to Senator Hagel, 25 April 2001",
      "date": "2001-04-25",
      "url": "https://web.archive.org/web/20030901184343id_/harkin.senate.gov/disabilities/idea-letters/nebraska-leg-1.pdf"
+    },
+    {
+     "thumb": "thumbs/GUFWFB4V3DQPO6WQ4S7KLIWBKCRDXPYY.webp",
+     "member": "George Radanovich",
+     "member_id": "R000004",
+     "to": "Environmental Protection Agency",
+     "subject": "On Washington Aqueduct Sediment Discharge Permit \u2014 to Administrator Whitman, 11 February 2002",
+     "date": "2002-02-11",
+     "url": "https://web.archive.org/web/20040227165807id_/house.gov/radanovich/press/2002/feb02/021102washingtonaqueductletter.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-107/data/letters-from-congress-107th.csv",
@@ -249,13 +286,13 @@
      "url": "https://web.archive.org/web/20090724135614id_/grassley.senate.gov/news/upload/letter-from-special-ig-neil-m-barofsky-to-senator-chuck-grassley-4.pdf"
     },
     {
-     "thumb": "thumbs/CRT4TRQUWMG6U6S2ZVDWSQORDJWOAYUI.webp",
+     "thumb": "thumbs/OHS2EGVCJKMFBGIGI4BRPZKTPWGPS33Z.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Dan Burton",
-     "subject": "On Committee Subpoena Procedures \u2014 Representative Waxman to Chairman Burton, 20 February 1997",
-     "date": "1997-02-20",
-     "url": "https://web.archive.org/web/20091202034008id_/henrywaxman.house.gov/uploadedfiles/letter_on_violation_of_agreement_on_issuing_subpoenas.pdf"
+     "to": "Governor Schwarzenegger",
+     "subject": "Arra Ed Funds",
+     "date": "2009-03-17",
+     "url": "https://web.archive.org/web/20090429230611id_/henrywaxman.house.gov/uploadedfiles/delegation_letter_arra_ed_funds.pdf"
     },
     {
      "thumb": "thumbs/DAWN3YYDYZJ2KQEITNCPIT6ZVSXHERKA.webp",
