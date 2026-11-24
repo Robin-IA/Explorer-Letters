@@ -1,5 +1,5 @@
 {
- "built": "20261120112901",
+ "built": "20261124145944",
  "congresses": [
   {
    "number": 105,
@@ -28,8 +28,8 @@
      "thumb": "thumbs/34Y66REQLM4VX3KEJ72BKBNPT3QBEU53.webp",
      "member": "John McCain",
      "member_id": "M000303",
-     "to": "Mr. President",
-     "subject": "102897 Topresidentclinton00",
+     "to": "Executive Office of the President",
+     "subject": "On Using the Line-Item Veto on Wasteful Spending in the FY1998 Interior Appropriations Bill \u2014 to President Clinton, 28 October 1997",
      "date": "1997-10-28",
      "url": "https://web.archive.org/web/20140221130105id_/mccain.senate.gov/public/_cache/files/d598fe60-1e84-4710-9af7-8f02c24a3ae8/102897lettertopresidentclinton00.pdf"
     },
@@ -190,8 +190,8 @@
      "thumb": "thumbs/RLRONB6VFZDS467CF3LJ7RKUUX54KZ6G.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Governor Johanns",
-     "subject": "",
+     "to": "Governor of Nebraska",
+     "subject": "On Evidence Against the Canadian Feed Ban Before Reopening the Border to Canadian Cattle \u2014 to Governor Johanns, 5 January 2005",
      "date": "2005-01-05",
      "url": "https://web.archive.org/web/20091007125241id_/henrywaxman.house.gov/uploadedfiles/letter_to_governor_johanns.pdf"
     },
@@ -199,8 +199,8 @@
      "thumb": "thumbs/Y43DX55KFYA4LNGF44HQXHB3CE23EM75.webp",
      "member": "Fortney Pete Stark",
      "member_id": "S000810",
-     "to": "Mr. President",
-     "subject": "109th 01 12 Presbush",
+     "to": "Executive Office of the President",
+     "subject": "On a Timetable for Withdrawing U.S. Troops From Iraq \u2014 to President Bush, 12 January 2005",
      "date": "2005-01-12",
      "url": "https://web.archive.org/web/20050214023947id_/house.gov/stark/news/109th/letters/01-12_presbush.pdf"
     },
@@ -209,7 +209,7 @@
      "member": "John D. Dingell",
      "member_id": "D000355",
      "to": "Government Accountability Office",
-     "subject": "Covert Propaganda",
+     "subject": "On a GAO Survey of Covert Propaganda Contracts by Federal Agencies \u2014 to Comptroller General Walker, 11 January 2005",
      "date": "2005-01-11",
      "url": "https://web.archive.org/web/20050205100017id_/house.gov/dingell/documents/letters/gao_covert_propaganda.pdf"
     },
@@ -217,8 +217,8 @@
      "thumb": "thumbs/DEFC454OKMIMJ55YF657R6QYDQUPBXLD.webp",
      "member": "Charles E. Schumer",
      "member_id": "S000148",
-     "to": "Governor Pataki",
-     "subject": "Schumerwebsite Pressroom Pataki",
+     "to": "Governor of New York",
+     "subject": "On Reconsidering the Closure of the Camp Pharsalia Corrections Facility \u2014 to Governor Pataki",
      "date": "2005-01-19",
      "url": "https://web.archive.org/web/20050124093441id_/schumer.senate.gov/schumerwebsite/pressroom/letters/011905.pataki.pdf"
     }
@@ -235,37 +235,37 @@
      "thumb": "thumbs/OGMSNAOIDL5NTSEETIDWUWYC35KLEULJ.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Ambassador Schwab",
-     "subject": "Pdfs Thailand Aids Drug",
+     "to": "Office of the US Trade Representative",
+     "subject": "On Respecting Thailand's Compulsory License on the AIDS Drug Efavirenz \u2014 to Ambassador Schwab, 10 January 2007",
      "date": "2007-01-10",
      "url": "https://web.archive.org/web/20070201012104id_/henrywaxman.house.gov/pdfs/letter_thailand_aids_drug_1.10.07.pdf"
-    },
-    {
-     "thumb": "thumbs/KDUB5Q5E6ZU7ASFVSKFC7E3VHNNLIOWX.webp",
-     "member": "Carolyn B. Maloney",
-     "member_id": "M000087",
-     "to": "Mr. Attorney General",
-     "subject": "911recovery Tojustice",
-     "date": "2007-01-04",
-     "url": "https://web.archive.org/web/20080131105423id_/maloney.house.gov/documents/911recovery/20080104_lettertojustice.pdf"
     },
     {
      "thumb": "thumbs/3WSS46YIHORMG6SPCTT4M57KW74PMB3H.webp",
      "member": "Frank R. Wolf",
      "member_id": "W000672",
-     "to": "The President",
-     "subject": "March 29",
+     "to": "Executive Office of the President",
+     "subject": "On Vigorously Enforcing Laws Against Employers Who Hire Illegal Immigrants \u2014 to President Bush, 29 March 2007",
      "date": "2007-03-29",
      "url": "https://web.archive.org/web/20070926231627id_/wolf.house.gov/uploads/potus%20letter%20march%2029%2020071.pdf"
     },
     {
-     "thumb": "thumbs/QFJDBKZWD2UUMIU5HRQVMPSXJ7QPOZGP.webp",
-     "member": "Fortney Pete Stark",
-     "member_id": "S000810",
-     "to": "President Bush",
-     "subject": "110th Srilanka",
-     "date": "2007-01-31",
-     "url": "https://web.archive.org/web/20070404051530id_/house.gov/stark/news/110th/letters/20070116_srilanka.pdf"
+     "thumb": "thumbs/W442DZQOQ5KZZAN3BFOG5YVQY7AJLDTJ.webp",
+     "member": "Carolyn B. Maloney",
+     "member_id": "M000087",
+     "to": "Pulitzer Board",
+     "subject": "911recovery Dailynewspulitzer",
+     "date": "2007-01-09",
+     "url": "https://web.archive.org/web/20070426020704id_/maloney.house.gov/documents/911recovery/20070109_dailynewspulitzerletter.pdf"
+    },
+    {
+     "thumb": "thumbs/WVRDWXSKLO7PPO2LCY57AYXYEQXTE7LU.webp",
+     "member": "Barney Frank",
+     "member_id": "F000339",
+     "to": "Department of Defense",
+     "subject": "On the Defense Department's Use of Contractors as Interrogators at Guantanamo and Elsewhere \u2014 to Secretary Gates, 23 January 2007",
+     "date": "2007-01-23",
+     "url": "https://web.archive.org/web/20070205063010id_/house.gov/frank/letter%20to%20gates%20-%20contract%20interrogator%20final.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-110/data/letters-from-congress-110th.csv",
@@ -281,7 +281,7 @@
      "member": "Chuck Grassley",
      "member_id": "G000386",
      "to": "Chuck Grassley",
-     "subject": "Special IG Neil Barofsky Chuck Grassley",
+     "subject": "On the Special Inspector General's Plan to Ask All TARP Recipients How They Used Their Funds \u2014 Special Inspector General Barofsky to Senator Grassley, 22 January 2009",
      "date": "2009-01-22",
      "url": "https://web.archive.org/web/20090724135614id_/grassley.senate.gov/news/upload/letter-from-special-ig-neil-m-barofsky-to-senator-chuck-grassley-4.pdf"
     },
@@ -289,28 +289,28 @@
      "thumb": "thumbs/OHS2EGVCJKMFBGIGI4BRPZKTPWGPS33Z.webp",
      "member": "Henry A. Waxman",
      "member_id": "W000215",
-     "to": "Governor Schwarzenegger",
-     "subject": "Arra Ed Funds",
+     "to": "Governor of California",
+     "subject": "On Letting Local Educational Agencies Decide How to Spend California's State Fiscal Stabilization Funds \u2014 to Governor Schwarzenegger, Secretary Thomas and Superintendent O'Connell, 17 March 2009",
      "date": "2009-03-17",
      "url": "https://web.archive.org/web/20090429230611id_/henrywaxman.house.gov/uploadedfiles/delegation_letter_arra_ed_funds.pdf"
     },
     {
-     "thumb": "thumbs/DAWN3YYDYZJ2KQEITNCPIT6ZVSXHERKA.webp",
-     "member": "Tammy Baldwin",
-     "member_id": "B001230",
-     "to": "S ecretary Salazar",
-     "subject": "Pdfs Beloitcasinosalazar",
-     "date": "2009-01-27",
-     "url": "https://web.archive.org/web/20090130002920id_/tammybaldwin.house.gov/media/pdfs/beloitcasinosalazarletter012709.pdf"
+     "thumb": "thumbs/X2FEG4NN435EORGYLDIO7NRNM3VXGT3W.webp",
+     "member": "Pedro R. Pierluisi",
+     "member_id": "P000596",
+     "to": "Nancy Pelosi",
+     "subject": "On Equitable Treatment of the U.S. Territories in SCHIP Reauthorization and Medicaid Matching Rates in the Stimulus \u2014 to Speaker Pelosi, 12 January 2009",
+     "date": "2009-01-12",
+     "url": "https://web.archive.org/web/20090625002442id_/pierluisi.house.gov/pdf/letters/01-12-09-schip-medicaid.pdf"
     },
     {
-     "thumb": "thumbs/XQLDR5TIWZQJY5IQ2QDAKY7HFIWS3URP.webp",
-     "member": "Carolyn B. Maloney",
-     "member_id": "M000087",
-     "to": "Chairman Frank and Ranking Member Bachus",
-     "subject": "Financial Iti Supprot Hr1242",
-     "date": "2009-03-11",
-     "url": "https://web.archive.org/web/20091202014212id_/maloney.house.gov/documents/financial/iti%20supprot%20letter%20hr1242.pdf"
+     "thumb": "thumbs/BY2BUOBY7X5PW57B3BRSDNSJZ53PDDIZ.webp",
+     "member": "Fortney Pete Stark",
+     "member_id": "S000810",
+     "to": "The President",
+     "subject": "On the Humanitarian Crisis in the Gaza Strip \u2014 to President Bush, 9 January 2009",
+     "date": "2009-01-09",
+     "url": "https://web.archive.org/web/20090115180141id_/house.gov/stark/news/111th/letters/gazaletter.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-111/data/letters-from-congress-111th.csv",
@@ -478,19 +478,19 @@
      "thumb": "thumbs/ZAT5ANG74GMMUTSQPQBGKU2AQWY4TRUJ.webp",
      "member": "Jon Tester",
      "member_id": "T000464",
-     "to": "Secretary McDonald and Mr. Gellert",
-     "subject": "Healthnet",
+     "to": "Department of Veterans Affairs",
+     "subject": "On the Veterans Choice Program in Montana \u2014 to Secretary McDonald and, jointly, Health Net CEO Jay Gellert, 5 January 2017",
      "date": "2017-01-05",
      "url": "https://web.archive.org/web/20170131092605id_/tester.senate.gov/files/letters/healthnet%201_5_17.pdf"
     },
     {
-     "thumb": "thumbs/HGQDHJLCIARYE6A3SDKUN4EC2W4L57VI.webp",
-     "member": "Dianne Feinstein",
-     "member_id": "F000062",
-     "to": "Jeff Sessions",
-     "subject": "On Questions About Russian Allegations Before the Attorney General Nomination \u2014 to Senator Sessions, 17 January 2017",
-     "date": "2017-01-17",
-     "url": "https://web.archive.org/web/20170121001029id_/feinstein.senate.gov/public/_cache/files/5/3/5333680f-aecb-4797-b3b3-9038a3eb6ed6/1017CA8F0E8CC77AFF62876E7837BB16.letter-to-sessions-on-hacking-investigation.pdf"
+     "thumb": "thumbs/5FS6O5GRD4M353NF7QJYZE7SW4YRAQGW.webp",
+     "member": "Tammy Baldwin",
+     "member_id": "B001230",
+     "to": "The President",
+     "subject": "On Conflicts of Interest Among Cabinet Nominees \u2014 to President-Elect Trump, 10 January 2017",
+     "date": "2017-01-10",
+     "url": "https://web.archive.org/web/20170111233851id_/baldwin.senate.gov/imo/media/doc/letter%20to%20peotus%20trump%20cabinet%20conflict%20of%20interest.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-115/data/letters-from-congress-115th.csv",
@@ -523,8 +523,8 @@
      "thumb": "thumbs/SLWVR4K27ILQ5W5NDMBNQACQOPBVBLOE.webp",
      "member": "Michael F. Bennet",
      "member_id": "B001267",
-     "to": "Mr. President",
-     "subject": "Shutdown Fire",
+     "to": "The White House",
+     "subject": "On the Government Shutdown's Effect on Wildfire Preparedness \u2014 to President Trump, 14 January 2019",
      "date": "2019-01-14",
      "url": "https://web.archive.org/web/20200114050000id_/bennet.senate.gov/public/_cache/files/8/7/876f4002-c757-40b5-8c6b-06385514d0c9/25E7E3378E90A53697F61C0AEB4BFA48.2019-1-11-bennet-merkley-shutdown-fire-letter.pdf"
     },
