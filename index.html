@@ -86,6 +86,21 @@ h1.title { font-family: var(--serif); color: var(--red-deep); font-size: 4.6rem;
 main { flex: 1; width: 100%; padding: 0 0 5.6rem; }
 h2.sec { font-family: var(--serif); font-size: 2.4rem; color: var(--red-deep); margin: 4rem 0 .4rem; }
 .secnote { color: var(--muted); font-size: 1.35rem; margin-bottom: 1.6rem; }
+/* Search results start right under the search box (#1416): while a search
+   shows, the banner, introduction, chart, letter pages and statistics go. */
+body.searching .banner, body.searching .kicker, body.searching .lede,
+body.searching .herochart, body.searching #pages, body.searching #stats,
+body.searching .searchbox + .note { display: none; }
+body.searching .hero { padding: 1.6rem 0 .8rem; }
+body.searching .herogrid { grid-template-columns: minmax(0, 1fr); }
+body.searching .searchbox { margin: 1rem 0 0; }
+.results-h { font-family: var(--serif); font-size: 2rem; margin: 2rem 0 .6rem; }
+.results-h:focus { outline: 3px solid var(--blue); outline-offset: 4px; }
+.jump { font-size: 1.4rem; margin: 0 0 1rem; padding: .8rem 1.2rem; background: var(--panel);
+  border: 1px solid var(--hair); border-radius: 8px; }
+.jump a { font-weight: 600; }
+.topic-hits .n { color: var(--muted); font-size: 1.1rem; }
+#results section h2.sec, #sr-letters { scroll-margin-top: 1rem; }
 
 /* Letters by Congress: one bar each, linking to that explorer. */
 .chart { background: var(--panel); border: 1px solid var(--hair); border-radius: 8px; padding: 2rem 2rem 1.2rem; }
@@ -317,7 +332,7 @@ footer p.updated { margin: 0 0 1em; }
     </section>
   </main>
   <footer><div class="wrap">
-    <p class="updated">Last updated: <time datetime="2026-11-26T14:15-05:00">November 26, 2026, 2:15 PM EST</time>.</p>
+    <p class="updated">Last updated: <time datetime="2026-11-26T14:44-05:00">November 26, 2026, 2:44 PM EST</time>.</p>
     <p><a href="./">Letters from Congress</a> are the letters published on Congress members' websites
     and preserved by the <a href="https://web.archive.org/">Wayback Machine</a>. An experiment from
     Democracy's Library at the Internet Archive; this is not an official U.S. government publication.
@@ -332,6 +347,6 @@ footer p.updated { margin: 0 0 1em; }
   </div>
 </footer>
 </div>
-<script type="module" src="hub.js?v=20261126141550"></script>
+<script type="module" src="hub.js?v=20261126144449"></script>
 </body>
 </html>

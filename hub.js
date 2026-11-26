@@ -329,13 +329,49 @@ function fullTextSection(query, run) {
   return section;
 }
 
-async function runSearch(query, term) {
+// The vocabulary terms a search names (#1416): topics and organizations whose
+// name, or another name for them, contains the query, with letters to show.
+// Exact names first, then names that start with it, then by letters.
+function topicsFor(needle) {
+  if (!TREE || (needle || '').replace(/[^a-z0-9]/g, '').length < 2) return [];
+  const out = [];
+  const walk = nodes => {
+    for (const n of nodes || []) {
+      if ((n.kind === 'topic' || n.kind === 'organization') && n.status !== 'candidate' && n.letters) {
+        const names = [n.label, ...(n.names || [])].map(x => (x || '').replace(/@\d{4}-\d{4}$/, '').toLowerCase());
+        // A word must start with the query: "ice" is not in Justice or Service.
+        const rank = names.some(x => x === needle) ? 0
+          : names.some(x => x.startsWith(needle)) ? 1
+          : names.some(x => x.split(/[^a-z0-9]+/).some(w => w.startsWith(needle))
+            || x.includes(` ${needle}`)) ? 2 : -1;
+        if (rank >= 0) out.push([rank, n]);
+      }
+      walk(n.children);
+    }
+  };
+  walk(TREE);
+  const seen = new Set();
+  return out.sort((a, b) => a[0] - b[0] || b[1].letters - a[1].letters)
+    .map(([, n]) => n).filter(n => !seen.has(n.id) && seen.add(n.id));
+}
+
+// While a search is showing, the hero's banner, introduction, chart, letter
+// pages and statistics are hidden, so the results start right under the
+// search box (#1416). Clearing the search brings them back.
+function searching(on) {
+  document.body.classList.toggle('searching', Boolean(on));
+}
+
+async function runSearch(query, term, { focus = false } = {}) {
   const run = ++searchRun;
   const needle = term ? '' : (query || '').trim().toLowerCase();
   const match = term ? termMatcher(term) : null;
   const out = $('#results');
   $('#list').hidden = !!(needle || term);
+  searching(needle || term);
   if (!needle && !term) { out.replaceChildren(); return; }
+  if (needle) await ensureTermIds();       // loads the vocabulary for Topics
+  if (run !== searchRun) return;
 
   const newest = [...HUB.congresses].sort((a, b) => b.number - a.number)
     .filter(c => { const i = INDEXES.get(c.number); return i && !i.failed; });
@@ -355,9 +391,23 @@ async function runSearch(query, term) {
 
   const status = el('p', { class: 'status', role: 'status' }, `Searching ${newest.length} Congresses…`);
   const groups = new Map(newest.map(c => [c.number, el('div', { class: 'group' })]));
-  fill(out,
-    peopleList.length ? el('h2', { class: 'sec' }, `Members named “${query.trim()}”`) : null,
-    peopleList.length ? el('div', { class: 'people' }, ...peopleList.slice(0, 24).map(({ m, terms }) =>
+  const topics = term ? [] : topicsFor(needle);
+  const lettersCount = el('span', { class: 'ct' }, '');
+
+  const topicsSec = topics.length ? el('section', { 'aria-labelledby': 'sr-topics' },
+    el('h2', { class: 'sec', id: 'sr-topics' }, 'Topics'),
+    el('p', { class: 'secnote' }, 'Subjects and organizations in the vocabulary that match. Each opens all its letters, across every Congress.'),
+    el('div', { class: 'chips topic-hits' }, ...topics.slice(0, 18).map(n =>
+      el('a', { href: `?term=${encodeURIComponent(n.id)}` },
+        marked(n.label, needle), el('span', { class: 'n' }, ` ${num(n.letters)}`)))),
+    topics.length > 18
+      ? el('p', { class: 'more' }, el('a', { href: `?view=topics&find=${encodeURIComponent(query.trim())}` },
+        `All ${num(topics.length)} matching topics in the vocabulary →`))
+      : null) : null;
+
+  const membersSec = peopleList.length ? el('section', { 'aria-labelledby': 'sr-members' },
+    el('h2', { class: 'sec', id: 'sr-members' }, `Members named “${query.trim()}”`),
+    el('div', { class: 'people' }, ...peopleList.slice(0, 24).map(({ m, terms }) =>
       el('div', { class: 'person' },
         el('div', { class: 'nm' }, marked(m.name, needle)),
         el('div', { class: 'meta' }, [m.chamber === 'sen' ? 'Senate' : 'House', m.state, m.party].filter(Boolean).join(' · '),
@@ -369,8 +419,28 @@ async function runSearch(query, term) {
         el('div', { class: 'chips' }, ...terms.filter(([, n]) => n).map(([c, n]) =>
           el('a', { href: congressLink(c, `member=${encodeURIComponent(m.id)}`),
                     title: `${m.name} in the ${(INDEXES.get(c.number).congress || {}).ordinal} Congress` },
-            `${(INDEXES.get(c.number).congress || {}).ordinal || c.number} · ${num(n)}`)))))) : null,
-    el('h2', { class: 'sec' }, term ? `Letters: ${term.label}` : 'Letters'),
+            `${(INDEXES.get(c.number).congress || {}).ordinal || c.number} · ${num(n)}`))))))) : null;
+
+  // Subjects first; a member's name, when it matches, ahead of them (#1416).
+  const nameFirst = peopleList.length > 0;
+  const jump = term ? null : el('nav', { class: 'jump', 'aria-label': 'Search results' },
+    ...[
+      [nameFirst ? membersSec : topicsSec, nameFirst ? 'sr-members' : 'sr-topics',
+        nameFirst ? `Members (${num(peopleList.length)})` : `Topics (${num(topics.length)})`],
+      [nameFirst ? topicsSec : membersSec, nameFirst ? 'sr-topics' : 'sr-members',
+        nameFirst ? `Topics (${num(topics.length)})` : `Members (${num(peopleList.length)})`],
+      [true, 'sr-letters', el('span', {}, 'Letters', lettersCount)],
+      [true, 'ft-h', 'In the letters’ own words'],
+    ].filter(([sec]) => sec).flatMap(([, id, label], i) =>
+      [i ? ' · ' : '', el('a', { href: `#${id}` }, label)]));
+
+  fill(out,
+    term ? null : el('h2', { class: 'results-h', id: 'sr-h', tabindex: '-1' },
+      `Search results for “${query.trim()}”`),
+    jump,
+    nameFirst ? membersSec : topicsSec,
+    nameFirst ? topicsSec : membersSec,
+    el('h2', { class: 'sec', id: 'sr-letters' }, term ? `Letters: ${term.label}` : 'Letters'),
     term ? el('p', { class: 'secnote' }, el('a', { href: '?view=topics' }, '← Congress Member or Topic'),
       term.kind === 'member'
         ? ((term.names || []).length
@@ -382,6 +452,7 @@ async function runSearch(query, term) {
     status,
     ...groups.values(),
     term ? null : fullTextSection(query, run));
+  if (focus) $('#sr-h')?.focus({ preventScroll: true });
 
   let total = 0, done = 0, failed = 0;
   await Promise.all(newest.map(async c => {
@@ -414,7 +485,14 @@ async function runSearch(query, term) {
           if (hits.length >= CAP) break;
         }
       }
-      hits.sort((a, b) => (b[2] || 0) - (a[2] || 0) || (b[4] - a[4]));
+      // Letters whose subject matches come first, then those matched only by
+      // recipient or topic tag; when the search is a member's name, that
+      // member's own letters lead (#1416).
+      const idOf = new Map(data.members.map((id, i) => [id, i]));
+      const rankOf = h => match ? 0
+        : writers.has(idOf.get(h[0])) ? 0
+        : (h[3] || '').toLowerCase().includes(needle) ? 1 : 2;
+      hits.sort((a, b) => rankOf(a) - rankOf(b) || (b[2] || 0) - (a[2] || 0) || (b[4] - a[4]));
       total += hits.length;
       if (!hits.length) {
         box.replaceChildren();
@@ -465,6 +543,7 @@ async function runSearch(query, term) {
           more);
       }
     }
+    lettersCount.textContent = ` (${num(total)}${done < newest.length ? '…' : ''})`;
     status.textContent = done < newest.length
       ? `${num(total)} letters so far; ${newest.length - done} Congresses still to search…`
       : `${num(total)} letters across ${newest.length - failed} Congresses.`
@@ -803,6 +882,7 @@ function showAbout() {
 
 function fromUrl() {
   const p = new URLSearchParams(location.search);
+  searching(false);
   const q = p.get('q') || '';
   $('#q').value = q;
   if (p.get('term')) {
@@ -851,7 +931,9 @@ async function boot() {
     e.preventDefault();
     const q = $('#q').value.trim();
     history.pushState({}, '', q ? `?q=${encodeURIComponent(q)}` : location.pathname);
-    runSearch(q);
+    // Enter or the button: search, then move focus to the results so a
+    // keyboard or screen-reader user lands on them (#1416).
+    runSearch(q, null, { focus: Boolean(q) });
   });
   $('#q').addEventListener('search', () => {   // the clear button
     if (!$('#q').value) { history.pushState({}, '', location.pathname); runSearch(''); }
