@@ -17,6 +17,94 @@ const num = n => Number(n || 0).toLocaleString('en-US');
 const PER_CONGRESS = 25;   // matches shown per Congress before "all N"
 const CAP = 4000;          // matches counted per Congress, as the explorers do
 
+const fold = s => (s || '').toLowerCase().normalize('NFKD')
+  .replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+
+// Dotted initials count as one word, so "A.I." and "U.S." fold to the same
+// word as "AI" and "US" (#1461): a single letter and a period, immediately
+// followed by another letter, loses its period before the usual fold().
+const foldInitials = s => (s || '').replace(/\b([A-Za-z])\.(?=[A-Za-z])/g, '$1');
+const words = s => fold(foldInitials(s)).split(' ').filter(Boolean);
+
+// A name or a piece of text matches a search term only as a whole word or
+// phrase ("ai" is not inside Daines, Kaine or McCain, any more than "Robin"
+// is named "Bin"; "bernie sanders" still matches the whole name), unless the
+// term ends in "*", which asks for a word that starts with it instead
+// ("clai*" finds Claire). #1461.
+function wordMatch(text, rawNeedle) {
+  const s = (rawNeedle || '').trim();
+  if (!s) return false;
+  const prefix = s.endsWith('*');
+  const core = fold(foldInitials(prefix ? s.slice(0, -1) : s));
+  if (!core) return false;
+  const hay = words(text).join(' ');
+  const esc = core.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = prefix ? new RegExp(`(^| )${esc}`) : new RegExp(`(^| )${esc}( |$)`);
+  return re.test(hay);
+}
+
+// What a short query might stand for, across every Congress's own acronyms
+// (search.json's `acronyms`, from vocabulary/acronyms.csv and the
+// vocabulary's abbreviations -- see build_site.py's search_acronyms, #1448).
+// Each Congress only lists an acronym its own letters use, so this merges
+// what every already-loaded Congress says, rather than picking one.
+function acronymLookup(perCongressData, query) {
+  const q = (query || '').trim();
+  if (!/^[A-Za-z&]{2,8}$/.test(q)) return null;
+  const key = q.toUpperCase();
+  const byMeaning = new Map();   // meaning.toLowerCase() -> {meaning, tag, forms, n}
+  for (const data of perCongressData) {
+    const meanings = data && data.acronyms && data.acronyms[key];
+    if (!meanings) continue;
+    for (const [meaning, tag, forms] of meanings) {
+      const k = meaning.toLowerCase();
+      const m = byMeaning.get(k) || { meaning, tag, forms: new Set(forms), n: 0 };
+      forms.forEach(f => m.forms.add(f));
+      byMeaning.set(k, m);
+    }
+  }
+  if (!byMeaning.size) return null;
+  const word = new RegExp(`(^|[^a-z0-9])${key.toLowerCase().replace('&', '\\&')}($|[^a-z0-9])`);
+  const list = [...byMeaning.values()].map(m => ({ ...m, forms: [...m.forms], n: 0 }));
+  const rank = (subject, recipient, topics) => {
+    const tags = topics ? topics.split(',') : [];
+    if (list.some(m => m.tag && tags.includes(m.tag))) return 0;
+    const text = `${subject} ${recipient}`.toLowerCase();
+    if (word.test(text) || list.some(m => m.forms.some(f => text.includes(f)))) return 1;
+    return 2;
+  };
+  for (const data of perCongressData) {
+    if (!data || !Array.isArray(data.rows)) continue;
+    for (const row of data.rows) {
+      const recipient = row[1] >= 0 ? data.recipients[row[1]] : '';
+      const text = `${row[4]} ${recipient}`.toLowerCase();
+      const tags = row[6] ? row[6].split(',') : [];
+      for (const m of list) {
+        if ((m.tag && tags.includes(m.tag)) || m.forms.some(f => text.includes(f))) m.n++;
+      }
+    }
+  }
+  list.sort((a, b) => b.n - a.n);
+  return { key, list, rank };
+}
+
+function acronymNote(acro, matched, total) {
+  const rest = total - matched;
+  const [top, ...others] = acro.list;
+  return el('div', { class: 'panel acro-note' },
+    el('p', {}, el('b', {}, acro.key), ` stands for ${top.meaning}`,
+      others.length ? el('span', {}, ', or for ',
+        ...others.flatMap((m, i) => [i ? ', ' : '',
+          el('a', { href: `?q=${encodeURIComponent(m.meaning)}` }, m.meaning)])) : null,
+      '. ',
+      matched
+        ? el('span', {}, el('b', {}, num(matched)),
+          matched === 1 ? ' letter is' : ' letters are',
+          ` tagged with it, spell it out, or use “${acro.key}” as a word, and come first`,
+          rest ? el('span', {}, `; the other ${num(rest)} only contain “${acro.key.toLowerCase()}” inside another word.`) : '.')
+        : `No letter here uses “${acro.key}” as a word or spells it out.`));
+}
+
 function el(tag, attrs = {}, ...kids) {
   const node = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs || {})) {
@@ -376,11 +464,32 @@ async function runSearch(query, term, { focus = false } = {}) {
   const newest = [...HUB.congresses].sort((a, b) => b.number - a.number)
     .filter(c => { const i = INDEXES.get(c.number); return i && !i.failed; });
 
+  // A name matches a search term as a whole word, not a substring: "ai" is
+  // not inside Daines, Kaine or McCain, any more than "Robin" is named "Bin"
+  // (#1461). Fetched once here and reused (loadSearch caches), so the letter
+  // loop below pays nothing extra for it.
+  const allData = term ? [] : await Promise.all(newest.map(c => loadSearch(c)));
+  if (run !== searchRun) return;
+  const acro = term ? null : acronymLookup(allData, query);
+  let acroMatched = 0, acroCounted = 0;
+  if (acro) {
+    for (const data of allData) {
+      if (!data || !Array.isArray(data.rows)) continue;
+      for (const row of data.rows) {
+        const recipient = row[1] >= 0 ? data.recipients[row[1]] : '';
+        const r = acro.rank(row[4], recipient, row[6] || '');
+        if (r < 2) { acroMatched++; acroCounted++; }
+        else if (wordMatch(row[4], query) || wordMatch(recipient, query)
+                 || wordMatch(row[6] || '', query)) acroCounted++;
+      }
+    }
+  }
+
   // Members first: everything they need is already in the indexes.
   const people = new Map();
   for (const c of (term ? [] : newest)) {
     for (const m of INDEXES.get(c.number).members || []) {
-      if (!m.name.toLowerCase().includes(needle)) continue;
+      if (!wordMatch(m.name, query)) continue;
       const p = people.get(m.id) || { m, terms: [] };
       p.terms.push([c, m.letters || 0]);
       people.set(m.id, p);
@@ -437,6 +546,7 @@ async function runSearch(query, term, { focus = false } = {}) {
   fill(out,
     term ? null : el('h2', { class: 'results-h', id: 'sr-h', tabindex: '-1' },
       `Search results for “${query.trim()}”`),
+    acro ? acronymNote(acro, acroMatched, acroCounted) : null,
     jump,
     nameFirst ? membersSec : topicsSec,
     nameFirst ? topicsSec : membersSec,
@@ -472,26 +582,29 @@ async function runSearch(query, term, { focus = false } = {}) {
       // the letters they wrote, not only letters that mention them.
       const writers = new Set();
       data.members.forEach((id, i) => {
-        if ((names.get(id) || '').toLowerCase().includes(needle)) writers.add(i);
+        if (wordMatch(names.get(id) || '', query)) writers.add(i);
       });
       for (const [mIdx, rIdx, year, rowIdx, subject, exact, topics] of data.rows) {
         const recipient = rIdx >= 0 ? data.recipients[rIdx] : '';
+        const acroRank = acro ? acro.rank(subject, recipient, topics || '') : 2;
         if (match ? match({ member: data.members[mIdx], recipient, year, topics })
             : (writers.has(mIdx)
-            || subject.toLowerCase().includes(needle)
-            || recipient.toLowerCase().includes(needle)
-            || (topics || '').toLowerCase().includes(needle))) {
-          hits.push([data.members[mIdx], recipient, year, subject, exact, rowIdx, topics]);
+            || wordMatch(subject, query)
+            || wordMatch(recipient, query)
+            || wordMatch(topics || '', query)
+            || acroRank < 2)) {
+          hits.push([data.members[mIdx], recipient, year, subject, exact, rowIdx, topics, acroRank]);
           if (hits.length >= CAP) break;
         }
       }
-      // Letters whose subject matches come first, then those matched only by
-      // recipient or topic tag; when the search is a member's name, that
-      // member's own letters lead (#1416).
+      // An acronym's own letters lead; then letters whose subject matches,
+      // then those matched only by recipient or topic tag; when the search
+      // is a member's name, that member's own letters lead (#1416, #1448).
       const idOf = new Map(data.members.map((id, i) => [id, i]));
       const rankOf = h => match ? 0
+        : acro ? h[7]
         : writers.has(idOf.get(h[0])) ? 0
-        : (h[3] || '').toLowerCase().includes(needle) ? 1 : 2;
+        : wordMatch(h[3] || '', query) ? 1 : 2;
       hits.sort((a, b) => rankOf(a) - rankOf(b) || (b[2] || 0) - (a[2] || 0) || (b[4] - a[4]));
       total += hits.length;
       if (!hits.length) {
