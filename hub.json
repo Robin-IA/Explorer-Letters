@@ -1,5 +1,5 @@
 {
- "built": "20261126222837",
+ "built": "20261128033843",
  "congresses": [
   {
    "number": 105,
@@ -370,8 +370,8 @@
      "thumb": "thumbs/2JQA5UFG2YY5JRZKAWWRZRTNIF7ZLBBP.webp",
      "member": "Claire McCaskill",
      "member_id": "M001170",
-     "to": "Mr. President",
-     "subject": "Potusigvacancies",
+     "to": "The President",
+     "subject": "On Filling Vacant Inspector General Positions \u2014 to President Obama, 24 January 2013",
      "date": "2013-01-24",
      "url": "https://web.archive.org/web/20140711074253id_/mccaskill.senate.gov/imo/media/doc/letterpotusigvacancies.pdf"
     },
@@ -412,6 +412,15 @@
    "path": "../Explorer-Congressional-Letters-114/",
    "samples": [
     {
+     "thumb": "thumbs/TD3LU33MYY3UMLX5GL6252TU7I2X5EDQ.webp",
+     "member": "Marco Rubio",
+     "member_id": "R000595",
+     "to": "The President",
+     "subject": "On Normalizing Relations with Cuba \u2014 to President Obama, 6 January 2015",
+     "date": "2015-01-06",
+     "url": "https://web.archive.org/web/20170226054959id_/rubio.senate.gov/public/_cache/files/12037935-e81c-40a2-9a54-1852ba697df9/E8DF3A50DEAC842479A4C6B6109A924A.1.6.15-letter-to-obama-re-cuba-hr.pdf"
+    },
+    {
      "thumb": "thumbs/FFJFID6UFEVQ5KL2RSARLODSTE2WQOYS.webp",
      "member": "Chuck Grassley",
      "member_id": "G000386",
@@ -421,31 +430,22 @@
      "url": "https://web.archive.org/web/20161109062254id_/grassley.senate.gov/sites/default/files/judiciary/upload/public%20safety%20officers%20benefits,%2001-12-15,%20letter%20to%20doj,%20fallen%20iowans%20benefits.pdf"
     },
     {
-     "thumb": "thumbs/TD3LU33MYY3UMLX5GL6252TU7I2X5EDQ.webp",
-     "member": "Marco Rubio",
-     "member_id": "R000595",
-     "to": "The President",
-     "subject": "Cuba Hr",
-     "date": "2015-01-06",
-     "url": "https://web.archive.org/web/20170226054959id_/rubio.senate.gov/public/_cache/files/12037935-e81c-40a2-9a54-1852ba697df9/E8DF3A50DEAC842479A4C6B6109A924A.1.6.15-letter-to-obama-re-cuba-hr.pdf"
-    },
-    {
-     "thumb": "thumbs/673SL5C34IPCX7TN6KOHAPDDY4KIM5U2.webp",
-     "member": "Edward J. Markey",
-     "member_id": "M000133",
-     "to": "Edward J. Markey",
-     "subject": "On a Briefing About the Shooting Death of Danroy Henry \u2014 Assistant Attorney General Kadzik to Senator Markey, 8 January 2015",
-     "date": "2015-01-08",
-     "url": "https://web.archive.org/web/20200902011259id_/markey.senate.gov/imo/media/doc/2014%20dj%20henry%20letter%20doj%20response.pdf"
-    },
-    {
      "thumb": "thumbs/LSVCUD3P2IMJH6DAPBOKRTO4FTNAPN6D.webp",
      "member": "Claire McCaskill",
      "member_id": "M001170",
-     "to": "Leader McConnell",
-     "subject": "Tomcconnellonhouserulechange",
+     "to": "Mitch McConnell",
+     "subject": "On Rejecting a House Rule Change Affecting Social Security Disability Benefits \u2014 to Leader McConnell, 9 January 2015",
      "date": "2015-01-09",
      "url": "https://web.archive.org/web/20161109020019id_/mccaskill.senate.gov/imo/media/doc/lettertomcconnellonhouserulechange.pdf"
+    },
+    {
+     "thumb": "thumbs/T4B4JVI4MQWA3TZYJZVNS7IYCJYLSSSA.webp",
+     "member": "Ted Cruz",
+     "member_id": "C001098",
+     "to": "Department of State",
+     "subject": "On OneVoice and the V15 Campaign in Israel's Elections \u2014 to Secretary Kerry, 29 January 2015",
+     "date": "2015-01-29",
+     "url": "https://web.archive.org/web/20150206124252id_/cruz.senate.gov/files/documents/letters/20150129_letter_to_secretary_kerry.pdf"
     }
    ],
    "download": "../Explorer-Congressional-Letters-114/data/letters-from-congress-114th.csv",
@@ -623,7 +623,7 @@
      "member": "Josh Hawley",
      "member_id": "H001089",
      "to": "Department of Justice",
-     "subject": "",
+     "subject": "On Classified Documents Found at the Penn Biden Center \u2014 to Attorney General Garland, 11 January 2023",
      "date": "2023-01-11",
      "url": "https://web.archive.org/web/20230112103445id_/hawley.senate.gov/sites/default/files/2023-01/2023-01-11-senator-hawley-letter-to-garland.pdf"
     }
